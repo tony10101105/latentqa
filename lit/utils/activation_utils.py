@@ -158,10 +158,13 @@ def generate_substitute_layer_single(
                     write_mask_len += num_hook_triggered[idx]
                     new_input[i] = torch.cat(
                         [
+                            # start of user message in the decoder model
                             new_input[i][: write_seq_len - write_mask_len, :],
+                            # activations from the target model
                             module_activations[idx][
                                 i, read_seq_len - read_mask_len :, :
                             ],
+                            # rest of the user message in the decoder model + decoder model's generated tokens
                             new_input[i][
                                 write_seq_len - (write_mask_len - read_mask_len) :, :
                             ],

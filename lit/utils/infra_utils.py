@@ -8,6 +8,9 @@ from collections import OrderedDict
 from functools import partial
 from copy import deepcopy
 
+from accelerate import init_empty_weights
+from transformers import AutoConfig
+
 from peft import get_peft_model, PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers.models.llama.modeling_llama import LlamaDecoderLayer
@@ -256,23 +259,22 @@ def get_model(
                 torch_dtype=torch.bfloat16,
             )
         else:
-            with torch.device("meta"):
-                model = AutoModelForCausalLM.from_pretrained(
-                    model_name,
-                    use_cache=None,
-                    torch_dtype=torch.bfloat16,
-                )
+            config = AutoConfig.from_pretrained(model_name)   # tiny
+            with init_empty_weights():                        # everything on meta
+                model = AutoModelForCausalLM.from_config(config)
     else:
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             attn_implementation="flash_attention_2",
             torch_dtype=torch.bfloat16,
-            use_cache=None,
+            #use_cache=None,
             device_map="auto" if device == "auto" else None,
         )
+    
+    # --- operations that read the weights -------------------------------
     model.resize_token_embeddings(len(tokenizer))
-    for _, param in model.named_parameters():
-        param.requires_grad = False
+    for p in model.parameters():
+        p.requires_grad = False
 
     # Load PEFT
     assert peft_config is None or load_peft_checkpoint is None
@@ -338,7 +340,7 @@ def get_model(
         if fsdp_args.fsdp_activation_checkpointing:
             non_reentrant_wrapper = partial(
                 checkpoint_wrapper,
-                checkpoint_impl=CheckpointImpl.NO_REENTRANT,
+                checkpoint_impl=CheckpointImpl.REENTRANT,
             )
             check_fn = lambda submodule: isinstance(submodule, DECODER_LAYER)
             apply_activation_checkpointing(
@@ -366,7 +368,16 @@ def get_modules(
             eval("target_model.model.model.layers")
             target_model_str = "target_model.model.model"
         except:
-            target_model_str = "target_model.module.model.model"
+            try:
+                eval("target_model.module.model.model.layers")
+                target_model_str = "target_model.module.model.model"
+            except:
+                # Gemma-series models use model.language_model bc of multimodality
+                try:
+                    eval("target_model.language_model.model.layers")
+                    target_model_str = "target_model.language_model.model"
+                except:
+                    target_model_str = "target_model.module.language_model.model"
     try:
         eval("decoder_model.model.layers")
         decoder_model_str = "decoder_model.model"
@@ -375,7 +386,16 @@ def get_modules(
             eval("decoder_model.model.model.layers")
             decoder_model_str = "decoder_model.model.model"
         except:
-            decoder_model_str = "decoder_model.module.model.model"
+            try:
+                eval("decoder_model.module.model.model.layers")
+                decoder_model_str = "decoder_model.module.model.model"
+            except:
+                # Gemma-series models use model.language_model bc of multimodality
+                try:
+                    eval("decoder_model.language_model.model.layers")
+                    decoder_model_str = "decoder_model.language_model.model"
+                except:
+                    decoder_model_str = "decoder_model.module.language_model.model"
 
     # List[List[Module]]
     module_read, module_write = [], []

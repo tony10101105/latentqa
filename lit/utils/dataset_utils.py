@@ -22,6 +22,8 @@ NUM_READ_TOKENS_TO_SHIFT = {
     "mistralai/Mistral-Small-24B-Instruct-2501": 2,
     "deepseek-ai/DeepSeek-R1-Distill-Llama-8B": 2,
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B": 2,
+    "google/gemma-3-4b-it": 1,
+    "Qwen/Qwen3-4B-Instruct-2507": 0,
 }
 
 # Magic numbers that are the length of the user tag + BOS token
@@ -33,6 +35,8 @@ NUM_WRITE_TOKENS_TO_SHIFT = {
     "mistralai/Mistral-Small-24B-Instruct-2501": 2,
     "deepseek-ai/DeepSeek-R1-Distill-Llama-8B": 2,
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B": 2,
+    "google/gemma-3-4b-it": 4,
+    "Qwen/Qwen3-4B-Instruct-2507": 3,
 }
 
 PAD_TOKEN_IDS = {
@@ -43,51 +47,55 @@ PAD_TOKEN_IDS = {
     "mistralai/Mistral-Small-24B-Instruct-2501": 2,
     "deepseek-ai/DeepSeek-R1-Distill-Llama-8B": 128010,
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B": 151643,
+    "google/gemma-3-4b-it": 0,
+    "Qwen/Qwen3-4B-Instruct-2507": 151643,
 }
 
 # Magic numbers that correspond to the token idxs of the chat format for the models
 # <bos>, <user>, <assistant>, <assistant_with_reflection>
 CHAT_FORMAT_TOKENS = {
     "meta-llama/Meta-Llama-3-8B-Instruct": (
-        128000,
+        torch.tensor([128006, 9125, 128007, 271]),
         torch.tensor([128006, 882, 128007, 271]),
         torch.tensor([128006, 78191, 128007, 271]),
         torch.tensor([128006, 36013, 128007, 271]),
     ),
     "meta-llama/Llama-3.1-8B-Instruct": (
-        128000,
+        torch.tensor([128006, 9125, 128007, 271]),
         torch.tensor([128006, 882, 128007, 271]),
         torch.tensor([128006, 78191, 128007, 271]),
         torch.tensor([128006, 36013, 128007, 271]),
     ),
     "meta-llama/Meta-Llama-3-70B-Instruct": (
-        128000,
+        torch.tensor([128006, 9125, 128007, 271]),
         torch.tensor([128006, 882, 128007, 271]),
         torch.tensor([128006, 78191, 128007, 271]),
         torch.tensor([128006, 36013, 128007, 271]),
     ),
     "mistralai/Ministral-8B-Instruct-2410": (
-        1,
+        None,
         torch.tensor([3]),
         torch.tensor([4]),
         torch.tensor([4]),
     ),
     "mistralai/Mistral-Small-24B-Instruct-2501": (
-        1,
+        None,
         torch.tensor([3]),
         torch.tensor([4]),
         torch.tensor([4]),
     ),
-    "deepseek-ai/DeepSeek-R1-Distill-Llama-8B": (
-        torch.tensor([128011]),
-        torch.tensor([128012]),
-        torch.tensor([128016]),
+    "google/gemma-3-4b-it": (
+        None,
+        torch.tensor([105, 2364, 107]),
+        torch.tensor([105, 4368, 107]),
+        torch.tensor([105, 48409, 107]),
     ),
-    "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B": (
-        torch.tensor([151644]),
-        torch.tensor([151645]),
-        torch.tensor([151665]),
-    ),
+    "Qwen/Qwen3-4B-Instruct-2507": (
+        torch.tensor([151644, 8948, 198]),
+        torch.tensor([151644, 872, 198]),
+        torch.tensor([151644, 77091, 198]),
+        torch.tensor([151644, 34913, 198]),
+    )
 }
 
 # Reasoning models need to encode their thought tokens
@@ -98,6 +106,8 @@ ENCODER_CHAT_TEMPLATES = {
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<｜User｜>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<｜Assistant｜><｜tool▁calls▁begin｜><｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{{'<｜tool▁calls▁end｜><｜end▁of▁sentence｜>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<｜tool▁outputs▁end｜>' + message['content'] + '<｜end▁of▁sentence｜>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{{'<｜Assistant｜>' + content + '<｜end▁of▁sentence｜>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<｜tool▁outputs▁begin｜><｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<｜tool▁outputs▁end｜>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<｜Assistant｜><think>\\n'}}{% endif %}",
 }
 DECODER_CHAT_TEMPLATES = {
+    "Qwen/Qwen3-4B-Instruct-2507": "{%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- for message in messages %}\n    {%- if message.content is string %}\n        {%- set content = message.content %}\n    {%- else %}\n        {%- set content = '' %}\n    {%- endif %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + 'reflect' + '\\n' + content }}\n        {{- '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>reflect\\n' }}\n{%- endif %}",
+    "google/gemma-3-4b-it": "{{ bos_token }}\n{%- if messages[0]['role'] == 'system' -%}\n    {%- if messages[0]['content'] is string -%}\n        {%- set first_user_prefix = messages[0]['content'] + '\n\n' -%}\n    {%- else -%}\n        {%- set first_user_prefix = messages[0]['content'][0]['text'] + '\n\n' -%}\n    {%- endif -%}\n    {%- set loop_messages = messages[1:] -%}\n{%- else -%}\n    {%- set first_user_prefix = \"\" -%}\n    {%- set loop_messages = messages -%}\n{%- endif -%}\n{%- for message in loop_messages -%}\n    {%- if (message['role'] == 'user') != (loop.index0 % 2 == 0) -%}\n        {{ raise_exception(\"Conversation roles must alternate user/assistant/user/assistant/...\") }}\n    {%- endif -%}\n    {%- if (message['role'] == 'assistant') -%}\n        {%- set role = \"reflect\" -%}\n    {%- else -%}\n        {%- set role = message['role'] -%}\n    {%- endif -%}\n    {{ '<start_of_turn>' + role + '\n' + (first_user_prefix if loop.first else \"\") }}\n    {%- if message['content'] is string -%}\n        {{ message['content'] | trim }}\n    {%- elif message['content'] is iterable -%}\n        {%- for item in message['content'] -%}\n            {%- if item['type'] == 'image' -%}\n                {{ '<start_of_image>' }}\n            {%- elif item['type'] == 'text' -%}\n                {{ item['text'] | trim }}\n            {%- endif -%}\n        {%- endfor -%}\n    {%- else -%}\n        {{ raise_exception(\"Invalid content type\") }}\n    {%- endif -%}\n    {{ '<end_of_turn>\n' }}\n{%- endfor -%}\n{%- if add_generation_prompt -%}\n    {{'<start_of_turn>reflect\n'}}\n{%- endif -%}\n",
     "mistralai/Mistral-Small-24B-Instruct-2501": "{{- bos_token }}\n\n{%- for message in messages %}\n    {%- if message['role'] == 'user' %}\n        {{- '[INST]' + message['content'] + '[/INST]' }}\n    {%- elif message['role'] == 'system' %}\n        {{- '[SYSTEM_PROMPT]' + message['content'] + '[/SYSTEM_PROMPT]' }}\n    {%- elif message['role'] == 'assistant' %}\n        {{- message['content'] + eos_token }}\n    {%- else %}\n        {{- raise_exception('Only user, system and assistant roles are supported!') }}\n    {%- endif %}\n{%- endfor %}",
     "meta-llama/Meta-Llama-3-8B-Instruct": "{% set loop_messages = messages %}{% for message in loop_messages %}{% set role = message['role'] %}{% if role == 'assistant' %}{% set role = 'reflect' %}{% endif %}{% set content = '<|start_header_id|>' + role + '<|end_header_id|>\n\n' + message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %}{% endif %}{{ content }}{% endfor %}{% if add_generation_prompt %}{{ '<|start_header_id|>reflect<|end_header_id|>\n\n' }}{% endif %}",
     "meta-llama/Llama-3.1-8B-Instruct": "{% set loop_messages = messages %}{% for message in loop_messages %}{% set role = message['role'] %}{% if role == 'assistant' %}{% set role = 'reflect' %}{% endif %}{% set content = '<|start_header_id|>' + role + '<|end_header_id|>\n\n' + message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %}{% endif %}{{ content }}{% endfor %}{% if add_generation_prompt %}{{ '<|start_header_id|>reflect<|end_header_id|>\n\n' }}{% endif %}",
@@ -127,16 +137,19 @@ def mask_inputs(
     mask_all_but_last=False,
     modify_chat_template=False,
 ):
-    bos_token,start_tokens, end_tokens_default, end_tokens_modify = CHAT_FORMAT_TOKENS[
+    sys_tokens, start_tokens, end_tokens_default, end_tokens_modify = CHAT_FORMAT_TOKENS[
         tokenizer_name
     ]
     end_tokens = end_tokens_modify if modify_chat_template else end_tokens_default
     batch_size, seq_len = input_ids.shape
     mask = torch.zeros_like(input_ids, dtype=torch.bool)
     for b in range(batch_size):
+        sys_idx = []
         start_idx = []
         end_idx = []
         for i in range(seq_len):
+            if torch.equal(input_ids[b][i : i + len(sys_tokens)], sys_tokens):
+                sys_idx.append(i)
             if torch.equal(input_ids[b][i : i + len(start_tokens)], start_tokens):
                 start_idx.append(i)
             if torch.equal(input_ids[b][i : i + len(end_tokens)], end_tokens):
@@ -161,14 +174,15 @@ def mask_inputs(
                 continue
             mask[b][start_idx[0] : start_idx[1]] = True
         elif mask_type[b] == "system":
-            bos_idx = input_ids[b].tolist().index(bos_token)
-            mask[b][bos_idx + 1 : start_idx[0]] = True
+            if len(sys_idx) == 0:
+                raise ValueError("No system message found to mask! This is usually because the model does not have a specific system turn, but your dataset does. You should not use the dataset with system turns for this particular model")
+            mask[b][sys_idx[0] : start_idx[0]] = True
         else:
             raise ValueError(f"Invalid verb mask: {mask_type[b]}")
     return mask
 
 
-def tokenize(
+def lqa_tokenize(
     batch,
     tokenizer,
     name=None,
@@ -178,6 +192,12 @@ def tokenize(
     modify_chat_template=False,
 ):
     name = tokenizer.name_or_path if name is None else name
+    TOKENIZER_HAS_BOS = any(
+        [
+            m in name.lower()
+            for m in ["gemma", "mistral", "llama-3", "deepseek-r1-distill"]
+        ]
+    )
 
     # Tokenize read inputs
     tokenized_read = tokenizer(
@@ -190,7 +210,8 @@ def tokenize(
 
     # Compute length of read input and maybe add verb_lengths
     read_lengths = torch.sum(tokenized_read.attention_mask, dim=1)
-    tokenized_batch["read_lengths"] = read_lengths - 1  # Exclude BOS token
+    # Exclude BOS token if present
+    tokenized_batch["read_lengths"] = read_lengths - (1 if TOKENIZER_HAS_BOS else 0)
 
     if mask_type is not None:
         verb_mask = mask_inputs(tokenized_read.input_ids, name, mask_type=mask_type)
@@ -238,12 +259,7 @@ def tokenize(
             tokenized_write.input_ids,
             name,
             mask_type=None,
-            shift_start=any(
-                [
-                    m in name.lower()
-                    for m in ["mistral", "llama-3", "deepseek-r1-distill"]
-                ]
-            ),
+            shift_start=TOKENIZER_HAS_BOS,
             mask_all_but_last=mask_all_but_last,
             modify_chat_template=modify_chat_template,
         )
@@ -420,7 +436,7 @@ class DataCollatorForLatentQA:
                 }
             )
             mask_type.append(item["mask_type"])
-        return tokenize(
+        return lqa_tokenize(
             formatted_batch,
             self.tokenizer,
             mask_type=mask_type,
