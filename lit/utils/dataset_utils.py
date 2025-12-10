@@ -450,13 +450,13 @@ class LengthBasedBatchSampler(torch.utils.data.BatchSampler):
     def __init__(
         self, data_source, batch_size: int, drop_last: bool, shuffle: bool = True
     ) -> None:
-        self.lengths = data_source.lengths
+        self.lengths = data_source.lengths # length of each sample
         self.batch_size = batch_size
         self.drop_last = drop_last
         self.shuffle = shuffle
 
     def __iter__(self):
-        ids = np.argsort(self.lengths)
+        ids = np.argsort(self.lengths) # slice samples into batche based on their lengths
         if self.drop_last:
             ids = ids[: len(ids) // self.batch_size * self.batch_size]
 
@@ -484,7 +484,7 @@ class DistributedLengthBasedBatchSampler(torch.utils.data.BatchSampler):
         self,
         data_source,
         batch_size: int,
-        num_replicas: int,
+        num_replicas: int, # number of gpus
         rank: int,
         shuffle: bool = True,
         seed: int = 0,
@@ -525,11 +525,11 @@ def get_dist_batch_sampler(dataset, train_config, mode):
 
 
 def get_dataset(train_config, tokenizer, train=True):
-    FILTER = train_config.filter.split("-")
-    qa_path = train_config.train_qa if train else train_config.eval_qa
+    FILTER = train_config.filter.split("-") # ['']
+    qa_path = train_config.train_qa if train else train_config.eval_qa # ata/train/qa.json
     with open(qa_path, "r") as f:
-        qa_data = json.load(f)
-        NUM_QA = max([len(qa_data[label]) for label in qa_data])
+        qa_data = json.load(f) # len = 16784
+        NUM_QA = max([len(qa_data[label]) for label in qa_data]) # 2
         assert NUM_QA == min([len(qa_data[label]) for label in qa_data])
 
     def build_data_and_idx(path):
@@ -554,7 +554,7 @@ def get_dataset(train_config, tokenizer, train=True):
                     )
                 )
         # Get id tuples
-        NUM_BEHAVIORS = max([len(data[label]) for label in data])
+        NUM_BEHAVIORS = max([len(data[label]) for label in data]) # 1
         assert NUM_BEHAVIORS == min([len(data[label]) for label in data])
         id_tuples = range(len(data) * NUM_BEHAVIORS * NUM_QA)
         if train_config.train_percent == 1 or not train:
@@ -565,12 +565,12 @@ def get_dataset(train_config, tokenizer, train=True):
             )
         for i in range(len(id_tuples)):
             label_idx = id_tuples[i] // (NUM_BEHAVIORS * NUM_QA)
-            data_idx = (id_tuples[i] // NUM_QA) % NUM_BEHAVIORS
-            qa_idx = id_tuples[i] % NUM_QA
+            data_idx = (id_tuples[i] // NUM_QA) % NUM_BEHAVIORS # 0
+            qa_idx = id_tuples[i] % NUM_QA # 0 or 1
             id_tuples[i] = (label_idx, data_idx, qa_idx)
         return data, id_tuples
 
-    p0 = train_config.train_system if train else train_config.eval_system
+    p0 = train_config.train_system if train else train_config.eval_system # ""
     p1 = (
         train_config.train_stimulus_completion
         if train
@@ -590,7 +590,7 @@ def get_dataset(train_config, tokenizer, train=True):
         data_stimulus,
         data_control,
         qa_data,
-        add_thought_tokens=train_config.add_thought_tokens,
+        add_thought_tokens=train_config.add_thought_tokens, # default false
     )
 
 

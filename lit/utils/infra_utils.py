@@ -99,11 +99,13 @@ def requires_grad(model, flag=True):
 def save_model(decoder_model, ema_model, tokenizer, args, epoch, steps, logger, rank):
     if rank == 0:
         logger.info(f"Saving decoder model...")
+        # print('args.checkpoint_dir: ', args.checkpoint_dir)
         output_dir = (
             args.checkpoint_dir
             + f"/epoch{epoch}-steps{steps}"
             + f"-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}"
         )
+        # print('output_dir: ', output_dir)
         ema_output_dir = (
             args.checkpoint_dir
             + f"/ema-epoch{epoch}-steps{steps}"
@@ -409,7 +411,7 @@ def get_modules(
             for j in range(i):
                 module_read_i.append(eval(f"{target_model_str}.layers[{j}]"))
                 module_write_i.append(eval(f"{decoder_model_str}.layers[{j}]"))
-        elif module_setup == "read-vary_write-fixed_n-fixed":
+        elif module_setup == "read-vary_write-fixed_n-fixed": # default this
             for j in range(i, i + num_layers_to_read):
                 module_read_i.append(eval(f"{target_model_str}.layers[{j}]"))
             for j in range(layer_to_write, layer_to_write + num_layers_to_read):

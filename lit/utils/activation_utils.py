@@ -25,42 +25,42 @@ def _forward_cache_outputs(
     return cache
 
 
-# Not used but can also cache from inputs
-def _forward_cache_inputs(
-    model, tokenizer, inputs, modules_to_hook, split, token_idx, no_grad=True, **kwargs
-):
-    cache = []
+# # Not used but can also cache from inputs
+# def _forward_cache_inputs(
+#     model, tokenizer, inputs, modules_to_hook, split, token_idx, no_grad=True, **kwargs
+# ):
+#     cache = []
 
-    def forward_pre_hook_idx(idx):
-        def forward_pre_hook(module, input):
-            if isinstance(input, tuple):
-                input = input[0]
-            if split[idx]:
-                bsz, seq_len, _ = input.shape
-                input_by_head = input.reshape(
-                    bsz, seq_len, model.config.num_attention_heads, -1
-                )
-                if token_idx is None:
-                    cache.append(input_by_head)
-                else:
-                    cache.append(input_by_head[:, token_idx, :, :])
-            else:
-                if token_idx is None:
-                    cache.append(input)
-                else:
-                    cache.append(input[:, token_idx, :])
-            return None
+#     def forward_pre_hook_idx(idx):
+#         def forward_pre_hook(module, input):
+#             if isinstance(input, tuple):
+#                 input = input[0]
+#             if split[idx]:
+#                 bsz, seq_len, _ = input.shape
+#                 input_by_head = input.reshape(
+#                     bsz, seq_len, model.config.num_attention_heads, -1
+#                 )
+#                 if token_idx is None:
+#                     cache.append(input_by_head)
+#                 else:
+#                     cache.append(input_by_head[:, token_idx, :, :])
+#             else:
+#                 if token_idx is None:
+#                     cache.append(input)
+#                 else:
+#                     cache.append(input[:, token_idx, :])
+#             return None
 
-        return forward_pre_hook
+#         return forward_pre_hook
 
-    hook_handles = [
-        modules_to_hook[i].register_forward_pre_hook(forward_pre_hook_idx(i))
-        for i in range(len(modules_to_hook))
-    ]
-    _ = _forward(model, tokenizer, inputs, generate=False, no_grad=no_grad, **kwargs)
-    for hook_handle in hook_handles:
-        hook_handle.remove()
-    return cache
+#     hook_handles = [
+#         modules_to_hook[i].register_forward_pre_hook(forward_pre_hook_idx(i))
+#         for i in range(len(modules_to_hook))
+#     ]
+#     _ = _forward(model, tokenizer, inputs, generate=False, no_grad=no_grad, **kwargs)
+#     for hook_handle in hook_handles:
+#         hook_handle.remove()
+#     return cache
 
 
 def _forward(model, tokenizer, inputs, generate, no_grad, **kwargs):
@@ -274,7 +274,7 @@ def latent_qa(
         prepare_inputs=no_op,
     )
     verb_lengths = None
-    if mask_verbs:
+    if mask_verbs: # default true
         activation_cache = torch.stack(activation_cache, dim=0)
         num_modules, bs, read_seq_len, _ = activation_cache.shape
 

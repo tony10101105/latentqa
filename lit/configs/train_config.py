@@ -27,11 +27,11 @@ class train_config:
     eval_stimulus: str = ""
     eval_control: str = ""
     eval_qa: str = ""
-    eval_every_n_steps: int = 500
+    eval_every_n_steps: int = 2000
     # Please change to a directory with ample space as model checkpoints are saved here
-    output_dir: str = "out/runs"
+    output_dir: str = "out/test" # "out/replication" "out/llama-3.1-8B"
     save_model: bool = True
-    save_every_n_steps: int = 500
+    save_every_n_steps: int = 2000
     use_wandb: bool = False
     run_name: str = ""
 
@@ -47,7 +47,7 @@ class train_config:
     num_layers_to_sample: int = 1
 
     # Training args
-    batch_size_training: int = 4
+    batch_size_training: int = 2
     gradient_accumulation_steps: int = 1
     gradient_clipping: bool = False
     gradient_clipping_threshold: float = 1.0

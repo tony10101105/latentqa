@@ -5,7 +5,7 @@ import numpy as np
 import torch
 from transformers import PreTrainedModel
 
-from lit.utils.dataset_utils import tokenize, BASE_DIALOG, ENCODER_CHAT_TEMPLATES
+from lit.utils.dataset_utils import lqa_tokenize, BASE_DIALOG, ENCODER_CHAT_TEMPLATES
 from lit.utils.activation_utils import latent_qa
 from lit.utils.infra_utils import (
     update_config,
@@ -64,8 +64,8 @@ def interpret(
 
     probe_data = []
     mask_type = None
-    for dialog in dialogs:
-        if len(dialog) == 1:
+    for dialog in dialogs: # [['']] by default
+        if len(dialog) == 1: # here
             read_prompt = tokenizer.apply_chat_template(
                 [{"role": "user", "content": dialog[0]}],
                 tokenize=False,
@@ -107,7 +107,8 @@ def interpret(
                     "dialog": BASE_DIALOG + dialog,
                 }
             )
-    batch = tokenize(
+
+    batch = lqa_tokenize(
         probe_data,
         tokenizer,
         name=args.target_model_name,
@@ -128,7 +129,6 @@ def interpret(
         cache_target_model_grad=cache_target_model_grad,
         no_grad=no_grad,
     )
-
     QA_PAIRS = {}
     if generate:
         for i in range(len(out)):
@@ -137,7 +137,8 @@ def interpret(
                 QA_PAIRS[curr_dialog] = []
 
             prompt = questions[i % len(questions)][0]
-            num_tokens = batch["tokenized_write"][i].shape[0]
+            # num_tokens = batch["tokenized_write"][i].shape[0]
+            num_tokens = batch["tokenized_write"]['input_ids'][i].shape[0]
             completion = tokenizer.decode(out[i][num_tokens:])
             print(f"[PROMPT]: {prompt}")
             print(f"[COMPLETION]: {completion}")
@@ -199,12 +200,12 @@ def main(**kwargs):
         args.target_model_name,
         tokenizer,
         load_peft_checkpoint=args.decoder_model_name,
-        device="cuda:1",
+        device="cuda:0",
     )
     target_model = get_model(args.target_model_name, tokenizer, device="cuda:0")
     dialogs = [[args.prompt]]
     questions = QUESTIONS
-    loss = interpret(target_model, decoder_model, tokenizer, dialogs, questions, args, generate=False,
+    loss = interpret(target_model, decoder_model, tokenizer, dialogs, questions, args, generate=True, # false by default; false with cause errors in line 102
             no_grad=False,
             cache_target_model_grad=True)[1].loss 
     print(loss)

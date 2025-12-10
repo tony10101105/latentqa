@@ -5,7 +5,7 @@ from dataclasses import dataclass
 @dataclass
 class wandb_config:
     project: str = "latentqa"
-    entity: Optional[str] = "WANDB_USERNAME"
+    entity: Optional[str] = "tony10101105"
     job_type: Optional[str] = None
     tags: Optional[List[str]] = None
     group: Optional[str] = None

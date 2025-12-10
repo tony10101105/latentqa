@@ -1,4 +1,7 @@
 import os
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = (
+    "expandable_segments:True"  # prevent memory fragmentation
+)
 from dataclasses import fields
 import random
 import fire
@@ -13,11 +16,11 @@ import torch.optim as optim
 from torch.optim.lr_scheduler import StepLR
 import torch.distributed as dist
 
+from dotenv import load_dotenv
+load_dotenv()
+
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
-os.environ["PYTORCH_CUDA_ALLOC_CONF"] = (
-    "expandable_segments:True"  # prevent memory fragmentation
-)
 
 from lit.configs.train_config import train_config
 from lit.configs.peft_config import lora_config
@@ -58,7 +61,6 @@ def main(**kwargs):
     np.random.seed(seed)
     random.seed(seed)
     print(f"Starting rank={rank}, seed={seed}, world_size={dist.get_world_size()}.")
-
     logger = get_logger(args, rank)
     wandb_run = None
     if args.use_wandb and rank == 0:
