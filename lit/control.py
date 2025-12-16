@@ -261,6 +261,7 @@ def per_layer_loss(args, decoder_model, tokenizer, **kwargs):
         
         attention_mask = tokenized_read.attention_mask
         batch_size, seq_len = attention_mask.shape
+        
         converter = AttentionMaskConverter(is_causal=True)
         causal_mask = converter.to_causal_4d(
             batch_size=batch_size,
@@ -285,7 +286,8 @@ def per_layer_loss(args, decoder_model, tokenizer, **kwargs):
         for l_idx, decoder_layer in enumerate(target_model.model.model.layers):
             layer_outputs = decoder_layer(
                 hidden_states,
-                attention_mask=causal_mask,
+                # attention_mask=causal_mask,
+                attention_mask=attention_mask,
                 position_ids=position_ids,
                 past_key_value=None,
                 cache_position=cache_position,

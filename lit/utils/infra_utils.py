@@ -267,7 +267,7 @@ def get_model(
     else:
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            # attn_implementation="flash_attention_2",
+            attn_implementation="flash_attention_2",
             torch_dtype=torch.bfloat16,
             #use_cache=None,
             device_map="auto" if device == "auto" else None,
