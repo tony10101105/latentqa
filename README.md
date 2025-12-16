@@ -3,19 +3,30 @@ This project contains the code to train and run the decoder LLM described in the
 
 For more details, see the [project page](https://latentqa.github.io).
 
+This repo is further modified by Tony.
+
 ## :toolbox: Setup
-Clone this repo:
+1. Create and activate an uv environment with Python=3.13
+
+2. Install Pytorch 2.8.0; for example:
 ```bash
-git clone https://github.com/aypan17/latentqa
+pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu128
+```
+
+3. Install Flash Attention 2 through wheel file with specified version (should match your Pytorch and cuda driver version). Please take a look at [this discussion](https://github.com/Dao-AILab/flash-attention/issues/945).
+
+4. Clone this repo:
+```bash
+git clone https://github.com/tony10101105/latentqa
 cd latentqa
 ```
 
-Install dependencies:
+5. Install other dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-Download the decoder model (or train your own below):
+Pretrained decoder model has been on the huggingface:
 - [Decoder for Llama-3-8B-Instruct](https://huggingface.com/aypan17/latentqa_llama-3-8b-instruct)
 
 ## :chart_with_downwards_trend: Training
@@ -34,6 +45,7 @@ torchrun --nnodes 1 --nproc-per-node $NUM_GPUS -m lit.train \
     --gradient_accumulation_steps 8 \ 
     --use_wandb
 ```
+I have only tested DDP. Using A100-80GB sometimes face OOM error. If that happens, increase *gradient_accumulation_steps* to 16 and reduce *batch_size_training* in lit/configs/train_config.py to 2.
 
 FSDP was tested on 8x A100-80GB cards. For FSDP, run:
 ```
@@ -113,14 +125,14 @@ When running the control, an `out/` folder which contains outputs from the steer
 ├── lit/                        # Code for Latent Interpretation Tuning (LIT)
 │   ├── configs/                # Default configs for training, reading, and control
 │   ├── utils/                  # Helper functions for training and patching
-│   ├── control.py              
-│   ├── reading.py            
+│   ├── control.py              # Corresponds to Experments in Section 5.2
+│   ├── reading.py              # # Corresponds to Experments in Section 5.1
 |   └── train.py                
 
 ├── prompts/                    # Prompts used for evaluating the control
 
 ├── LICENSE
-├── README.md
+├── README.md                   
 └── requirements.txt            # Do `pip install -r requirements.txt`
 ```
 
