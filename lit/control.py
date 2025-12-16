@@ -9,8 +9,9 @@ import torch
 from peft import LoraConfig
 from datasets import load_dataset
 import matplotlib.pyplot as plt
+from transformers.modeling_attn_mask_utils import AttentionMaskConverter
 
-from lit.utils.dataset_utils import tokenize, BASE_DIALOG, ENCODER_CHAT_TEMPLATES
+from lit.utils.dataset_utils import lqa_tokenize, BASE_DIALOG, ENCODER_CHAT_TEMPLATES
 from lit.utils.infra_utils import (
     update_config,
     get_model,
@@ -160,8 +161,9 @@ def get_results(args, model, tokenizer):
             top_p=None,
         )
         for i in range(len(out)):
-            num_tokens = tokenized["tokenized_write"][i].shape[0]
-            completion = tokenizer.decode(out[i][num_tokens:])
+            # num_tokens = tokenized["tokenized_write"][i].shape[0]
+            # completion = tokenizer.decode(out[i][num_tokens:])
+            completion = tokenizer.decode(out[i])
             print(f"[PROMPT]: {prompts[i]}")
             print(f"[COMPLETION]: {completion}")
             print("#" * 80)
@@ -190,7 +192,7 @@ def steer(args, decoder_model, tokenizer, **kwargs):
     losses = []
     for i in tqdm(range(len(dataset) // args.batch_size)):
         batch = dataset[i * args.batch_size : (i + 1) * args.batch_size]
-        tokenized_batch = tokenize(
+        tokenized_batch = lqa_tokenize(
             [item[0] for item in batch],
             tokenizer,
             name=args.target_model_name,
@@ -240,7 +242,7 @@ def per_layer_loss(args, decoder_model, tokenizer, **kwargs):
         batch = dataset[i * args.batch_size : (i + 1) * args.batch_size]
         tokenized_batch = {}
         for l_idx in dataset[0].keys():
-            tokenized_batch[l_idx] = tokenize(
+            tokenized_batch[l_idx] = lqa_tokenize(
                 [item[l_idx] for item in batch],
                 tokenizer,
                 name=args.target_model_name,
@@ -256,17 +258,29 @@ def per_layer_loss(args, decoder_model, tokenizer, **kwargs):
             0, inputs_embeds.shape[1], device=inputs_embeds.device
         )
         position_ids = cache_position.unsqueeze(0)
-        causal_mask = target_model.model.model._update_causal_mask(
-            tokenized_read.attention_mask,
-            inputs_embeds,
-            cache_position,
-            past_key_values=None,
-            output_attentions=False,
+        
+        attention_mask = tokenized_read.attention_mask
+        batch_size, seq_len = attention_mask.shape
+        converter = AttentionMaskConverter(is_causal=True)
+        causal_mask = converter.to_causal_4d(
+            batch_size=batch_size,
+            query_length=seq_len,
+            key_value_length=seq_len,
+            dtype=inputs_embeds.dtype,
+            device=attention_mask.device
         )
+
         hidden_states = inputs_embeds
+
         position_embeddings = target_model.model.model.rotary_emb(
             hidden_states, position_ids
         )
+        # print('hidden_states shape:', hidden_states.shape)
+        # print('position_ids shape:', position_ids.shape)
+        # print('position_embeddings[0] shape:', position_embeddings[0].shape)
+        # hidden_states shape: torch.Size([1, 146, 4096])
+        # position_ids shape: torch.Size([1, 146])
+        # position_embeddings: (cos, sin) each of shape torch.Size([1, 146, 128])
 
         for l_idx, decoder_layer in enumerate(target_model.model.model.layers):
             layer_outputs = decoder_layer(
@@ -306,7 +320,6 @@ def per_layer_loss(args, decoder_model, tokenizer, **kwargs):
                 out["loss"].backward()
                 if l_idx == 15:
                     losses.append(out["loss"].item())
-                # hidden_states -= args.lr * hidden_states.grad
                 hidden_states = hidden_states.detach()
                 optimizer = l_to_optimizer[l_idx]
                 optimizer.step()
@@ -325,7 +338,7 @@ def main(**kwargs):
         model_name=args.target_model_name,
         tokenizer=tokenizer,
         load_peft_checkpoint=args.decoder_model_name,
-        device="cuda:1",
+        device="cuda:0",
     )
     if args.per_layer_loss:
         per_layer_loss(args, decoder_model, tokenizer, device="cuda:0", **kwargs)

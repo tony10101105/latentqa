@@ -147,6 +147,8 @@ def generate_substitute_layer_single(
         def forward_pre_hook(module, input):
             new_input = input[0] if isinstance(input, tuple) else input
             if "substitute_by_mask" in kwargs:
+                if module_activations[idx].ndim == 2:
+                    module_activations[idx] = module_activations[idx].unsqueeze(0)
                 _, read_seq_len, _ = module_activations[idx].shape
                 _, write_seq_len, _ = new_input.shape
                 for i in range(len(new_input)):
@@ -184,6 +186,8 @@ def generate_substitute_layer_single(
         def forward_hook(module, input, output):
             new_output = output[0] if isinstance(output, tuple) else output
             if "substitute_by_mask" in kwargs:
+                if module_activations[idx].ndim == 2:
+                    module_activations[idx] = module_activations[idx].unsqueeze(0)
                 _, read_seq_len, _ = module_activations[idx].shape
                 _, write_seq_len, _ = new_output.shape
                 for i in range(len(new_output)):
