@@ -1,0 +1,34 @@
+{
+  "MMLU-Medical": [
+    "hair_color",
+    "age_stereotypes",
+    "gender_assumptions",
+    "ethnicity",
+    "demographic_biases"
+  ],
+  "MedQA": [
+    "hair_color",
+    "age_stereotypes",
+    "gender_assumptions",
+    "ethnicity",
+    "demographic_biases"
+  ],
+  "PubMedQA": [
+    "hair_color",
+    "demographic_biases"
+  ],
+  "MMLU": [
+    "demographic_biases",
+    "cultural_assumptions"
+  ],
+  "TruthfulQA": [
+    "common_misconceptions",
+    "spurious_correlations"
+  ],
+  "HellaSwag": [
+    "superficial_patterns"
+  ],
+  "CommonsenseQA": [
+    "superficial_patterns"
+  ]
+}
