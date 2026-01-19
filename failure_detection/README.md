@@ -19,7 +19,7 @@ The pipeline consists of four main steps:
 ### 1. Install Dependencies
 
 ```bash
-pip install datasets transformers torch fire tqdm
+pip install datasets transformers torch fire tqdm openai
 ```
 
 ### 2. Run the Full Pipeline
@@ -28,6 +28,21 @@ pip install datasets transformers torch fire tqdm
 python -m failure_detection.pipeline \
     --benchmarks MMLU-Medical MedQA \
     --model meta-llama/Meta-Llama-3-8B-Instruct \
+    --max-samples 100 \
+    --output-dir failure_detection_output
+```
+ 
+### 2b. Use GPT-4.1 as Judge (Recommended)
+
+Set your API key and pass `--judge-model gpt-4.1`:
+
+```bash
+setx OPENAI_API_KEY "your_api_key"
+
+python -m failure_detection.pipeline \
+    --benchmarks MMLU-Medical MedQA \
+    --model meta-llama/Meta-Llama-3-8B-Instruct \
+    --judge-model gpt-4.1 \
     --max-samples 100 \
     --output-dir failure_detection_output
 ```
@@ -83,7 +98,8 @@ python -m failure_detection.model_evaluator \
 python -m failure_detection.judge_evaluator \
     --evaluation-file model_evaluations.json \
     --output-file judgments.json \
-    --spurious-features-file spurious_features.json
+    --spurious-features-file spurious_features.json \
+    --judge-model gpt-4.1
 ```
 
 #### 4. Collect Failures

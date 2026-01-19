@@ -8,6 +8,7 @@
 python -m failure_detection.pipeline \
     --benchmarks MMLU-Medical MedQA \
     --model meta-llama/Meta-Llama-3-8B-Instruct \
+    --judge-model gpt-4.1 \
     --max-samples 100 \
     --output-dir failure_detection_output
 ```
@@ -58,10 +59,27 @@ python -m failure_detection.model_evaluator \
 # 3. Judge responses
 python -m failure_detection.judge_evaluator \
     --evaluation-file model_evaluations.json \
-    --output-file judgments.json
+    --output-file judgments.json \
+    --judge-model gpt-4.1
 
 # 4. Collect failures
 python -m failure_detection.failure_collector \
     --judgment-file judgments.json \
     --output-file failures.json
 ```
+
+### Using GPT-4.1 as Judge (Recommended)
+
+1. Install the OpenAI client:
+
+```bash
+pip install openai
+```
+
+2. Set the API key in your shell:
+
+```bash
+setx OPENAI_API_KEY "your_api_key"
+```
+
+3. Run the pipeline or judge step with `--judge-model gpt-4.1`.

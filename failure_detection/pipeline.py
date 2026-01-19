@@ -44,7 +44,7 @@ class FailureDetectionPipeline:
     def __init__(
         self,
         model_name: str = "meta-llama/Meta-Llama-3-8B-Instruct",
-        judge_model: Optional[str] = None,
+        judge_model: Optional[str] = "gpt-4.1",
         device: Optional[str] = None,
         output_dir: str = "failure_detection_output",
     ):
@@ -53,12 +53,12 @@ class FailureDetectionPipeline:
         
         Args:
             model_name: Model to evaluate
-            judge_model: Model to use as judge (defaults to same as model_name)
+            judge_model: Model to use as judge
             device: Device to use
             output_dir: Directory for outputs
         """
         self.model_name = model_name
-        self.judge_model = judge_model or model_name
+        self.judge_model = judge_model
         self.device = device
         self.output_dir = output_dir
         
@@ -230,8 +230,8 @@ def main():
     )
     parser.add_argument(
         "--judge-model",
-        default=None,
-        help="Model to use as judge (defaults to same as --model)",
+        default="gpt-4.1",
+        help="Model to use as judge",
     )
     parser.add_argument(
         "--max-samples",

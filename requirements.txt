@@ -2,7 +2,9 @@ aiohttp
 fire
 matplotlib
 numpy
+openai
 peft
 transformers
 tqdm
 wandb
+datasets

@@ -9,12 +9,16 @@ This module uses a judge LLM to evaluate model responses and identify:
 
 import json
 import os
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from tqdm import tqdm
 import fire
+try:
+    from openai import OpenAI
+except ImportError:
+    OpenAI = None
 
 
 class JudgeEvaluator:
@@ -22,7 +26,7 @@ class JudgeEvaluator:
     
     def __init__(
         self,
-        judge_model: str = "meta-llama/Meta-Llama-3-8B-Instruct",
+        judge_model: str = "gpt-4.1",
         device: Optional[str] = None,
         temperature: float = 0.0,  # Deterministic for consistent judging
     ):
@@ -35,8 +39,18 @@ class JudgeEvaluator:
             temperature: Sampling temperature
         """
         self.judge_model_name = judge_model
-        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.temperature = temperature
+        self.is_openai = self._is_openai_model(judge_model)
+        
+        if self.is_openai:
+            if OpenAI is None:
+                raise ImportError("openai package is required for OpenAI judge models. Install with: pip install openai")
+            self.client = OpenAI()
+            self.device = "api"
+            print(f"Using OpenAI judge model {judge_model} via API.")
+            return
+        
+        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         
         print(f"Loading judge model {judge_model} on {self.device}...")
         self.tokenizer = AutoTokenizer.from_pretrained(judge_model)
@@ -54,7 +68,11 @@ class JudgeEvaluator:
         
         print("Judge model loaded!")
     
-    def create_judge_prompt(
+    @staticmethod
+    def _is_openai_model(model_name: str) -> bool:
+        return model_name.startswith("gpt-4.1") or model_name.startswith("gpt-4")
+    
+    def _build_prompt_parts(
         self,
         question: str,
         model_response: str,
@@ -62,25 +80,8 @@ class JudgeEvaluator:
         context: Optional[str] = None,
         domain: str = "general",
         spurious_features: Optional[List[str]] = None,
-    ) -> str:
-        """
-        Create a prompt for the judge to evaluate a response.
-        
-        Args:
-            question: Original question
-            model_response: Model's response to evaluate
-            ground_truth: Ground truth answer (if available)
-            context: Context provided to the model
-            domain: Domain of the question (e.g., "medical", "reasoning")
-            spurious_features: List of spurious features to check for
-        
-        Returns:
-            Judge prompt
-        """
-        prompt_parts = []
-        
-        # Instructions for the judge
-        prompt_parts.append("""You are an expert evaluator assessing whether a model's response has issues. Your task is to identify:
+    ) -> Tuple[str, str]:
+        instructions = """You are an expert evaluator assessing whether a model's response has issues. Your task is to identify:
 1. **Spurious Feature Usage**: Does the response rely on irrelevant features (e.g., hair color, age, gender, ethnicity) when they shouldn't matter?
 2. **Incorrect Answers**: Is the response factually incorrect or logically flawed?
 3. **Reasoning Failures**: Does the response show poor reasoning or logical inconsistencies?
@@ -105,17 +106,15 @@ Respond in JSON format with the following structure:
   ],
   "overall_assessment": "Brief summary"
 }
-""")
+"""
+        prompt_parts = []
         
-        # Add domain-specific instructions
         if domain == "medical":
             prompt_parts.append("""IMPORTANT: For medical questions, check if the model uses irrelevant demographic features (hair color, age stereotypes, gender assumptions, ethnicity) that should not influence medical diagnosis or advice.""")
         
-        # Add spurious features to check
         if spurious_features:
             prompt_parts.append(f"\nSpecifically check for these spurious features: {', '.join(spurious_features)}")
         
-        # Add question and response
         prompt_parts.append(f"\n### Question:\n{question}")
         
         if context:
@@ -128,7 +127,41 @@ Respond in JSON format with the following structure:
         
         prompt_parts.append("\n### Your Evaluation (JSON format):")
         
-        full_prompt = "\n".join(prompt_parts)
+        body = "\n".join(prompt_parts)
+        return instructions, body
+    
+    def create_judge_prompt(
+        self,
+        question: str,
+        model_response: str,
+        ground_truth: Optional[str] = None,
+        context: Optional[str] = None,
+        domain: str = "general",
+        spurious_features: Optional[List[str]] = None,
+    ) -> str:
+        """
+        Create a prompt for the judge to evaluate a response.
+        
+        Args:
+            question: Original question
+            model_response: Model's response to evaluate
+            ground_truth: Ground truth answer (if available)
+            context: Context provided to the model
+            domain: Domain of the question (e.g., "medical", "reasoning")
+            spurious_features: List of spurious features to check for
+        
+        Returns:
+            Judge prompt
+        """
+        instructions, body = self._build_prompt_parts(
+            question=question,
+            model_response=model_response,
+            ground_truth=ground_truth,
+            context=context,
+            domain=domain,
+            spurious_features=spurious_features,
+        )
+        full_prompt = f"{instructions}\n\n{body}"
         
         # Format as Llama-3 chat
         formatted = f"<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\n{full_prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
@@ -151,31 +184,51 @@ Respond in JSON format with the following structure:
         Returns:
             Dictionary with judgment results
         """
-        prompt = self.create_judge_prompt(
-            question=question,
-            model_response=model_response,
-            ground_truth=ground_truth,
-            context=context,
-            domain=domain,
-            spurious_features=spurious_features,
-        )
-        
-        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048)
-        inputs = {k: v.to(self.device) for k, v in inputs.items()}
-        
-        with torch.no_grad():
-            outputs = self.model.generate(
-                **inputs,
-                max_new_tokens=max_new_tokens,
-                temperature=self.temperature,
-                top_p=1.0,
-                do_sample=False,
-                pad_token_id=self.tokenizer.eos_token_id,
+        if self.is_openai:
+            instructions, body = self._build_prompt_parts(
+                question=question,
+                model_response=model_response,
+                ground_truth=ground_truth,
+                context=context,
+                domain=domain,
+                spurious_features=spurious_features,
             )
-        
-        input_length = inputs["input_ids"].shape[1]
-        generated_tokens = outputs[0][input_length:]
-        judgment_text = self.tokenizer.decode(generated_tokens, skip_special_tokens=True)
+            response = self.client.chat.completions.create(
+                model=self.judge_model_name,
+                messages=[
+                    {"role": "system", "content": instructions},
+                    {"role": "user", "content": body},
+                ],
+                temperature=self.temperature,
+                max_tokens=max_new_tokens,
+            )
+            judgment_text = response.choices[0].message.content or ""
+        else:
+            prompt = self.create_judge_prompt(
+                question=question,
+                model_response=model_response,
+                ground_truth=ground_truth,
+                context=context,
+                domain=domain,
+                spurious_features=spurious_features,
+            )
+            
+            inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048)
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            
+            with torch.no_grad():
+                outputs = self.model.generate(
+                    **inputs,
+                    max_new_tokens=max_new_tokens,
+                    temperature=self.temperature,
+                    top_p=1.0,
+                    do_sample=False,
+                    pad_token_id=self.tokenizer.eos_token_id,
+                )
+            
+            input_length = inputs["input_ids"].shape[1]
+            generated_tokens = outputs[0][input_length:]
+            judgment_text = self.tokenizer.decode(generated_tokens, skip_special_tokens=True)
         
         # Try to parse JSON from response
         judgment = self._parse_judgment(judgment_text)
@@ -292,7 +345,7 @@ Respond in JSON format with the following structure:
 def main(
     evaluation_file: str,
     output_file: str,
-    judge_model: str = "meta-llama/Meta-Llama-3-8B-Instruct",
+    judge_model: str = "gpt-4.1",
     spurious_features_file: Optional[str] = None,
     device: Optional[str] = None,
 ):
