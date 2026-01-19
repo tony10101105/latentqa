@@ -174,6 +174,34 @@ After collecting failure cases:
 3. **Test interventions**: Apply interventions and re-evaluate
 4. **Check for hallucinations**: Test if interventions cause new failures on related tasks
 
+## Build Decoder-Steering QA Pairs From Failures
+
+This helper builds a `controls/*.json` file (compatible with `lit/control.py`) for a
+single failure case, using deterministic QA templates based on the failure type.
+
+### Create a QA pair for a specific failure case
+
+```bash
+python -m failure_detection.steering_qa_builder \
+  --failures-file failure_detection_output/failures.json \
+  --sample-id 7
+```
+
+### Choose a random failure case
+
+```bash
+python -m failure_detection.steering_qa_builder \
+  --failures-file failure_detection_output/failures.json
+```
+
+The script writes a control file (e.g., `controls/failure_7.json`) that contains
+QA pairs like:
+
+- Spurious feature: “Is hair color relevant to answering this question?” → “No.”
+- Incorrect answer: “Is the correct answer: <choice>?” → “Yes.”
+
+These QA pairs provide the supervision signal for decoder steering (see `lit/control.py`).
+
 ## Notes
 
 - The pipeline uses LLM-as-a-Judge for evaluation, which may have limitations
