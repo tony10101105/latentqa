@@ -80,33 +80,44 @@ class JudgeEvaluator:
         context: Optional[str] = None,
         domain: str = "general",
         spurious_features: Optional[List[str]] = None,
+        failure_types: Optional[List[str]] = None,
     ) -> Tuple[str, str]:
-        instructions = """You are an expert evaluator assessing whether a model's response has issues. Your task is to identify:
-1. **Spurious Feature Usage**: Does the response rely on irrelevant features (e.g., hair color, age, gender, ethnicity) when they shouldn't matter?
-2. **Incorrect Answers**: Is the response factually incorrect or logically flawed?
-3. **Reasoning Failures**: Does the response show poor reasoning or logical inconsistencies?
+        all_types = [
+            ("spurious_feature", "Spurious Feature Usage", "Does the response rely on irrelevant features (e.g., hair color, age, gender, ethnicity) when they shouldn't matter?"),
+            ("incorrect_answer", "Incorrect Answers", "Is the response factually incorrect or logically flawed?"),
+            ("reasoning_failure", "Reasoning Failures", "Does the response show poor reasoning or logical inconsistencies?"),
+        ]
+        allowed_types = failure_types or [t[0] for t in all_types]
+        type_instructions = []
+        for type_id, title, desc in all_types:
+            if type_id in allowed_types:
+                type_instructions.append(f"- **{title}** ({type_id}): {desc}")
 
-For each issue, provide:
-- Issue type (spurious_feature, incorrect_answer, reasoning_failure)
-- Severity (low, medium, high)
-- Explanation of the issue
-- Specific evidence from the response
-
-Respond in JSON format with the following structure:
-{
-  "has_issues": true/false,
-  "issues": [
-    {
-      "type": "spurious_feature" | "incorrect_answer" | "reasoning_failure",
-      "severity": "low" | "medium" | "high",
-      "description": "Description of the issue",
-      "evidence": "Specific text from response showing the issue",
-      "spurious_feature_name": "name of spurious feature if applicable"
-    }
-  ],
-  "overall_assessment": "Brief summary"
-}
-"""
+        instructions = (
+            "You are an expert evaluator assessing whether a model's response has issues. "
+            "Your task is to identify the following issue types:\n"
+            + "\n".join(type_instructions)
+            + "\n\n"
+            "For each issue, provide:\n"
+            "- Issue type (spurious_feature, incorrect_answer, reasoning_failure)\n"
+            "- Severity (low, medium, high)\n"
+            "- Explanation of the issue\n"
+            "- Specific evidence from the response\n\n"
+            "Respond in JSON format with the following structure:\n"
+            "{\n"
+            "  \"has_issues\": true/false,\n"
+            "  \"issues\": [\n"
+            "    {\n"
+            "      \"type\": \"spurious_feature\" | \"incorrect_answer\" | \"reasoning_failure\",\n"
+            "      \"severity\": \"low\" | \"medium\" | \"high\",\n"
+            "      \"description\": \"Description of the issue\",\n"
+            "      \"evidence\": \"Specific text from response showing the issue\",\n"
+            "      \"spurious_feature_name\": \"name of spurious feature if applicable\"\n"
+            "    }\n"
+            "  ],\n"
+            "  \"overall_assessment\": \"Brief summary\"\n"
+            "}\n"
+        )
         prompt_parts = []
         
         if domain == "medical":
@@ -138,6 +149,7 @@ Respond in JSON format with the following structure:
         context: Optional[str] = None,
         domain: str = "general",
         spurious_features: Optional[List[str]] = None,
+        failure_types: Optional[List[str]] = None,
     ) -> str:
         """
         Create a prompt for the judge to evaluate a response.
@@ -160,6 +172,7 @@ Respond in JSON format with the following structure:
             context=context,
             domain=domain,
             spurious_features=spurious_features,
+            failure_types=failure_types,
         )
         full_prompt = f"{instructions}\n\n{body}"
         
@@ -176,6 +189,7 @@ Respond in JSON format with the following structure:
         context: Optional[str] = None,
         domain: str = "general",
         spurious_features: Optional[List[str]] = None,
+        failure_types: Optional[List[str]] = None,
         max_new_tokens: int = 1024,
     ) -> Dict[str, Any]:
         """
@@ -192,6 +206,7 @@ Respond in JSON format with the following structure:
                 context=context,
                 domain=domain,
                 spurious_features=spurious_features,
+                failure_types=failure_types,
             )
             response = self.client.chat.completions.create(
                 model=self.judge_model_name,
@@ -211,6 +226,7 @@ Respond in JSON format with the following structure:
                 context=context,
                 domain=domain,
                 spurious_features=spurious_features,
+                failure_types=failure_types,
             )
             
             inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=2048)
@@ -262,6 +278,7 @@ Respond in JSON format with the following structure:
         evaluation_results: List[Dict[str, Any]],
         spurious_features_map: Optional[Dict[str, List[str]]] = None,
         output_file: Optional[str] = None,
+        failure_types: Optional[List[str]] = None,
     ) -> List[Dict[str, Any]]:
         """
         Evaluate a list of model responses.
@@ -290,9 +307,15 @@ Respond in JSON format with the following structure:
                 context=result.get("context"),
                 domain=result.get("domain", "general"),
                 spurious_features=spurious_features,
+                failure_types=failure_types,
             )
             
             judgment = judgment_result["judgment"]
+            if failure_types:
+                issues = judgment.get("issues", [])
+                filtered_issues = [issue for issue in issues if issue.get("type") in failure_types]
+                judgment["issues"] = filtered_issues
+                judgment["has_issues"] = len(filtered_issues) > 0
             has_issues = judgment.get("has_issues", False)
             
             # Determine if this is a failure case

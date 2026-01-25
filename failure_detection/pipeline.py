@@ -11,6 +11,7 @@ This script orchestrates the full pipeline:
 import json
 import os
 import argparse
+import time
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
@@ -36,6 +37,13 @@ except ImportError:
     from failure_detection.model_evaluator import ModelEvaluator
     from failure_detection.judge_evaluator import JudgeEvaluator
     from failure_detection.failure_collector import FailureCollector
+
+
+def _debug_log(payload: Dict[str, Any]) -> None:
+    log_path = "/home/ubuntu/.cursor/debug.log"
+    payload.setdefault("timestamp", int(time.time() * 1000))
+    with open(log_path, "a", encoding="utf-8") as log_file:
+        log_file.write(json.dumps(payload) + "\n")
 
 
 class FailureDetectionPipeline:
@@ -70,6 +78,7 @@ class FailureDetectionPipeline:
         max_samples_per_benchmark: Optional[int] = None,
         min_severity: str = "low",
         spurious_features_file: Optional[str] = None,
+        failure_types: Optional[List[str]] = None,
     ) -> Dict[str, Any]:
         """
         Run the full failure detection pipeline.
@@ -93,6 +102,16 @@ class FailureDetectionPipeline:
         benchmark_info = {}
         
         for bench_name in benchmark_names:
+            #region agent log
+            _debug_log({
+                "sessionId": "debug-session",
+                "runId": "initial",
+                "hypothesisId": "H4",
+                "location": "pipeline.py:run_full_pipeline:bench_loop",
+                "message": "Attempting to load benchmark",
+                "data": {"bench_name": bench_name},
+            })
+            #endregion
             benchmark = get_benchmark_by_name(bench_name)
             if not benchmark:
                 print(f"Warning: Benchmark '{bench_name}' not found. Skipping.")
@@ -111,8 +130,28 @@ class FailureDetectionPipeline:
                 print(f"    Loaded {len(samples)} samples")
             else:
                 print(f"    Warning: No samples loaded for {bench_name}")
+            #region agent log
+            _debug_log({
+                "sessionId": "debug-session",
+                "runId": "initial",
+                "hypothesisId": "H5",
+                "location": "pipeline.py:run_full_pipeline:bench_result",
+                "message": "Benchmark load result",
+                "data": {"bench_name": bench_name, "sample_count": len(samples)},
+            })
+            #endregion
         
         if not all_samples:
+            #region agent log
+            _debug_log({
+                "sessionId": "debug-session",
+                "runId": "initial",
+                "hypothesisId": "H5",
+                "location": "pipeline.py:run_full_pipeline:no_samples",
+                "message": "No samples loaded from any benchmark",
+                "data": {"benchmark_names": benchmark_names},
+            })
+            #endregion
             raise ValueError("No samples loaded from any benchmark!")
         
         print(f"\nTotal samples loaded: {len(all_samples)}")
@@ -156,6 +195,7 @@ class FailureDetectionPipeline:
             evaluation_results,
             spurious_features_map=spurious_features_map,
             output_file=judgment_file,
+            failure_types=failure_types,
         )
         
         # Statistics
@@ -246,6 +286,13 @@ def main():
         help="Minimum severity for failure collection",
     )
     parser.add_argument(
+        "--failure-types",
+        nargs="+",
+        default=["spurious_feature", "incorrect_answer", "reasoning_failure"],
+        choices=["spurious_feature", "incorrect_answer", "reasoning_failure"],
+        help="Failure types to evaluate (space-separated list)",
+    )
+    parser.add_argument(
         "--spurious-features-file",
         default=None,
         help="JSON file mapping benchmarks to spurious features",
@@ -290,6 +337,7 @@ def main():
         max_samples_per_benchmark=args.max_samples,
         min_severity=args.min_severity,
         spurious_features_file=args.spurious_features_file,
+        failure_types=args.failure_types,
     )
     
     print("\nSummary:")

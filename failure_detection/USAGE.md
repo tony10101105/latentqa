@@ -68,6 +68,22 @@ python -m failure_detection.failure_collector \
     --output-file failures.json
 ```
 
+### Oversteering Failure Pipeline
+
+This pipeline steers the model against a spurious feature and evaluates whether
+the steering causes overcorrection failures.
+
+```bash
+python -m failure_detection.oversteering_pipeline \
+    --benchmarks MMLU-Medical \
+    --spurious-feature "hair color" \
+    --decoder-model path/to/decoder_checkpoint \
+    --model meta-llama/Meta-Llama-3-8B-Instruct \
+    --judge-model gpt-4.1 \
+    --max-samples 100 \
+    --output-dir failure_detection_output/oversteering
+```
+
 ### Using GPT-4.1 as Judge (Recommended)
 
 1. Install the OpenAI client:

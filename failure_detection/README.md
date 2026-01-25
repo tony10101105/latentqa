@@ -64,6 +64,41 @@ python -m failure_detection.pipeline \
     --min-severity medium
 ```
 
+### Only Evaluate Specific Failure Types
+
+Use `--failure-types` to restrict judgment to specific failure modes:
+
+```bash
+python -m failure_detection.pipeline \
+    --benchmarks MMLU-Medical \
+    --failure-types spurious_feature \
+    --max-samples 50
+```
+
+You can pass multiple types:
+
+```bash
+python -m failure_detection.pipeline \
+    --benchmarks MMLU-Medical \
+    --failure-types spurious_feature reasoning_failure
+```
+
+### Detect Oversteering Failures After Steering
+
+This pipeline steers the model against a spurious feature (default: hair color),
+then evaluates whether the steering caused *overcorrection* failures.
+
+```bash
+python -m failure_detection.oversteering_pipeline \
+    --benchmarks MMLU-Medical \
+    --spurious-feature "hair color" \
+    --decoder-model path/to/decoder_checkpoint \
+    --model meta-llama/Meta-Llama-3-8B-Instruct \
+    --judge-model gpt-4.1 \
+    --max-samples 100 \
+    --output-dir failure_detection_output/oversteering
+```
+
 ### Use Custom Spurious Features Mapping
 
 ```bash
@@ -164,6 +199,8 @@ Failures are categorized into:
 1. **spurious_feature**: Model uses irrelevant features (e.g., hair color in medical questions)
 2. **incorrect_answer**: Factually incorrect or logically flawed
 3. **reasoning_failure**: Poor reasoning or logical inconsistencies
+
+You can limit evaluation to a subset using `--failure-types`.
 
 ## Next Steps
 

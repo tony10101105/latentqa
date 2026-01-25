@@ -7,6 +7,7 @@ particularly focusing on spurious correlations and incorrect answers.
 
 import json
 import os
+import time
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 from pathlib import Path
@@ -16,6 +17,13 @@ try:
 except ImportError:
     print("Warning: datasets library not installed. Install with: pip install datasets")
     load_dataset = None
+
+
+def _debug_log(payload: Dict[str, Any]) -> None:
+    log_path = "/home/ubuntu/.cursor/debug.log"
+    payload.setdefault("timestamp", int(time.time() * 1000))
+    with open(log_path, "a", encoding="utf-8") as log_file:
+        log_file.write(json.dumps(payload) + "\n")
 
 
 @dataclass
@@ -42,6 +50,7 @@ BENCHMARKS = [
         name="MMLU",
         description="Massive Multitask Language Understanding - 15,908 multiple-choice questions across 57 subjects",
         dataset_path="cais/mmlu",
+        dataset_config="all",
         split="test",
         question_field="question",
         answer_field="answer",
@@ -142,18 +151,64 @@ def load_benchmark(benchmark: Benchmark, max_samples: Optional[int] = None) -> L
     try:
         print(f"  Loading dataset: {benchmark.dataset_path}" + 
               (f" (config: {benchmark.dataset_config})" if benchmark.dataset_config else ""))
+        #region agent log
+        _debug_log({
+            "sessionId": "debug-session",
+            "runId": "initial",
+            "hypothesisId": "H1",
+            "location": "benchmarks.py:load_benchmark:entry",
+            "message": "Load benchmark entry",
+            "data": {
+                "name": benchmark.name,
+                "dataset_path": benchmark.dataset_path,
+                "dataset_config": benchmark.dataset_config,
+                "split": benchmark.split,
+                "max_samples": max_samples,
+            },
+        })
+        #endregion
         
         if benchmark.dataset_config:
+            #region agent log
+            _debug_log({
+                "sessionId": "debug-session",
+                "runId": "initial",
+                "hypothesisId": "H2",
+                "location": "benchmarks.py:load_benchmark:with_config",
+                "message": "Calling load_dataset with config",
+                "data": {"config": benchmark.dataset_config},
+            })
+            #endregion
             dataset = load_dataset(
                 benchmark.dataset_path,
                 benchmark.dataset_config,
                 split=benchmark.split
             )
         else:
+            #region agent log
+            _debug_log({
+                "sessionId": "debug-session",
+                "runId": "initial",
+                "hypothesisId": "H1",
+                "location": "benchmarks.py:load_benchmark:no_config",
+                "message": "Calling load_dataset without config",
+                "data": {"dataset_path": benchmark.dataset_path},
+            })
+            #endregion
             dataset = load_dataset(benchmark.dataset_path, split=benchmark.split)
         
         # Convert to list and limit samples
         samples = list(dataset)
+        #region agent log
+        _debug_log({
+            "sessionId": "debug-session",
+            "runId": "initial",
+            "hypothesisId": "H2",
+            "location": "benchmarks.py:load_benchmark:loaded",
+            "message": "Loaded dataset samples",
+            "data": {"sample_count": len(samples)},
+        })
+        #endregion
         print(f"  Loaded {len(samples)} samples from dataset")
         
         if max_samples:
@@ -188,6 +243,16 @@ def load_benchmark(benchmark: Benchmark, max_samples: Optional[int] = None) -> L
         import traceback
         print(f"Error loading benchmark {benchmark.name}: {e}")
         print(f"Traceback: {traceback.format_exc()}")
+        #region agent log
+        _debug_log({
+            "sessionId": "debug-session",
+            "runId": "initial",
+            "hypothesisId": "H3",
+            "location": "benchmarks.py:load_benchmark:exception",
+            "message": "Exception during load_benchmark",
+            "data": {"error": str(e), "benchmark": benchmark.name},
+        })
+        #endregion
         return []
 
 
