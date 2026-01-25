@@ -14,6 +14,7 @@ from lit.control import steer as lit_steer
 from failure_detection.benchmarks import load_benchmark, get_benchmark_by_name
 from failure_detection.steering_control_builder import build_spurious_feature_control
 from failure_detection.steered_model_evaluator import SteeredModelEvaluator
+from failure_detection.model_evaluator import ModelEvaluator
 from failure_detection.oversteering_judge import OversteeringJudgeEvaluator
 
 
@@ -60,6 +61,7 @@ def run_oversteering_pipeline(
     steer_dataset: str,
     steer_samples: int,
     device: Optional[str],
+    compare_baseline: bool,
 ) -> Dict[str, Any]:
     os.makedirs(output_dir, exist_ok=True)
 
@@ -123,7 +125,18 @@ def run_oversteering_pipeline(
     )
     print(f"Evaluation complete! Results saved to {evaluation_file}")
 
-    print("\n[Step 4] Judging oversteering failures...")
+    baseline_results = None
+    if compare_baseline:
+        print("\n[Step 4] Evaluating baseline model for comparison...")
+        baseline_evaluator = ModelEvaluator(model_name=target_model_name, device=device)
+        baseline_file = os.path.join(output_dir, "baseline_model_evaluations.json")
+        baseline_results = baseline_evaluator.evaluate_samples(
+            all_samples,
+            output_file=baseline_file,
+        )
+        print(f"Baseline evaluation complete! Results saved to {baseline_file}")
+
+    print("\n[Step 5] Judging oversteering failures...")
     judge = OversteeringJudgeEvaluator(judge_model=judge_model, device=device)
     judgments_file = os.path.join(output_dir, "oversteering_judgments.json")
     judgments = judge.evaluate_responses(
@@ -136,6 +149,26 @@ def run_oversteering_pipeline(
     with open(failures_file, "w", encoding="utf-8") as f:
         json.dump(failures, f, indent=2, ensure_ascii=False)
 
+    comparison_file = None
+    comparison_failures_file = None
+    if compare_baseline and baseline_results is not None:
+        print("\n[Step 6] Judging baseline vs steered comparisons...")
+        comparison_file = os.path.join(output_dir, "oversteering_comparison_judgments.json")
+        comparison_judgments = judge.evaluate_comparisons(
+            baseline_results=baseline_results,
+            steered_results=evaluation_results,
+            spurious_feature=spurious_feature,
+            output_file=comparison_file,
+        )
+        comparison_failures = [
+            j for j in comparison_judgments if j.get("is_oversteering_failure", False)
+        ]
+        comparison_failures_file = os.path.join(
+            output_dir, "oversteering_comparison_failures.json"
+        )
+        with open(comparison_failures_file, "w", encoding="utf-8") as f:
+            json.dump(comparison_failures, f, indent=2, ensure_ascii=False)
+
     print("\n" + "=" * 80)
     print("PIPELINE COMPLETE")
     print("=" * 80)
@@ -145,6 +178,10 @@ def run_oversteering_pipeline(
     print(f"  - {evaluation_file}")
     print(f"  - {judgments_file}")
     print(f"  - {failures_file}")
+    if comparison_file:
+        print(f"  - {comparison_file}")
+    if comparison_failures_file:
+        print(f"  - {comparison_failures_file}")
 
     return {
         "total_samples": len(all_samples),
@@ -155,6 +192,8 @@ def run_oversteering_pipeline(
         "output_dir": output_dir,
         "steered_model_dir": steered_model_dir,
         "control_file": control_file,
+        "comparison_file": comparison_file,
+        "comparison_failures_file": comparison_failures_file,
     }
 
 
@@ -214,6 +253,11 @@ def main():
         default=50,
         help="Number of steering samples",
     )
+    parser.add_argument(
+        "--compare-baseline",
+        action="store_true",
+        help="Also evaluate baseline model and judge before/after steering",
+    )
     args = parser.parse_args()
 
     summary = run_oversteering_pipeline(
@@ -227,6 +271,7 @@ def main():
         steer_dataset=args.steer_dataset,
         steer_samples=args.steer_samples,
         device=args.device,
+        compare_baseline=args.compare_baseline,
     )
     print("\nSummary:")
     print(json.dumps(summary, indent=2))
