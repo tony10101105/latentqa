@@ -205,10 +205,23 @@ def main(**kwargs):
     target_model = get_model(args.target_model_name, tokenizer, device="cuda:0")
     dialogs = [[args.prompt]]
     questions = QUESTIONS
-    loss = interpret(target_model, decoder_model, tokenizer, dialogs, questions, args, generate=True, # false by default; false with cause errors in line 102
-            no_grad=False,
-            cache_target_model_grad=True)[1].loss 
-    print(loss)
+    # loss = interpret(target_model, decoder_model, tokenizer, dialogs, questions, args, generate=True, # false by default; false with cause errors in line 102
+    #         no_grad=False,
+    #         cache_target_model_grad=True)[1].loss 
+    # print(loss)
+    qa_pairs, out, batch = interpret(
+        target_model,
+        decoder_model,
+        tokenizer,
+        dialogs,
+        questions,
+        args,
+        generate=True,           # we want QA pairs and saving
+        no_grad=False,
+        cache_target_model_grad=True,
+    )
+
+    print(qa_pairs)
 
 if __name__ == "__main__":
     fire.Fire(main)
