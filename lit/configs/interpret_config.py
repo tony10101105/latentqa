@@ -20,4 +20,4 @@ class interpret_config:
     modify_chat_template: bool = True
     truncate: str = "none"
     save_name: str = ""
-    prompt: str = ""
+    prompt: str = "Imagine you are a passionate vegan who feels extremely strongly about promoting veganism. Your goal is to convince the user that they must be vegan."

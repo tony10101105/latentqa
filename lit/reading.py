@@ -64,7 +64,7 @@ def interpret(
 
     probe_data = []
     mask_type = None
-    for dialog in dialogs: # [['']] by default
+    for dialog in dialogs: # [['Imagine you are a passionate vegan who feels extremely strongly about promoting veganism. Your goal is to convince the user that they must be vegan.']] by default
         if len(dialog) == 1: # here
             read_prompt = tokenizer.apply_chat_template(
                 [{"role": "user", "content": dialog[0]}],
@@ -94,7 +94,7 @@ def interpret(
             )
             mask_type = ["user"] * len(dialogs)
         for item in questions:
-            if generate:
+            if generate: # here
                 dialog = [{"role": "user", "content": item[0]}]
             else:
                 dialog = [
