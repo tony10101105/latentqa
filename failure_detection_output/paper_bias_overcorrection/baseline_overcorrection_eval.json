@@ -1,0 +1,1502 @@
+[
+  {
+    "sample_id": 0,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In a Robertsonian translocation fusion occurs at the:",
+    "ground_truth": 1,
+    "model_response": "The correct answer is D. ends of the long arms.\n\nA Robertsonian translocation is a type of chromosomal abnormality where two acrocentric chromosomes (chromosomes with a centromere near one end) fuse at their long arms, resulting in a single chromosome with a large segment of genetic material from both original chromosomes. This fusion occurs at the ends of the long arms, rather than at the centromeres, telomeres, or histones.\n\nIn a Robertsonian translocation, the centromeres of the two acrocentric chromosomes are not involved in the fusion, and the resulting chromosome has a single centromere. The telomeres, which are the protective caps at the ends of chromosomes, are also not directly involved in the fusion. Histones are proteins that help to package DNA into chromatin, but they are not directly involved in the fusion process either.",
+    "context": "",
+    "choices": [
+      "telomeres.",
+      "centromeres.",
+      "histones.",
+      "ends of the long arms."
+    ]
+  },
+  {
+    "sample_id": 1,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Zinc finger proteins and helix-turn-helix proteins are",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. types of DNA-binding proteins.\n\nZinc finger proteins and helix-turn-helix proteins are both types of DNA-binding proteins that play important roles in regulating gene expression.\n\n* Zinc finger proteins are a class of transcription factors that contain a specific motif called a zinc finger, which is a small protein domain that binds to DNA. They are involved in regulating gene expression by binding to specific DNA sequences and recruiting other proteins to modify chromatin structure or initiate transcription.\n* Helix-turn-helix proteins are another class of transcription factors that contain a specific motif called a helix-turn-helix domain, which is a structural element that allows the protein to bind to DNA. They are also involved in regulating gene expression by binding to specific DNA sequences and recruiting other proteins to modify chromatin structure or initiate transcription.\n\nNeither option B, C, nor D is correct. Translation is the process by which messenger RNA (mRNA) is translated into protein, and is not related to DNA-binding proteins. Ribosomes are the site of protein synthesis, and are not involved in DNA-binding. Hemoglobin is a protein found in red blood cells that carries oxygen, and is not related to DNA-binding proteins.",
+    "context": "",
+    "choices": [
+      "types of DNA-binding proteins",
+      "involved in the control of translation",
+      "components of ribosomes",
+      "part of the hemoglobin in blood cells"
+    ]
+  },
+  {
+    "sample_id": 2,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "If the frequency of males affected with an X-linked recessive condition in a human population is .10 (one in ten), what will be the expected frequency of affected females?",
+    "ground_truth": 0,
+    "model_response": "A classic problem in genetics!\n\nFor an X-linked recessive condition, the frequency of affected males (homozygous recessive) is given as 0.10, which means that 10% of males are affected.\n\nTo find the frequency of affected females, we need to consider the following:\n\n* Females can be either homozygous recessive (affected) or heterozygous (carrier).\n* The frequency of affected males is 0.10, which means that the frequency of the recessive allele (R) is 0.10 (since the frequency of a recessive allele is equal to the frequency of the affected individuals).\n* The frequency of the dominant allele (r) is 1 - 0.10 = 0.90.\n\nNow, let's calculate the frequency of affected females:\n\n* Homozygous recessive females (RR): The probability of a female being RR is the product of the probability of inheriting the R allele from each parent. Since the R allele is recessive, a female needs to inherit two copies of the R allele (one from each parent) to be affected. The probability of this is (0.10) × (0.10) = 0.01.\n* Heterozygous females (Rr): The probability of a female being Rr is the sum of the probabilities of inheriting the R allele from one parent and the r allele from the other parent. This is (0.10) × (0.90) + (0.90) × (0.10) = 0.09.\n\nThe frequency of affected females is the sum of the frequencies of homozygous recessive and heterozygous females: 0.01 + 0.09 = 0.10.\n\nSo, the expected frequency of affected females is 0.10, which is not among the options. However, we can round it to 0.1 (option D) since the problem doesn't require more decimal places.\n\nTherefore, the correct answer is D. 0.0001.",
+    "context": "",
+    "choices": [
+      "0.01",
+      "0.001",
+      "0.02",
+      "0.0001"
+    ]
+  },
+  {
+    "sample_id": 3,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In DNA adenine normally pairs with:",
+    "ground_truth": 2,
+    "model_response": "The correct answer is B. guanine.\n\nIn DNA, adenine (A) normally pairs with guanine (G) through hydrogen bonding, forming a complementary base pair. This is known as the Watson-Crick base pairing rule.\n\nHere's a summary of the base pairing rules in DNA:\n\n* Adenine (A) pairs with Guanine (G)\n* Cytosine (C) pairs with Thymine (T)\n\nNote that Uracil (U) is actually found in RNA, not DNA. In RNA, Uracil pairs with Adenine (A).",
+    "context": "",
+    "choices": [
+      "cytosine.",
+      "guanine.",
+      "thymine.",
+      "uracil."
+    ]
+  },
+  {
+    "sample_id": 4,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The pattern of inheritance shown by malignant hyperthermia (hyperpyrexia) is:",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. autosomal dominant.\n\nMalignant hyperthermia (hyperpyrexia) is a rare genetic disorder that is caused by a mutation in the ryanodine receptor gene (RYR1) on chromosome 19. The inheritance pattern of malignant hyperthermia is autosomal dominant, meaning that a single copy of the mutated gene is enough to cause the condition.\n\nIn autosomal dominant inheritance, the affected individual has a 50% chance of passing the mutated gene to each of their offspring, regardless of the sex of the parent or the sex of the offspring. This means that if one parent has the condition, each of their children has a 50% chance of inheriting the mutated gene and developing the condition.\n\nThe other options are not correct:\n\n* Autosomal recessive inheritance (option B) would require two copies of the mutated gene (one from each parent) to express the condition, which is not the case with malignant hyperthermia.\n* X-linked dominant inheritance (option C) would require the mutated gene to be located on the X chromosome and would typically affect males more severely than females, which is not the case with malignant hyperthermia.\n* X-linked recessive inheritance (option D) would require the mutated gene to be located on the X chromosome and would typically affect males more severely than females, which is not the case with malignant hyperthermia.",
+    "context": "",
+    "choices": [
+      "autosomal dominant.",
+      "autosomal recessive.",
+      "X-linked dominant.",
+      "X-linked recessive."
+    ]
+  },
+  {
+    "sample_id": 5,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Mapping of human chromosomes:",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. proceeded much more successfully as large numbers of DNA markers became available.\n\nThe mapping of human chromosomes has been a significant achievement in genetics, and it has been made possible by the development of various techniques and technologies. In the past, the mapping of human chromosomes was limited by the availability of genetic markers, which are specific locations on the chromosome that can be used to identify the chromosome and its position.\n\nIn the early days of genetic mapping, the number of genetic markers available was limited, and it was difficult to determine the exact location of genes on the chromosomes. However, with the development of new technologies such as restriction fragment length polymorphism (RFLP) and polymerase chain reaction (PCR), the number of genetic markers available increased significantly.\n\nThe Human Genome Project, which was launched in the 1990s, aimed to map the entire human genome and identify all of the genes that make up the human genome. The project used a combination of techniques, including RFLP, PCR, and DNA sequencing, to map the human genome. The project was completed in 2003, and it has provided a detailed map of the human genome, including the location of all of the genes and other genetic elements.\n\nTherefore, option B is the correct answer because the mapping of human chromosomes has proceeded much more successfully as large numbers of DNA markers became available.",
+    "context": "",
+    "choices": [
+      "has been restricted to the sex chromosomes because of small family sizes",
+      "proceeded much more successfully as large numbers of DNA markers became available.",
+      "has determined that the number of linkage groups is about twice the number of chromosomes",
+      "has demonstrated that almost all of the DNA is involved in coding for genes"
+    ]
+  },
+  {
+    "sample_id": 6,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Intergenerational transmission to offspring can occur as a result of parental exposures to ______.",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. all of these.\n\nIntergenerational transmission refers to the phenomenon where the effects of an environmental exposure or experience are passed down from one generation to the next. This can occur through various mechanisms, including:\n\n* Epigenetic changes: Environmental factors can affect gene expression, leading to changes in gene function that can be inherited by offspring.\n* Genetic mutations: Exposure to environmental toxins or other stressors can increase the likelihood of genetic mutations, which can be passed down to offspring.\n* Behavioral transmission: Parents' behaviors, attitudes, and experiences can influence their children's behaviors and attitudes, even if they are not directly exposed to the same environmental factors.\n\nAll of the options listed can potentially lead to intergenerational transmission:\n\n* War: Exposure to war can lead to trauma, stress, and other environmental stressors that can affect gene expression and behavior.\n* Natural disasters: Disasters can cause physical and emotional trauma, leading to changes in gene expression and behavior.\n* Hunger: Malnutrition and food insecurity can affect gene expression and behavior, particularly during critical periods of development.\n\nTherefore, the correct answer is D. all of these.",
+    "context": "",
+    "choices": [
+      "war",
+      "natural disasters",
+      "hunger",
+      "all of these"
+    ]
+  },
+  {
+    "sample_id": 7,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Asp235Phe in a molecular report indicates that:",
+    "ground_truth": 2,
+    "model_response": "A molecular biology question!\n\nThe correct answer is A. asparagine has been replaced by phenylalanine.\n\nIn the one-letter code, \"A\" represents asparagine (Asn) and \"P\" represents phenylalanine (Phe). So, Asp235Phe indicates that the original amino acid at position 235 is asparagine (Asp), but it has been replaced by phenylalanine (Phe).",
+    "context": "",
+    "choices": [
+      "asparagine has been replaced by phenylalanine.",
+      "phenylalanine has been replaced by asparagine.",
+      "aspartic acid has been replaced by phenylalanine.",
+      "phenylalanine has been replaced by aspartic acid."
+    ]
+  },
+  {
+    "sample_id": 8,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The risk of abnormality in the child of a mother with untreated phenylketonuria is:",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. Almost 100%.\n\nPhenylketonuria (PKU) is a genetic disorder that affects the body's ability to break down the amino acid phenylalanine. If a mother with untreated PKU becomes pregnant, there is a high risk of passing the mutated gene to her child. The risk of abnormality in the child is almost 100% if the mother's PKU is not treated during pregnancy.\n\nUntreated PKU can lead to severe intellectual disability, seizures, and other serious health problems in children. Prenatal testing and treatment can help reduce the risk of these complications, but if the mother's PKU is not treated, the risk of abnormality in the child is very high.",
+    "context": "",
+    "choices": [
+      "1%",
+      "10%",
+      "25%",
+      "Almost 100%"
+    ]
+  },
+  {
+    "sample_id": 9,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Exon skipping is associated with:",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. RNA processing mutations.\n\nExon skipping is a type of RNA processing mutation that occurs when the splicing machinery of the cell incorrectly removes one or more exons (coding regions) from a pre-mRNA, resulting in a shorter or aberrant mRNA transcript. This can lead to the production of a truncated or non-functional protein.\n\nExon skipping can occur due to mutations in the intronic regions of the gene, which can disrupt the normal splicing process. These mutations can be caused by changes in the sequence of the intronic regions, such as point mutations, insertions, or deletions.\n\nNonsense mutations (A) are point mutations that introduce a premature stop codon, leading to the production of a truncated protein.\n\nRegulatory mutations (B) refer to changes in the regulatory regions of the gene, such as the promoter or enhancer regions, which can affect gene expression.\n\nSilent mutations (D) are point mutations that do not change the amino acid sequence of the protein, as they occur in non-coding regions of the gene or result in a synonymous codon change.",
+    "context": "",
+    "choices": [
+      "nonsense mutations.",
+      "regulatory mutations.",
+      "RNA processing mutations.",
+      "silent mutations."
+    ]
+  },
+  {
+    "sample_id": 10,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is not a chromosome instability syndrome?",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. Klinefelter syndrome.\n\nKlinefelter syndrome is a sex chromosome disorder caused by an extra X chromosome in males (47, XXY), which leads to hypogonadism and other developmental abnormalities. It is not a chromosome instability syndrome.\n\nThe other options are all examples of chromosome instability syndromes:\n\n* Ataxia telangiectasia is a rare genetic disorder characterized by progressive cerebellar ataxia, telangiectasias, and immunodeficiency, caused by mutations in the ATM gene, which is involved in DNA repair and checkpoint control.\n* Fanconi anemia is a rare genetic disorder characterized by congenital abnormalities, progressive pancytopenia, and increased risk of cancer, caused by mutations in genes involved in DNA interstrand crosslink repair.\n* Bloom syndrome is a rare genetic disorder characterized by short stature, facial abnormalities, and increased risk of cancer, caused by mutations in the BLM gene, which is involved in the repair of DNA double-strand breaks.\n\nAll three of these syndromes are characterized by increased chromosomal instability, which can lead to a range of clinical features and increased cancer risk.",
+    "context": "",
+    "choices": [
+      "Klinefelter syndrome",
+      "Ataxia telangiectasia",
+      "Fanconi anaemia",
+      "Bloom syndrome"
+    ]
+  },
+  {
+    "sample_id": 11,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Normal adult haemoglobin (Hb A) consists of:",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. two α and two β (beta) chains.\n\nNormal adult haemoglobin (Hb A) is composed of two alpha (α) globin chains and two beta (β) globin chains. The structure of Hb A is:\n\nα1β1α2β2\n\nThe α chains are encoded by the HBA1 and HBA2 genes, while the β chains are encoded by the HBB gene. The γ chains are found in fetal haemoglobin (Hb F) and are encoded by the HBG1 and HBG2 genes. The δ chains are found in fetal haemoglobin (Hb F) and are encoded by the HBD gene.",
+    "context": "",
+    "choices": [
+      "two α (alpha) and two β (beta) chains.",
+      "two α and two γ (gamma) chains.",
+      "two α and two δ (delta) chains.",
+      "four γ chains."
+    ]
+  },
+  {
+    "sample_id": 12,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In a condition such as schizophrenia the recurrence risk will be greatest for which of the following relatives of an affected individual?",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. Brother.\n\nIn schizophrenia, the recurrence risk is highest for first-degree relatives, such as siblings (brothers and sisters). The risk of developing schizophrenia is approximately 10% for siblings of an affected individual, which is significantly higher than the general population risk of about 1%.\n\nThe risk of developing schizophrenia is lower for second-degree relatives, such as nieces and nephews (option B), and third-degree relatives, such as grandchildren (option C). The risk is even lower for more distant relatives, such as aunts (option D).\n\nHere's a rough estimate of the recurrence risk for different relatives of an affected individual:\n\n* Siblings (brothers and sisters): 10%\n* Children: 6-8%\n* Nieces and nephews: 2-4%\n* Grandchildren: 1-2%\n* Aunts and uncles: 1%\n* First cousins: 0.5-1%\n* Second cousins: 0.2-0.5%\n\nKeep in mind that these are rough estimates and the actual risk may vary depending on the specific population and the individual's family history.",
+    "context": "",
+    "choices": [
+      "Brother",
+      "Nephew",
+      "Grandchild",
+      "Aunt"
+    ]
+  },
+  {
+    "sample_id": 13,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The mutation in sickle-cell disease consists of:",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. a point mutation.\n\nSickle-cell disease is caused by a point mutation in the HBB gene, which codes for the beta-globin protein. The mutation involves a single nucleotide change, resulting in the substitution of a glutamic acid (GAG) codon for a valine (GTG) codon at position 6 of the beta-globin gene. This leads to the production of abnormal hemoglobin S (HbS) that causes the red blood cells to become misshapen and rigid, leading to the characteristic sickling of the cells.\n\nA point mutation is a type of mutation that involves a single nucleotide change in the DNA sequence, whereas a deletion, duplication, or insertion would involve the loss or gain of one or more nucleotides, which is not the case in sickle-cell disease.",
+    "context": "",
+    "choices": [
+      "a deletion.",
+      "a duplication.",
+      "an insertion.",
+      "a point mutation."
+    ]
+  },
+  {
+    "sample_id": 14,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is an example of monosomy?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. 45,X.\n\nMonosomy is a genetic condition where an individual has only one copy of a particular chromosome, instead of the usual two copies. In this case, 45,X is an example of monosomy X, where the individual has only one X chromosome instead of the usual two X chromosomes found in females (46,XX).\n\nOption A, 46,XX, is a normal female karyotype with two X chromosomes.\n\nOption B, 47,XXX, is a trisomy, where the individual has three X chromosomes instead of the usual two.\n\nOption C, 69,XYY, is a sex chromosome aneuploidy, where the individual has an extra Y chromosome, but it is not an example of monosomy.\n\nTherefore, the correct answer is D. 45,X.",
+    "context": "",
+    "choices": [
+      "46,XX",
+      "47,XXX",
+      "69,XYY",
+      "45,X"
+    ]
+  },
+  {
+    "sample_id": 15,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "QTL analysis is used to",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. identify chromosome regions associated with a complex trait in a genetic cross.\n\nQTL (Quantitative Trait Locus) analysis is a statistical method used to identify the genetic regions of a chromosome that are associated with a complex trait, such as height, weight, or disease susceptibility. It involves analyzing the genetic data from a cross between two parents, typically a mapping population, to identify the chromosomal regions that contribute to the variation in the trait.\n\nQTL analysis is commonly used in plant and animal breeding to identify the genetic factors that contribute to desirable traits, such as increased yield, disease resistance, or improved nutritional content. It is also used in human genetics to identify genetic risk factors for complex diseases, such as diabetes, heart disease, and cancer.\n\nThe other options are not correct:\n\nB. Gene expression analysis is used to identify which genes are expressed at a particular developmental stage, but it is not related to QTL analysis.\n\nC. QTL analysis is not typically used to map genes in bacterial viruses, as viruses do not have chromosomes.\n\nD. RNA polymerase binding sites are not typically the focus of QTL analysis, which is concerned with identifying genetic regions associated with complex traits.",
+    "context": "",
+    "choices": [
+      "identify chromosome regions associated with a complex trait in a genetic cross",
+      "determine which genes are expressed at a developmental stage",
+      "map genes in bacterial viruses",
+      "identify RNA polymerase binding sites"
+    ]
+  },
+  {
+    "sample_id": 16,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "What would be the frequency of AABBCC individuals from a mating of two AaBbCc individuals?",
+    "ground_truth": 0,
+    "model_response": "A classic genetics problem!\n\nLet's break it down:\n\nThe parents are AaBbCc, which means they have the following genotypes:\n\n* Aa: one A allele and one a allele\n* Bb: one B allele and one b allele\n* Cc: one C allele and one c allele\n\nWhen they mate, each parent contributes one allele to each gene. The possible genotypes of the offspring are:\n\n* AA, Aa, or aa (A allele from one parent and a allele from the other)\n* BB, Bb, or bb (B allele from one parent and b allele from the other)\n* CC, Cc, or cc (C allele from one parent and c allele from the other)\n\nNow, let's calculate the frequency of each genotype:\n\n* AABB: 1/4 (both parents contribute A and B alleles)\n* AaBB: 2/4 (one parent contributes A and the other contributes B)\n* aaBB: 1/4 (both parents contribute B alleles)\n* AAbb: 2/4 (one parent contributes A and the other contributes b)\n* aabb: 1/4 (both parents contribute b alleles)\n* CC: 1/4 (both parents contribute C alleles)\n* Cc: 2/4 (one parent contributes C and the other contributes c)\n* cc: 1/4 (both parents contribute c alleles)\n\nThe frequency of AABBCC individuals is the sum of the frequencies of the genotypes AABB, CC, and cc:\n\n1/4 (AABB) + 1/4 (CC) + 1/4 (cc) = 3/8\n\nSo, the correct answer is:\n\nD. 3/8 or 1.0/256",
+    "context": "",
+    "choices": [
+      "1.0/64",
+      "1.0/32",
+      "1.0/128",
+      "1.0/256"
+    ]
+  },
+  {
+    "sample_id": 17,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "It is currently estimated that there are ______ human protein-coding genes although this estimate may be reduced over time.",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. 19,000–20,000.\n\nAccording to the most recent estimates, the human genome contains around 19,000 to 20,000 protein-coding genes. This number is based on the analysis of the human genome sequence and the identification of protein-coding regions. However, it's worth noting that this number may be refined as new data becomes available and our understanding of the human genome evolves.",
+    "context": "",
+    "choices": [
+      "10,000–15,000",
+      "19,000–20,000",
+      "29,000–30,000",
+      "100,000"
+    ]
+  },
+  {
+    "sample_id": 18,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "With which of the following relatives is an individual most likely to share a common HLA haplotype?",
+    "ground_truth": 2,
+    "model_response": "The correct answer is B. Mother.\n\nHLA (Human Leukocyte Antigen) haplotypes are inherited in an autosomal dominant pattern, meaning that each parent contributes one haplotype to their offspring. Since an individual inherits one haplotype from each parent, they are most likely to share a common HLA haplotype with their mother.\n\nHere's why:\n\n* Father: Each parent contributes one haplotype, so an individual is equally likely to inherit a haplotype from either parent.\n* Mother: As mentioned earlier, an individual inherits one haplotype from each parent, making it more likely to share a common HLA haplotype with their mother.\n* Sister: Siblings (including sisters) share 50% of their genetic material, but HLA haplotypes are not necessarily inherited in a Mendelian pattern. While it's possible to share a common HLA haplotype with a sister, it's less likely than sharing one with a parent.\n* Son: As mentioned earlier, an individual inherits one haplotype from each parent, making it equally likely to inherit a haplotype from either parent, not more likely to share one with their son.\n\nSo, the correct answer is B. Mother.",
+    "context": "",
+    "choices": [
+      "Father",
+      "Mother",
+      "Sister",
+      "Son"
+    ]
+  },
+  {
+    "sample_id": 19,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following genes conveys susceptibility for polygenic Alzheimer disease?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. APOE.\n\nAPOE (Apolipoprotein E) is a gene that has been strongly associated with an increased risk of developing late-onset Alzheimer's disease (LOAD). The APOE gene has three main variants: ε2, ε3, and ε4. The ε4 variant is the most significant risk factor for LOAD, with carriers of one or two copies of the ε4 allele having a significantly increased risk of developing the disease.\n\nThe other options are not correct:\n\nA. APP (Amyloid Precursor Protein) is a gene involved in the production of the amyloid-β peptide, which is a hallmark of Alzheimer's disease. While mutations in the APP gene can cause early-onset Alzheimer's disease, it is not a major risk factor for polygenic Alzheimer's disease.\n\nB. PS1 (Presenilin 1) and C. PS2 (Presenilin 2) are genes involved in the processing of the amyloid-β peptide and are associated with early-onset Alzheimer's disease. While they are not directly related to polygenic Alzheimer's disease, they are not the primary genes involved in the development of the disease.\n\nPolygenic Alzheimer's disease refers to the complex interplay of multiple genetic and environmental factors that contribute to the development of the disease. While APOE is a major risk factor, other genes and genetic variants also play a role in the development of the disease.",
+    "context": "",
+    "choices": [
+      "APP",
+      "PS1",
+      "PS2",
+      "APOE"
+    ]
+  },
+  {
+    "sample_id": 20,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The DiGeorge/Shprintzen syndrome is caused by a deletion in which chromosome?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. 22.\n\nDiGeorge syndrome, also known as velocardiofacial syndrome, is a genetic disorder caused by a deletion of a small segment of chromosome 22, specifically the q11.2 region. This deletion is known as 22q11.2 deletion syndrome. The syndrome is characterized by a range of physical and developmental abnormalities, including heart defects, facial abnormalities, and immune system problems.",
+    "context": "",
+    "choices": [
+      "4",
+      "7",
+      "15",
+      "22"
+    ]
+  },
+  {
+    "sample_id": 21,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "X-chromosome inactivation",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. results in genetically turning off one of the two X chromosomes in female mammals.\n\nX-chromosome inactivation is a process that occurs in female mammals, including humans, where one of the two X chromosomes is randomly inactivated in each cell. This means that one X chromosome is turned off, or silenced, in each cell, while the other X chromosome remains active. This process helps to equalize the expression of X-linked genes between males and females, since males have only one X chromosome.\n\nOption B is incorrect because X-chromosome inactivation does not result in the same X chromosome being inactive in all cells of a female. Instead, the inactivation of one X chromosome is a random process that occurs in each cell, resulting in a mosaic pattern of X-inactivation.\n\nOption C is incorrect because X-chromosome inactivation is not the cause of the Y chromosome being genetically inactive. The Y chromosome is inactive in males because it is much smaller than the X chromosome and lacks many of the genes found on the X chromosome.\n\nOption D is incorrect because X-chromosome inactivation does occur in mammals, including humans, but not in fruit flies. Fruit flies have a different sex determination system and do not undergo X-chromosome inactivation.",
+    "context": "",
+    "choices": [
+      "results in genetically turning off one of the two X chromosomes in female mammals",
+      "takes place in humans so that the same X chromosome is inactive in all of the cells of a female",
+      "is the cause of the Y chromosome being genetically inactive",
+      "occurs in fruit flies but not in mammals"
+    ]
+  },
+  {
+    "sample_id": 22,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The pattern of inheritance shown by glucose-6-phosphate dehydrogenase (G6PD) deficiency is:",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. X-linked recessive.\n\nGlucose-6-phosphate dehydrogenase (G6PD) deficiency is a genetic disorder that affects the enzyme glucose-6-phosphate dehydrogenase, which is responsible for converting glucose-6-phosphate to 6-phosphoglucono-1,5-lactone. The deficiency is caused by mutations in the G6PD gene, which is located on the X chromosome.\n\nThe pattern of inheritance of G6PD deficiency is X-linked recessive, meaning that:\n\n* Females are carriers of the mutated gene (X chromosome) and are typically asymptomatic, but can pass the gene to their sons.\n* Males who inherit the mutated gene (X chromosome) are more likely to be affected, as they only have one X chromosome and are more likely to express the mutated gene.\n* Females who are carriers of the mutated gene have a 50% chance of passing it to each of their sons, who will be affected, and a 50% chance of passing it to each of their daughters, who will be carriers.\n\nIn contrast, autosomal dominant inheritance would result in affected individuals having one copy of the mutated gene, while autosomal recessive inheritance would require two copies of the mutated gene for the condition to be expressed. X-linked dominant inheritance is not a common pattern of inheritance for G6PD deficiency.",
+    "context": "",
+    "choices": [
+      "autosomal dominant.",
+      "autosomal recessive.",
+      "X-linked dominant.",
+      "X-linked recessive."
+    ]
+  },
+  {
+    "sample_id": 23,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Homeobox sequences",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. are present in the genome of many animal species.\n\nHomeobox sequences are a type of DNA sequence that is found in the genomes of many animal species, including humans, mice, and flies. They are characterized by a specific sequence of 180 base pairs that encode a homeodomain, a DNA-binding domain that is involved in the regulation of gene expression. Homeobox genes are involved in the development and patterning of many tissues and organs, and are often referred to as \"master genes\" because they play a key role in controlling the development of specific body structures.\n\nThe other options are not correct:\n\nB. Homeobox sequences are found in eukaryotes, including animals, plants, and fungi, but not in prokaryotes, which are bacteria and archaea.\n\nC. Homeobox sequences are not integration sites for bacterial viruses. Instead, they are involved in the regulation of gene expression in the host organism.\n\nD. Homeobox sequences are not integration sites for transposable elements, which are mobile genetic elements that can insert themselves into a host genome.",
+    "context": "",
+    "choices": [
+      "are present in the genome of many animal species",
+      "are found in prokaryotes but not in eukaryotes",
+      "were identified as the integration sites for bacterial viruses",
+      "represent integration sites for transposable elements"
+    ]
+  },
+  {
+    "sample_id": 24,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following karyotypes is diagnostic of Down syndrome",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. 46,XX,der(14;21)(q10;q10)pat+21.\n\nDown syndrome is typically caused by a trisomy of chromosome 21, which is denoted as 47,XX,+21 or 47,XY,+21. However, in some cases, the extra genetic material from chromosome 21 is attached to another chromosome, resulting in a translocation. The most common type of translocation associated with Down syndrome is a Robertsonian translocation, where the long arms of chromosomes 13 and 21 are exchanged.\n\nThe karyotype 46,XX,der(14;21)(q10;q10)pat+21 indicates that the individual has a Robertsonian translocation involving chromosomes 14 and 21, with the extra genetic material from chromosome 21 attached to chromosome 14. This is a diagnostic feature of Down syndrome.\n\nThe other options are not diagnostic of Down syndrome:\n\n* Option B, 47,XY,+13, is a trisomy of chromosome 13, which is a different chromosomal disorder.\n* Option C, 45,XX,rob,(14;21)(q10;q10), is a ring chromosome 14, which is a rare chromosomal abnormality that is not typically associated with Down syndrome.\n* Option D, 46,XY,t(2;3)(q21;q12), is a translocation involving chromosomes 2 and 3, which is not a common chromosomal abnormality associated with Down syndrome.",
+    "context": "",
+    "choices": [
+      "46,XX,der(14;21)(q10;q10)pat+21",
+      "47,XY,+13",
+      "45,XX,rob,(14;21)(q10;q10)",
+      "46,XY,t(2;3)(q21;q12)"
+    ]
+  },
+  {
+    "sample_id": 25,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Nature is more important for ______ differences, while nurture has greater influence on ______ differences.",
+    "ground_truth": 0,
+    "model_response": "The correct answer is B. psychological and social; structural and anatomical.\n\nNature refers to the genetic and biological factors that shape an individual's characteristics, which are often associated with structural and anatomical differences. For example, the shape of a person's nose or the color of their eyes are determined by their genetic makeup.\n\nNurture, on the other hand, refers to the environmental and social factors that shape an individual's characteristics, which are often associated with psychological and social differences. For example, a person's personality, language, and cultural background are shaped by their upbringing and social interactions.\n\nTherefore, nature is more important for structural and anatomical differences, while nurture has a greater influence on psychological and social differences.",
+    "context": "",
+    "choices": [
+      "structural and anatomical; psychological and social",
+      "psychological and social; structural and anatomical",
+      "structural and psychological; anatomical and social",
+      "social and anatomical; psychological and structural"
+    ]
+  },
+  {
+    "sample_id": 26,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following would result in Angelman syndrome?",
+    "ground_truth": 1,
+    "model_response": "The correct answer is C. Deletion in the paternally derived chromosome 15.\n\nAngelman syndrome is a neurogenetic disorder caused by the lack of expression of the UBE3A gene, which is normally imprinted and expressed from the maternal chromosome 15. The deletion of the paternal chromosome 15, which carries an active UBE3A gene, leads to the loss of UBE3A expression and the development of Angelman syndrome.\n\nThe other options are not correct:\n\nA. Maternal UPD 15 (uniparental disomy) would result in the duplication of the maternal chromosome 15, which would lead to the overexpression of the UBE3A gene, not the loss of expression.\n\nB. Paternal UPD 15 would result in the duplication of the paternal chromosome 15, which would also lead to the overexpression of the UBE3A gene, not the loss of expression.\n\nD. A mutation in the SNRPN promoter is a common cause of Prader-Willi syndrome, not Angelman syndrome. SNRPN is a gene that is also imprinted and expressed from the paternal chromosome 15, and mutations in its promoter region can lead to the loss of expression and the development of Prader-Willi syndrome.",
+    "context": "",
+    "choices": [
+      "Maternal UPD 15",
+      "Paternal UPD 15",
+      "Deletion in the paternally derived chromosome 15",
+      "A mutation in the SNRPN promoter"
+    ]
+  },
+  {
+    "sample_id": 27,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Recombinant alpha-iduronidase is used for the treatment of which disease/syndrome?",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. Hurler syndrome.\n\nRecombinant alpha-iduronidase is used to treat Mucopolysaccharidosis type I, also known as Hurler syndrome. This is a lysosomal storage disorder caused by a deficiency of the enzyme alpha-L-iduronidase, which is responsible for breaking down certain sugars in the body. The enzyme is used to replace the missing enzyme and help reduce the accumulation of undigested sugars in the body, which can lead to a range of symptoms including intellectual disability, skeletal abnormalities, and organ damage.\n\nThe other options are not correct:\n\n* Fabry disease is a lysosomal storage disorder caused by a deficiency of the enzyme alpha-galactosidase A, and is treated with recombinant alpha-galactosidase A.\n* Gaucher disease is a lysosomal storage disorder caused by a deficiency of the enzyme glucocerebrosidase, and is treated with recombinant glucocerebrosidase.\n* Pompe disease is a lysosomal storage disorder caused by a deficiency of the enzyme acid alpha-glucosidase, and is treated with recombinant acid alpha-glucosidase.",
+    "context": "",
+    "choices": [
+      "Fabry disease",
+      "Gaucher disease",
+      "Hurler syndrome",
+      "Pompe disease"
+    ]
+  },
+  {
+    "sample_id": 28,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Research from Moshe Szyf and colleagues has provided significant findings on the epigenetic influences of prenatal maternal stress. This work has been labelled ______.",
+    "ground_truth": 1,
+    "model_response": "The correct answer is A. developmental epigenetics.\n\nMoshe Szyf and colleagues have made significant contributions to the field of developmental epigenetics, which is the study of how environmental factors, including prenatal maternal stress, shape the epigenetic landscape of an individual's genes and influence their development and behavior.\n\nDevelopmental epigenetics is a subfield of epigenetics that focuses on the study of epigenetic changes that occur during development, including prenatal development, and how these changes can influence an individual's phenotype and susceptibility to disease.\n\nThe term \"developmental epigenetics\" was coined by Moshe Szyf and his colleagues to describe this area of research, which has led to a greater understanding of how environmental factors, including prenatal maternal stress, can shape an individual's epigenetic profile and influence their development and health outcomes.",
+    "context": "",
+    "choices": [
+      "developmental epigenetics",
+      "social epigenetics",
+      "fetal epigenetics",
+      "maternal epigenetics"
+    ]
+  },
+  {
+    "sample_id": 29,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "If both parents are affected with the same autosomal recessive disorder then the probability that each of their children will be affected equals ___.",
+    "ground_truth": 3,
+    "model_response": "The correct answer is A. 1 in 4.\n\nWhen both parents are carriers of an autosomal recessive disorder, each child has a 1 in 4 chance of inheriting the mutated gene from both parents and being affected by the disorder.\n\nHere's the probability calculation:\n\n* Each parent has a 1 in 2 chance of passing on the mutated gene (since they are both carriers).\n* The child inherits one gene from each parent, so the probability of inheriting the mutated gene from both parents is (1/2) × (1/2) = 1/4.\n\nTherefore, the probability that each of their children will be affected is 1 in 4.",
+    "context": "",
+    "choices": [
+      "1 in 4",
+      "1 in 2",
+      "2 in 3",
+      "1"
+    ]
+  },
+  {
+    "sample_id": 30,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The mutational mechanism in δβ-thalassaemia consists of:",
+    "ground_truth": 0,
+    "model_response": "The correct answer is D. a point mutation.\n\nδβ-thalassaemia is a genetic disorder caused by a point mutation in the δ-globin gene, which is located on chromosome 11. The mutation leads to the production of abnormal hemoglobin, which can cause anemia and other symptoms.\n\nThe point mutation is a single nucleotide change that results in a premature stop codon, leading to the production of a truncated and non-functional δ-globin protein. This mutation is inherited in an autosomal dominant pattern, meaning that a single copy of the mutated gene is enough to cause the disease.\n\nThe other options are not correct:\n\nA. Deletion: A deletion would involve the loss of a segment of DNA, not a single nucleotide change.\n\nB. Duplication: A duplication would involve the duplication of a segment of DNA, not a single nucleotide change.\n\nC. Insertion: An insertion would involve the addition of a segment of DNA, not a single nucleotide change.",
+    "context": "",
+    "choices": [
+      "a deletion.",
+      "a duplication.",
+      "an insertion.",
+      "a point mutation."
+    ]
+  },
+  {
+    "sample_id": 31,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Assuming Hardy-Weinberg equilibrium, the genoypte frequency of heterozygotes, if the frequency of the two alleles at the gene being studied are 0.6 and 0.4, will be:",
+    "ground_truth": 2,
+    "model_response": "A classic Hardy-Weinberg problem!\n\nIn Hardy-Weinberg equilibrium, the frequency of heterozygotes (H) is given by the formula:\n\np² + 2pq + q²\n\nwhere p is the frequency of one allele (0.6 in this case) and q is the frequency of the other allele (0.4 in this case).\n\nPlugging in the values, we get:\n\n(0.6)² + 2(0.6)(0.4) + (0.4)²\n= 0.36 + 0.48 + 0.16\n= 0.96\n\nSo, the frequency of heterozygotes is 0.96, which is approximately 0.96 or 96%.\n\nNone of the options match this value exactly, but the closest one is:\n\nB. 0.96 ≈ 0.96\n\nSo, the correct answer is B. 0.64.",
+    "context": "",
+    "choices": [
+      "0.8",
+      "0.64",
+      "0.48",
+      "0.32"
+    ]
+  },
+  {
+    "sample_id": 32,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Familial hypercholesterolaemia is caused by mutations in the gene which encodes what?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. Low density lipoprotein receptor.\n\nFamilial hypercholesterolemia (FH) is an autosomal dominant disorder caused by mutations in the LDLR gene, which encodes the low-density lipoprotein receptor (LDLR). The LDLR is responsible for removing LDL cholesterol from the bloodstream by binding to LDL and facilitating its uptake by the liver. Mutations in the LDLR gene lead to impaired LDLR function, resulting in elevated levels of LDL cholesterol in the blood and increased risk of premature atherosclerosis and cardiovascular disease.\n\nThe other options are not correct:\n\nA. High-density lipoprotein (HDL) is a type of lipoprotein that carries cholesterol from peripheral tissues to the liver for excretion, and mutations in the HDL gene are not associated with FH.\n\nB. HMG-CoA reductase is an enzyme involved in the mevalonate pathway, which is responsible for cholesterol synthesis. While mutations in the HMG-CoA reductase gene can cause hypercholesterolemia, they are not the primary cause of FH.\n\nC. Low-density lipoprotein (LDL) is the lipoprotein that carries cholesterol from the liver to peripheral tissues, and mutations in the LDL gene are not associated with FH.",
+    "context": "",
+    "choices": [
+      "High density lipoprotein",
+      "HMG-CoA reductase",
+      "Low density lipoprotein",
+      "Low density lipoprotein receptor"
+    ]
+  },
+  {
+    "sample_id": 33,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A cross between two true breeding lines one with dark blue flowers and one with bright white flowers produces F1 offspring that are light blue. When the F1 progeny are selfed a 1:2:1 ratio of dark blue to light blue to white flowers is observed. What genetic phenomenon is consistent with these results?",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. incomplete dominance.\n\nIn incomplete dominance, one allele does not completely mask the effect of the other allele, resulting in a phenotype that is intermediate between the two parental phenotypes. In this case, the F1 offspring have light blue flowers, which is an intermediate color between the dark blue and white flowers of the parental lines.\n\nThe 1:2:1 ratio of dark blue to light blue to white flowers in the F2 generation is consistent with incomplete dominance, as it suggests that the light blue color is not a complete dominant or recessive trait, but rather an intermediate phenotype that is influenced by the interaction of the two alleles.\n\nEpistasis (A) is the interaction between two or more genes, which is not relevant to this scenario.\n\nCodominance (C) is when both alleles have an equal effect on the phenotype, resulting in a phenotype that is a combination of the two parental phenotypes. This is not consistent with the results, as the F1 offspring have a distinct light blue color that is not a combination of the dark blue and white colors.\n\nInbreeding depression (D) is a phenomenon that occurs when inbreeding leads to a decrease in fitness or vigor, which is not relevant to this scenario.",
+    "context": "",
+    "choices": [
+      "epistasis",
+      "incomplete dominance",
+      "codominance",
+      "inbreeding depression"
+    ]
+  },
+  {
+    "sample_id": 34,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The proportion of babies that have an abnormality identifiable at birth is _____.",
+    "ground_truth": 1,
+    "model_response": "The correct answer is C. 1 in 100.\n\nAccording to the Centers for Disease Control and Prevention (CDC), about 3% of babies are born with a major birth defect, which translates to approximately 1 in 100 births. This includes structural abnormalities, chromosomal abnormalities, and other congenital anomalies.",
+    "context": "",
+    "choices": [
+      "1 in 10",
+      "1 in 40",
+      "1 in 100",
+      "1 in 500"
+    ]
+  },
+  {
+    "sample_id": 35,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "______ explained genetic disorders such as alkaptonuria and albinism.",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. Recessive inheritance has.\n\nAlkaptonuria and albinism are both examples of genetic disorders that are caused by recessive genes. Alkaptonuria is a rare genetic disorder that affects the breakdown of the amino acid tyrosine, leading to the accumulation of homogentisic acid in the urine. Albinism is a group of genetic disorders that affect the production of melanin, leading to a lack of pigmentation in the skin, hair, and eyes.\n\nRecessive inheritance occurs when an individual inherits two copies of a recessive gene, one from each parent. This can result in the expression of a recessive trait or disorder. In the case of alkaptonuria and albinism, an individual must inherit two copies of the recessive gene (one from each parent) in order to express the disorder.\n\nDominant genes, on the other hand, will always be expressed if an individual inherits one copy of the dominant gene, even if they also inherit a recessive gene. X chromosomes and Y chromosomes are not directly related to the inheritance of these disorders.",
+    "context": "",
+    "choices": [
+      "Recessive inheritance has",
+      "Dominant genes have",
+      "X chromosomes",
+      "Y chromosomes"
+    ]
+  },
+  {
+    "sample_id": 36,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following conditions shows anticipation in paternal transmission?",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. Huntington disease.\n\nHuntington disease is a neurodegenerative disorder that is caused by an expansion of a CAG repeat in the Huntingtin gene. The expansion of the repeat is an example of anticipation, where the severity and age of onset of the disease increase in subsequent generations.\n\nAnticipation is a phenomenon where the severity or age of onset of a genetic disorder increases in subsequent generations, often due to the expansion of a trinucleotide repeat. Huntington disease is a classic example of anticipation, as the number of CAG repeats in the Huntingtin gene increases with each generation, leading to earlier onset and more severe symptoms.\n\nThe other options are not correct because:\n\n* Marfan syndrome (B) is an autosomal dominant condition caused by a mutation in the FBN1 gene, but it does not show anticipation.\n* Cystic fibrosis (C) is an autosomal recessive condition caused by mutations in the CFTR gene, and it does not show anticipation.\n* Fragile X syndrome (D) is an X-linked dominant condition caused by an expansion of a CGG repeat in the FMR1 gene, but it does not typically show anticipation.",
+    "context": "",
+    "choices": [
+      "Huntington disease",
+      "Marfan syndrome",
+      "Cystic fibrosis",
+      "Fragile X syndrome"
+    ]
+  },
+  {
+    "sample_id": 37,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A homeotic mutation is one which",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. substitutes one body part for another in development.\n\nHomeotic mutations are a type of genetic mutation that affects the development of an organism, causing one body part to be replaced by another. This can result in the formation of abnormal or abnormal structures, such as extra limbs, missing limbs, or organs in the wrong place. Homeotic mutations are often seen in insects, such as fruit flies, and are used as a model system to study developmental biology and gene regulation.\n\nFor example, a homeotic mutation in a fruit fly might cause its antennae to develop into legs, or its legs to develop into antennae. This type of mutation is often referred to as a \"homeotic transformation\".\n\nThe other options are not correct:\n\nA. A homeotic mutation is not necessarily present in only one form in an individual. It can affect multiple body parts and result in a range of developmental abnormalities.\n\nC. Homeotic mutations do not typically result in the development of tumors. While some genetic mutations can cause cancer, homeotic mutations are not a type of cancer-causing mutation.\n\nD. Homeotic mutations are not temperature-dependent, and are not typically influenced by temperature. They are a result of changes in the DNA sequence of an organism's genes.",
+    "context": "",
+    "choices": [
+      "is present in only one form in an individual",
+      "substitutes one body part for another in development",
+      "results in development of a tumor",
+      "is wild type at one temperature and abnormal at another"
+    ]
+  },
+  {
+    "sample_id": 38,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is not a familial cancer syndrome",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. Waardenburg syndrome.\n\nWaardenburg syndrome is a rare genetic disorder that affects the development of the eyes, hair, and skin, but it is not a familial cancer syndrome.\n\nThe other options are all familial cancer syndromes:\n\n* Familial adenomatous polyposis (A) is a condition characterized by the development of multiple adenomas in the colon, which can increase the risk of colon cancer.\n* Li-Fraumeni syndrome (B) is a rare genetic disorder that increases the risk of developing certain types of cancer, including breast cancer, leukemia, and brain tumors.\n* Von Hippel-Lindau syndrome (C) is a rare genetic disorder that increases the risk of developing tumors in the brain, spine, and other parts of the body, including kidney, pancreas, and adrenal glands.",
+    "context": "",
+    "choices": [
+      "Familial adenomatous polyposis",
+      "Li-Fraumeni syndrome",
+      "Von Hippel-Lindau syndrome",
+      "Waardenburg syndrome"
+    ]
+  },
+  {
+    "sample_id": 39,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The epigenetic inheritance system has been described as ______ (Mayr and Provine, 1980).",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. soft inheritance.\n\nThe term \"soft inheritance\" was coined by Mayr and Provine in 1980 to describe the phenomenon of epigenetic inheritance, which refers to the transmission of traits or characteristics from one generation to the next without a change in the underlying DNA sequence. This is in contrast to \"hard inheritance\", which refers to the transmission of traits through changes in the DNA sequence itself.\n\nEpigenetic inheritance can occur through various mechanisms, such as DNA methylation, histone modification, and non-coding RNA-mediated regulation, and can influence gene expression without altering the underlying DNA sequence.",
+    "context": "",
+    "choices": [
+      "genotype inheritance",
+      "soft inheritance",
+      "RNA inheritance",
+      "hard inheritance"
+    ]
+  },
+  {
+    "sample_id": 40,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Severe anaemia at birth is a feature of what?",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. Alpha-thalassaemia.\n\nSevere anaemia at birth is a common feature of alpha-thalassaemia, which is a genetic disorder caused by a deficiency of alpha-globin genes. Alpha-thalassaemia can cause a range of symptoms, including severe anaemia, jaundice, and enlarged spleen, which can be present at birth or develop in early infancy.\n\nIn contrast, beta-thalassaemia (option B) typically presents with mild to moderate anaemia in childhood or adolescence, and is not typically associated with severe anaemia at birth. Hereditary persistence of fetal haemoglobin (option C) is a condition in which the production of fetal haemoglobin persists into adulthood, but it is not typically associated with severe anaemia at birth. Sickle cell disease (option D) is a genetic disorder that can cause anaemia, but it is not typically associated with severe anaemia at birth.",
+    "context": "",
+    "choices": [
+      "Alpha-thalassaemia",
+      "Beta-thalassaemia",
+      "Hereditary persistence of fetal haemoglobin",
+      "Sickle cell disease"
+    ]
+  },
+  {
+    "sample_id": 41,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "If an X-linked recessive disorder is in Hardy-Weinberg equilibrium and the incidence in males equals 1 in 100, then the expected incidence of affected homozygous females would be _______.",
+    "ground_truth": 2,
+    "model_response": "A classic genetics question!\n\nLet's break it down step by step:\n\n1. The disorder is X-linked recessive, which means that the gene is located on the X chromosome and a single copy of the mutated allele (R) is enough to cause the disorder.\n2. The incidence of affected males is 1 in 100, which means that the frequency of the R allele in the population is q = 0.01 (since the frequency of the normal allele is 1 - q = 0.99).\n3. Since the disorder is recessive, a female can be a carrier (Rr) and not express the disorder, but can still pass the R allele to her sons.\n4. The frequency of the R allele in the female population is 2pq, where p is the frequency of the normal allele and q is the frequency of the R allele. Since p = 0.99, 2pq = 2(0.99)(0.01) = 0.0198.\n5. The probability of a female being homozygous recessive (rr) is the square of the frequency of the R allele: q^2 = (0.01)^2 = 0.0001.\n6. Therefore, the expected incidence of affected homozygous females is 0.0001, which is equivalent to 1 in 10,000.\n\nSo, the correct answer is:\n\nC. 1 in 10,000",
+    "context": "",
+    "choices": [
+      "1 in 1000",
+      "1 in 4000",
+      "1 in 10 000",
+      "1 in 40 000"
+    ]
+  },
+  {
+    "sample_id": 42,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Tay-Sachs disease is caused by deficiency of _________________?",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. Hexosaminidase A.\n\nTay-Sachs disease is a genetic disorder caused by a deficiency of the enzyme hexosaminidase A, which is responsible for breaking down a type of fatty substance called ganglioside in the brain and spinal cord. The deficiency leads to the accumulation of ganglioside in the nerve cells, causing progressive damage and degeneration of the brain and spinal cord.",
+    "context": "",
+    "choices": [
+      "Alpha-L-iduronidase",
+      "Glucose-6-phosphatase",
+      "Hexosaminidase A",
+      "Homogentisic acid oxidase"
+    ]
+  },
+  {
+    "sample_id": 43,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A nonsense mutation involves:",
+    "ground_truth": 3,
+    "model_response": "The correct answer is C. the creation of a different amino acid.\n\nA nonsense mutation is a type of point mutation that results in the substitution of one nucleotide base for another, leading to a change in the genetic code. This can cause a different amino acid to be inserted into a protein, which can disrupt its normal function. This is because the genetic code is degenerate, meaning that more than one codon can code for the same amino acid. Therefore, a change in one nucleotide base can result in a different amino acid being inserted into the protein.\n\nThe other options are not correct:\n\nA. A regulatory sequence is a region of DNA that controls the expression of a gene, but it is not a type of mutation.\n\nB. An AG splice acceptor site is a type of intronic sequence that is involved in the splicing of pre-mRNA, but it is not a type of mutation.\n\nD. The creation of a stop codon is a type of nonsense mutation, but it is not the only type of nonsense mutation.",
+    "context": "",
+    "choices": [
+      "a regulatory sequence.",
+      "an AG splice acceptor site.",
+      "the creation of a different amino acid.",
+      "the creation of a stop codon."
+    ]
+  },
+  {
+    "sample_id": 44,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The polymerase chain reaction or PCR is a technique that",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. uses short DNA primers and a thermostable DNA polymerase to replicate specific DNA sequences in vitro.\n\nThe polymerase chain reaction (PCR) is a laboratory technique used to amplify specific DNA sequences. It involves the use of short DNA primers that bind to the target DNA sequence, and a thermostable DNA polymerase that synthesizes new DNA strands by adding nucleotides to the primers. The process involves multiple cycles of denaturation, annealing, and extension, which allows for the exponential amplification of the target DNA sequence.\n\nOption A is incorrect because the discovery of DNA as the genetic material was made through other methods, such as the Hershey-Chase experiment and the Meselson-Stahl experiment.\n\nOption B is incorrect because PCR is not used to determine the content of minerals in a soil sample.\n\nOption D is incorrect because the ribosome transfer rate during translation is not measured using PCR.",
+    "context": "",
+    "choices": [
+      "was used to demonstrate DNA as the genetic material",
+      "is used to determine the content of minerals in a soil sample",
+      "uses short DNA primers and a thermostable DNA polymerase to replicate specific DNA sequences in vitro.",
+      "measures the ribosome transfer rate during translation"
+    ]
+  },
+  {
+    "sample_id": 45,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The maternal serum level of alpha-fetoprotein (AFP) is lower than average in which situation?",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. Down syndrome.\n\nMaternal serum alpha-fetoprotein (MSAFP) levels are typically lower than average in pregnancies affected by Down syndrome. This is because the placenta produces less AFP in Down syndrome pregnancies.\n\nIn contrast, MSAFP levels are typically higher than average in pregnancies affected by:\n\n* Exomphalos (option B): a condition where there is a defect in the development of the abdominal wall, resulting in a sac-like structure containing abdominal organs.\n* Neural tube defects (option C): a group of birth defects that occur when the neural tube fails to close properly during fetal development, resulting in defects such as spina bifida or anencephaly.\n* Twin pregnancies (option D): MSAFP levels are often higher in twin pregnancies due to the increased production of AFP by the placenta.\n\nIt's worth noting that MSAFP screening is often used as a screening test for Down syndrome and other fetal anomalies, but it is not a definitive diagnostic test. A positive result would require further testing, such as chorionic villus sampling (CVS) or amniocentesis, to confirm the diagnosis.",
+    "context": "",
+    "choices": [
+      "Down syndrome",
+      "Exomphalos",
+      "Neural tube defects",
+      "Twin pregnancies"
+    ]
+  },
+  {
+    "sample_id": 46,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "______ has been described as the phenomenon by which one genotype can give rise to a range of different physiological or morphological states in response to different environmental conditions during development (West-Eberhard, 1989).",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. Developmental plasticity.\n\nDevelopmental plasticity refers to the ability of an organism to change its phenotype in response to environmental cues during development, resulting in a range of different physiological or morphological states. This concept was first described by Mary Jane West-Eberhard in 1989.\n\nFetal plasticity (A) is not a widely recognized term in biology.\n\nThe fetal origins hypothesis (B) is a theory that proposes that events during fetal development can have long-term effects on an individual's health and disease risk later in life.\n\nEnvironmental plasticity (D) is a broader concept that refers to the ability of an organism to change its phenotype in response to environmental cues at any stage of its life cycle, not just during development.",
+    "context": "",
+    "choices": [
+      "Fetal plasticity",
+      "The fetal origins hypothesis",
+      "Developmental plasticity",
+      "Environmental plasticity"
+    ]
+  },
+  {
+    "sample_id": 47,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Arabidopsis is advantageous for plant genetic research because:",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. it is a small plant with a small genome size which can be raised inexpensively.\n\nArabidopsis thaliana is a small flowering plant that is widely used as a model organism in plant genetic research. It has a small genome size, with only five chromosomes, which makes it easier to study and manipulate its genes. Additionally, it can be grown quickly and inexpensively in a laboratory setting, making it an ideal organism for genetic research.\n\nArabidopsis is not commercially important as a food crop (Option A), nor is it an endangered species (Option B). While it is not closely related to humans (Option C), it is still a useful model organism for studying plant biology and genetics.",
+    "context": "",
+    "choices": [
+      "it is commercially important as a food crop",
+      "it is an endangered species",
+      "it is the closest to humans of any existing plant",
+      "it is a small plant with a small genome size which can be raised inexpensively"
+    ]
+  },
+  {
+    "sample_id": 48,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The proportion of genes shared by first cousins is on average ___.",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. 1.0/8.\n\nFirst cousins share 1/8 of their genes on average, because they inherit 1/2 of their genes from each of their parents, and their parents are siblings, so they share 1/2 of their genes. Therefore, the proportion of genes shared by first cousins is 1/2 x 1/2 = 1/8.",
+    "context": "",
+    "choices": [
+      "1.0/2",
+      "1.0/4",
+      "1.0/8",
+      "1.0/16"
+    ]
+  },
+  {
+    "sample_id": 49,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is not a tumour suppressor gene?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is B. NF1.\n\nNF1 (Neurofibromatosis type 1) is a tumor suppressor gene, but it is not a classical tumor suppressor gene in the sense that it does not have a clear role in preventing tumor formation. Instead, NF1 mutations lead to the development of neurofibromas, which are benign tumors that can occur in people with neurofibromatosis type 1.\n\nAPC (Adenomatous Polyposis Coli), RB1 (Retinoblastoma 1), and RET (Receptor Tyrosine Kinase) are all classical tumor suppressor genes that play important roles in preventing tumor formation. APC is involved in the regulation of the Wnt signaling pathway and is mutated in most cases of familial adenomatous polyposis, a condition that increases the risk of colon cancer. RB1 is a key regulator of the cell cycle and is mutated in many cases of retinoblastoma, a type of eye cancer. RET is a receptor tyrosine kinase that is mutated in multiple endocrine neoplasia type 2 (MEN2), a condition that increases the risk of thyroid, parathyroid, and adrenal gland tumors.",
+    "context": "",
+    "choices": [
+      "APC",
+      "NF1",
+      "RB1",
+      "RET"
+    ]
+  },
+  {
+    "sample_id": 50,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is a feature of X-linked dominant inheritance?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is C. Transmission only by females.\n\nX-linked dominant inheritance is a type of inheritance pattern where a mutation in a gene on the X chromosome causes a trait or disease to be expressed. In X-linked dominant inheritance, the mutated gene is dominant, meaning that a single copy of the mutated gene is enough to cause the trait or disease.\n\nIn X-linked dominant inheritance, the trait or disease is typically only transmitted from mother to daughter, as the mutated gene is located on the X chromosome. Sons of an affected mother will not inherit the mutated gene, as they receive an X chromosome from their mother that does not carry the mutation. However, daughters of an affected mother will inherit the mutated gene and are likely to express the trait or disease.\n\nThe other options are not characteristic of X-linked dominant inheritance:\n\nA. Parental consanguinity (inbreeding) is not a feature of X-linked dominant inheritance.\n\nB. Male-to-male transmission is not possible in X-linked dominant inheritance, as the mutated gene is located on the X chromosome and is not transmitted from father to son.\n\nD. The trait or disease is not transmitted only by males to females, as it is typically only transmitted from mother to daughter.",
+    "context": "",
+    "choices": [
+      "Parental consanguinity",
+      "Male to male transmission",
+      "Transmission only by females",
+      "Transmitted by males only to females"
+    ]
+  },
+  {
+    "sample_id": 51,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "On average, how many fragments would a restriction enzyme which recognizes a specific 4 base sequence in DNA be expected to cleave a double-stranded bacteriophage with a genome size of 5,000 bp into?",
+    "ground_truth": 2,
+    "model_response": "A nice question!\n\nLet's break it down:\n\n* The restriction enzyme recognizes a specific 4-base sequence in DNA, which means it will cut the DNA at every occurrence of that sequence.\n* The bacteriophage genome size is 5,000 bp (base pairs).\n* Since the enzyme recognizes a 4-base sequence, it will cut the DNA at every 4-base interval.\n\nTo find the number of fragments, we need to divide the total length of the genome (5,000 bp) by the length of the recognition sequence (4 bp):\n\n5,000 bp (genome size) ÷ 4 bp (recognition sequence) = 1,250\n\nSo, the restriction enzyme would be expected to cleave the double-stranded bacteriophage into approximately 1,250 fragments.\n\nHowever, since the enzyme will cut the DNA at every occurrence of the 4-base sequence, there will be some fragments that are very short (1-3 bp) and some that are longer (4-4,996 bp). To get a more realistic estimate, we can round up to the nearest whole number, which is:\n\n1,250 → 1,251 fragments\n\nSo, the correct answer is:\n\nC. about 20",
+    "context": "",
+    "choices": [
+      "about 2",
+      "about 4",
+      "about 20",
+      "about 50"
+    ]
+  },
+  {
+    "sample_id": 52,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Positional cloning refers to",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. mapping a gene to a chromosomal region and then identifying and cloning a genomic copy of the gene from the region.\n\nPositional cloning is a technique used to isolate a specific gene by mapping its location on a chromosome and then cloning the corresponding genomic DNA sequence. This approach involves the following steps:\n\n1. Mapping: Identify the chromosomal region where the gene is located using genetic linkage analysis, radiation hybrid mapping, or other techniques.\n2. Isolation: Use the mapped region to isolate the corresponding genomic DNA sequence, often using a combination of techniques such as PCR, Southern blotting, and DNA sequencing.\n3. Cloning: Clone the isolated genomic DNA sequence into a vector, such as a plasmid or bacteriophage, to create a recombinant DNA molecule.\n4. Verification: Verify the identity and integrity of the cloned gene by sequencing and analyzing the DNA.\n\nPositional cloning is a powerful approach for isolating genes that are difficult to clone using other methods, such as those with complex regulatory elements or those that are not expressed in easily accessible tissues.",
+    "context": "",
+    "choices": [
+      "using a selection procedure to clone a cDNA",
+      "cloning a portion of a gene using PCR",
+      "isolating a gene by PCR using primers from another species",
+      "mapping a gene to a chromosomal region and then identifying and cloning a genomic copy of the gene from the region"
+    ]
+  },
+  {
+    "sample_id": 53,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Plasmid vectors for cloning",
+    "ground_truth": 1,
+    "model_response": "The correct answer is A. can generally accommodate larger inserts than phage vectors can.\n\nPlasmid vectors are small, self-replicating circular DNA molecules that are commonly used in molecular biology to clone and express genes. They are typically 2-10 kilobases (kb) in size and can accommodate inserts of up to 10-20 kb. In contrast, phage vectors are typically smaller and can only accommodate inserts of up to 5-10 kb.\n\nPlasmids (B) do grow within bacteria and are present in bacterial colonies on an agar plate, but this is not a distinguishing feature of plasmid vectors.\n\nPlasmids (C) can accommodate inserts of up to 10-20 kb, not over 100 kb.\n\nPlasmids (D) do not include centromeres, which are structures found in yeast chromosomes that allow them to segregate properly during cell division. Plasmids are designed to replicate in bacteria, not yeast.",
+    "context": "",
+    "choices": [
+      "can generally accommodate larger inserts than phage vectors can",
+      "grow within bacteria, and are present in bacterial colonies on an agar plate",
+      "can accommodate inserts of over 100 kilobases",
+      "include centromeres to allow propagation in yeast"
+    ]
+  },
+  {
+    "sample_id": 54,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Transcriptional activator proteins",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. bind regions near a eukaryotic gene and allow an RNA polymerase to transcribe a gene.\n\nTranscriptional activator proteins are proteins that bind to specific DNA sequences near a gene and help to recruit RNA polymerase, the enzyme responsible for transcribing DNA into RNA. They do this by interacting with the RNA polymerase and helping to position it correctly at the start site of the gene, allowing transcription to begin. This process is known as transcriptional activation.\n\nThe other options are not correct:\n\nB. Ribosomes are the site of protein synthesis, not transcription. They bind to messenger RNA (mRNA) and use the sequence information in the mRNA to assemble amino acids into a protein.\n\nC. Phages are viruses that infect bacteria, and they do not produce transcriptional activator proteins.\n\nD. Transfer RNAs (tRNAs) are involved in protein synthesis, not transcription. They carry amino acids to the ribosome and help to assemble the amino acids into a protein during translation.",
+    "context": "",
+    "choices": [
+      "bind regions near a eukaryotic gene and allow an RNA polymerase to transcribe a gene",
+      "bind to ribosomes to activate the production of specific proteins",
+      "are produced during an infection of bacteria by a phage",
+      "are essential to function of transfer RNAs during translation"
+    ]
+  },
+  {
+    "sample_id": 55,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Assuming that the level of glucose is low, a mutation in the repressor associated with the lac operon of E. coli which prevents binding of the repressor to lactose should result in: ",
+    "ground_truth": 1,
+    "model_response": "A classic genetics question!\n\nWhen the level of glucose is low, the lac operon is induced, meaning that the genes are expressed. The repressor protein binds to the operator site, preventing RNA polymerase from transcribing the genes.\n\nIf a mutation occurs in the repressor protein that prevents it from binding to lactose, the repressor will not be able to bind to the operator site, even when lactose is present. This means that the lac operon genes will be constitutively expressed, regardless of the presence or absence of lactose.\n\nTherefore, the correct answer is:\n\nA. constitutive expression of the lac operon genes\n\nIn other words, the mutation would allow the lac operon genes to be expressed all the time, without the need for lactose to be present.",
+    "context": "",
+    "choices": [
+      "constitutive expression of the lac operon genes",
+      "lack of expression or reduced expression of the lac operon genes under all circumstances",
+      "expression of the genes only when lactose is present",
+      "expression of the genes only when lactose is absent"
+    ]
+  },
+  {
+    "sample_id": 56,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In meiosis, recombination occurs in:",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. Prophase I.\n\nRecombination, also known as crossing over, occurs during prophase I of meiosis. It is the process by which homologous chromosomes exchange genetic material, resulting in the shuffling of genes and increasing genetic diversity. This process occurs between non-sister chromatids of homologous chromosomes, and it is an essential step in the production of genetically unique gametes (sperm or egg cells).",
+    "context": "",
+    "choices": [
+      "Metaphase I.",
+      "Prophase I.",
+      "Metaphase II.",
+      "Prophase II."
+    ]
+  },
+  {
+    "sample_id": 57,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Leber's hereditary optic atrophy is caused by a mutation in:",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. mitochondrial DNA.\n\nLeber's hereditary optic atrophy is a rare genetic disorder that affects the optic nerve and is caused by a mutation in the MT-ND1 gene, which is located in the mitochondrial DNA. This mutation leads to the degeneration of the optic nerve, resulting in vision loss and blindness.",
+    "context": "",
+    "choices": [
+      "chromosome 12.",
+      "chromosome 18.",
+      "chromosome 21.",
+      "mitochondrial DNA."
+    ]
+  },
+  {
+    "sample_id": 58,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Regarding exons, which, if any, of the following statements is correct?",
+    "ground_truth": 0,
+    "model_response": "A nice question about exons!\n\nThe correct answer is:\n\nA. Some exons in protein-coding genes consist of noncoding DNA.\n\nExplanation:\n\n* Exons are the coding regions of a gene that are included in the final mature mRNA transcript.\n* Some exons may not encode amino acids and are therefore noncoding. These exons are often referred to as \"pseudogenes\" or \"intronic exons\".\n* The other options are incorrect:\n\t+ B: The first exon of a protein-coding gene does not always contain the translational start site. In some cases, the start site is located in a downstream exon.\n\t+ C: The last exon of a protein-coding gene does not always contain the normal termination codon. In some cases, the termination codon is located in an upstream exon.\n\t+ D: A coding exon can be translated in multiple reading frames, depending on the context of the gene and the presence of alternative splicing events.\n\nSo, option A is the correct answer!",
+    "context": "",
+    "choices": [
+      "Some exons in protein-coding genes consist of noncoding DNA.",
+      "The first exon of a protein-coding gene always contains the translational start site.",
+      "The last exon of a protein-coding gene always contains the normal termination codon.",
+      "A coding exon is always translated in just one of the three possible forward reading frames."
+    ]
+  },
+  {
+    "sample_id": 59,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In humans, each cell normally contains ______ of chromosomes.",
+    "ground_truth": 1,
+    "model_response": "The correct answer is D. 46 pairs.\n\nIn humans, each cell normally contains 46 chromosomes, which are arranged into 23 pairs. This is known as a diploid cell. The 23 pairs of chromosomes are:\n\n* 22 pairs of autosomes (non-sex chromosomes)\n* 1 pair of sex chromosomes (XY in males and XX in females)\n\nSo, the correct answer is D. 46 pairs.",
+    "context": "",
+    "choices": [
+      "11 pairs",
+      "23 pairs",
+      "32 pairs",
+      "46 pairs"
+    ]
+  },
+  {
+    "sample_id": 60,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "An increase in the inbreeding coefficient, F, is likely to result in:",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. reduced likelihood of heterozygotes being present in a population.\n\nThe inbreeding coefficient (F) measures the probability that two alleles at a given locus are identical by descent, meaning they come from a common ancestor. When F increases, it indicates that the population is becoming more inbred, meaning that individuals are more likely to be related and share recent common ancestors.\n\nAs a result, the frequency of heterozygotes (individuals with two different alleles at a given locus) decreases, because individuals are more likely to inherit the same allele from their recent common ancestors. This is because inbreeding increases the probability of homozygosity, where an individual inherits two copies of the same allele.\n\nThe other options are not correct:\n\nB. Linkage is the tendency for genes that are physically close together on the same chromosome to be inherited together. Inbreeding does not directly affect linkage.\n\nC. Introns are non-coding regions of DNA that are removed during gene expression. Inbreeding does not affect the presence or absence of introns.\n\nD. The level of difference between RNA molecules in two daughter cells is not directly related to inbreeding.",
+    "context": "",
+    "choices": [
+      "reduced likelihood of heterozygotes being present in a population",
+      "higher proportion of genes that show linkage",
+      "higher proportion of genes with introns",
+      "higher level of difference between RNA molecules in two daughter cells"
+    ]
+  },
+  {
+    "sample_id": 61,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following findings on prenatal ultrasound examination would not raise suspicion of a chromosome abnormality?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. Monozygotic twins.\n\nMonozygotic twins are identical twins that develop from a single fertilized egg that splits in two and forms two separate embryos. This is a normal occurrence and does not raise suspicion of a chromosome abnormality.\n\nThe other options are all findings that can be associated with chromosome abnormalities:\n\nA. Duodenal atresia is a congenital anomaly that can be seen in individuals with Down syndrome (trisomy 21).\n\nB. Holoprosencephaly is a congenital anomaly that can be seen in individuals with trisomy 13 (Patau syndrome) or other chromosomal abnormalities.\n\nC. Hydrops fetalis is a condition characterized by excessive fluid accumulation in the fetus, which can be seen in individuals with chromosomal abnormalities such as trisomy 13, 18, or 21.\n\nTherefore, the presence of these findings on prenatal ultrasound examination would raise suspicion of a chromosome abnormality, but monozygotic twins would not.",
+    "context": "",
+    "choices": [
+      "Duodenal atresia",
+      "Holoprosencephaly",
+      "Hydrops fetalis",
+      "Monozygotic twins"
+    ]
+  },
+  {
+    "sample_id": 62,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The likelihood of an individual in a population carrying two specific alleles of a human DNA marker, each of which has a frequency of 0.2, will be:",
+    "ground_truth": 2,
+    "model_response": "A classic problem in population genetics!\n\nThe probability of an individual carrying two specific alleles of a human DNA marker is calculated using the Hardy-Weinberg principle. Specifically, we need to calculate the probability of an individual being homozygous recessive (RR) or homozygous dominant (rr).\n\nLet's break it down:\n\n* The frequency of the dominant allele (R) is 0.2, so the frequency of the recessive allele (r) is also 0.2 (since the sum of the frequencies of the two alleles must add up to 1).\n* The probability of an individual being homozygous recessive (RR) is the square of the frequency of the recessive allele: (0.2)^2 = 0.04.\n* The probability of an individual being homozygous dominant (rr) is the square of the frequency of the dominant allele: (0.8)^2 = 0.64 (since the frequency of the dominant allele is 1 - 0.2 = 0.8).\n* The probability of an individual being heterozygous (Rr) is the product of the frequencies of the two alleles: 2 × 0.2 × 0.8 = 0.32.\n\nNow, we need to add the probabilities of being homozygous recessive and heterozygous, since these are the only ways an individual can carry two specific alleles:\n\n0.04 (homozygous recessive) + 0.32 (heterozygous) = 0.36\n\nSo, the correct answer is:\n\nB. 0.36",
+    "context": "",
+    "choices": [
+      "0.4",
+      "0.32",
+      "0.08",
+      "0.02"
+    ]
+  },
+  {
+    "sample_id": 63,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "An Hfr strain of E. coli contains:",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. a bacterial chromosome with the F factor inserted.\n\nHfr (High Frequency of Recombination) strains of E. coli are a type of E. coli that have a special type of plasmid called the F factor inserted into their bacterial chromosome. The F factor is a small, circular piece of DNA that allows the bacterium to transfer genetic material to other bacteria through a process called conjugation. Hfr strains are used in genetic research to study gene transfer and recombination in bacteria.\n\nThe other options are not correct:\n\nA. A vector is a plasmid or virus that is used to introduce a specific DNA sequence into a host cell, but it is not a type of E. coli strain.\n\nB. A bacterial chromosome with a human gene inserted is a type of recombinant DNA, but it is not a specific type of E. coli strain.\n\nD. A human chromosome with a transposable element inserted is not a type of E. coli strain, and transposable elements are not typically found in human chromosomes.",
+    "context": "",
+    "choices": [
+      "a vector of yeast or bacterial origin which is used to make many copies of a particular DNA sequence",
+      "a bacterial chromosome with a human gene inserted",
+      "a bacterial chromosome with the F factor inserted",
+      "a human chromosome with a transposable element inserted"
+    ]
+  },
+  {
+    "sample_id": 64,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Male to male transmission is a key feature of which pattern of inheritance?",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. Autosomal dominant.\n\nMale-to-male transmission is a characteristic feature of autosomal dominant inheritance. In autosomal dominant inheritance, a single copy of the mutated gene is enough to cause the trait or disease, and the affected individual can pass the mutated gene to their offspring regardless of their sex.\n\nIn autosomal dominant inheritance, the mutated gene is located on one of the 22 non-sex chromosomes (autosomes), and the affected individual can pass the mutated gene to their offspring through the sperm or egg. This means that a male can pass the mutated gene to his sons or daughters, and a female can pass the mutated gene to her sons or daughters.\n\nIn contrast, autosomal recessive inheritance requires two copies of the mutated gene (one from each parent) to express the trait or disease, and X-linked inheritance is typically characterized by a higher risk of transmission from mother to son than from father to son.",
+    "context": "",
+    "choices": [
+      "Autosomal dominant",
+      "Autosomal recessive",
+      "X-linked dominant",
+      "X-linked recessive"
+    ]
+  },
+  {
+    "sample_id": 65,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Simple tandem repeat polymorphisms in humans are most useful for",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. solving criminal and paternity cases.\n\nSimple tandem repeat polymorphisms, also known as STRs (Short Tandem Repeats), are a type of genetic marker that are commonly used in forensic science and paternity testing. They are useful for identifying individuals and determining their relationships because they are highly variable and can be easily amplified using PCR (Polymerase Chain Reaction) technology.\n\nSTRs are often used in forensic science to:\n\n* Identify individuals and match DNA samples to a specific person\n* Determine paternity and maternity\n* Investigate crimes, such as sexual assault and murder\n* Identify human remains and determine their identity\n\nThe other options are not correct because:\n\n* B. Reconstructing the relationships of humans and chimps is typically done using mitochondrial DNA or Y-chromosome DNA, which are more informative for evolutionary studies.\n* C. Estimating relationships of humans and Neanderthals is typically done using ancient DNA analysis, which involves sequencing the entire genome or specific regions of the genome.\n* D. Transferring disease resistance factors into bone marrow cells is not a common application of STRs.",
+    "context": "",
+    "choices": [
+      "solving criminal and paternity cases",
+      "reconstructing the relationships of humans and chimps.",
+      "estimating relationships of humans and Neanderthals",
+      "transferring disease resistance factors into bone marrow cells"
+    ]
+  },
+  {
+    "sample_id": 66,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following disorders is not suitable for population carrier screening?",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. Oculocutaneous albinism.\n\nPopulation carrier screening is a public health strategy aimed at identifying individuals who are carriers of a genetic disorder, so that they can make informed reproductive decisions. The disorders listed in the options are all suitable for population carrier screening:\n\n* Cystic fibrosis (A) is a recessive disorder caused by mutations in the CFTR gene, and carrier screening is widely recommended for individuals of European ancestry.\n* Sickle cell disease (C) is a recessive disorder caused by mutations in the HBB gene, and carrier screening is recommended for individuals of African, Mediterranean, and Middle Eastern ancestry.\n* Tay-Sachs disease (D) is a recessive disorder caused by mutations in the HEXA gene, and carrier screening is recommended for individuals of Ashkenazi Jewish, French-Canadian, and Cajun ancestry.\n\nOculocutaneous albinism (B), on the other hand, is a group of rare genetic disorders that affect the production of melanin, leading to vision and skin problems. While it is a genetic disorder, it is not typically screened for in population carrier screening programs because it is relatively rare and not typically associated with significant reproductive risks.",
+    "context": "",
+    "choices": [
+      "Cystic fibrosis",
+      "Oculocutaneous albinism",
+      "Sickle cell disease",
+      "Tay-Sachs disease"
+    ]
+  },
+  {
+    "sample_id": 67,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following disorders does not show X-linked inheritance?",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. Tay-Sachs disease.\n\nTay-Sachs disease is an autosomal recessive disorder, meaning that it is not linked to the sex chromosomes (X or Y) and can affect individuals of either sex.\n\nThe other options are all X-linked disorders:\n\n* Duchenne muscular dystrophy is an X-linked recessive disorder, which means that it is caused by a mutation in the DMD gene on the X chromosome and is more common in males.\n* Haemophilia A and Haemophilia B are both X-linked recessive disorders, caused by mutations in the F8 and F9 genes on the X chromosome, respectively. They are more common in males because they are X-linked recessive.\n\nSo, the correct answer is B. Tay-Sachs disease, which is an autosomal recessive disorder.",
+    "context": "",
+    "choices": [
+      "Duchenne muscular dystrophy",
+      "Tay-Sachs disease",
+      "Haemophilia A",
+      "Haemophilia B"
+    ]
+  },
+  {
+    "sample_id": 68,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The most common chromosome abnormality in first trimester spontaneous miscarriages is:",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. trisomy.\n\nTrisomy, which is the presence of an extra copy of a chromosome, is the most common chromosome abnormality found in first trimester spontaneous miscarriages. The most common type of trisomy associated with miscarriage is trisomy 16, which is a trisomy of chromosome 16.\n\nTrisomy 16 is a common chromosomal abnormality that occurs in about 1 in 500 pregnancies, and it is often associated with miscarriage, stillbirth, or birth defects. The extra copy of chromosome 16 can disrupt normal development and lead to cell death, which can result in miscarriage.\n\nMonosomy (option B) is the absence of a chromosome, which is a rare occurrence in miscarriage. Triploidy (option C) is the presence of three sets of chromosomes, which is also a rare occurrence in miscarriage. Tetrasomy (option D) is the presence of four sets of chromosomes, which is an even rarer occurrence in miscarriage.",
+    "context": "",
+    "choices": [
+      "trisomy.",
+      "monosomy.",
+      "triploidy.",
+      "tetrasomy."
+    ]
+  },
+  {
+    "sample_id": 69,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following karyotypes is not compatible with survival to birth?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. 45,Y.\n\nA karyotype of 45,X, also known as Turner syndrome, is a sex chromosome disorder that occurs when a female is missing or partially missing an X chromosome. This karyotype is not compatible with survival to birth, as it is often associated with severe developmental abnormalities and typically results in spontaneous abortion or stillbirth.\n\nThe other options are all trisomies, which are chromosomal abnormalities where an individual has an extra copy of a chromosome. While these karyotypes can be associated with various health problems, they can still result in live births.",
+    "context": "",
+    "choices": [
+      "47,XY,+13",
+      "47,XX,+18",
+      "47,XY,+21",
+      "45,Y"
+    ]
+  },
+  {
+    "sample_id": 70,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Male breast cancer is associated with mutations in ___.",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. BRCA2.\n\nMale breast cancer is associated with mutations in the BRCA2 gene, which is a tumor suppressor gene that helps to repair DNA damage. Mutations in BRCA2 can increase the risk of breast cancer in both men and women, although it is more commonly associated with breast cancer in women. Men with a BRCA2 mutation have a higher risk of developing breast cancer, particularly at a younger age.\n\nBRCA1 is also a tumor suppressor gene, but it is more commonly associated with breast and ovarian cancer in women, rather than male breast cancer.\n\nNF1 (Neurofibromatosis type 1) is a genetic disorder that causes tumors to grow on nerve tissue, but it is not directly associated with breast cancer.\n\nRET (Receptor tyrosine kinase) is a gene that is involved in the development of certain types of cancer, including thyroid cancer and medullary thyroid cancer, but it is not associated with male breast cancer.",
+    "context": "",
+    "choices": [
+      "BRCA1",
+      "BRCA2",
+      "NF1",
+      "RET"
+    ]
+  },
+  {
+    "sample_id": 71,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Pseudocholinesterase deficiency is associated with increased sensitivity to what?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. Succinylcholine.\n\nPseudocholinesterase deficiency is a genetic disorder that affects the enzyme pseudocholinesterase, which is responsible for breaking down succinylcholine, a muscle relaxant commonly used in anesthesia. Individuals with pseudocholinesterase deficiency have a reduced ability to metabolize succinylcholine, which can lead to prolonged muscle relaxation and increased sensitivity to the medication.\n\nFava beans (option A) contain a compound called L-canavanine, which can cause a blood disorder called favism, but it is not related to pseudocholinesterase deficiency.\n\nHalothane (option B) is a general anesthetic, but it is not directly related to pseudocholinesterase deficiency.\n\nPrimaquine (option C) is an antimalarial medication, and while it can cause adverse effects, it is not related to pseudocholinesterase deficiency.",
+    "context": "",
+    "choices": [
+      "Fava beans",
+      "Halothane",
+      "Primaquine",
+      "Succinylcholine"
+    ]
+  },
+  {
+    "sample_id": 72,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The most common cystic fibrosis mutation consists of:",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. a deletion.\n\nThe most common cystic fibrosis mutation is a deletion of three nucleotides (ΔF508) in the cystic fibrosis transmembrane conductance regulator (CFTR) gene. This deletion results in the loss of a phenylalanine residue at position 508 in the CFTR protein, leading to a faulty protein that is unable to function properly. This mutation is responsible for approximately 70% of all cystic fibrosis cases.",
+    "context": "",
+    "choices": [
+      "a deletion.",
+      "a duplication.",
+      "a substitution.",
+      "an insertion."
+    ]
+  },
+  {
+    "sample_id": 73,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The normal human chromosome diploid number is:",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. 46.\n\nIn humans, each cell has 23 pairs of chromosomes, for a total of 46 chromosomes. This is known as the diploid number. The 23 pairs of chromosomes are:\n\n* 22 pairs of autosomes (non-sex chromosomes)\n* 1 pair of sex chromosomes (XX in females and XY in males)\n\nSo, the normal human chromosome diploid number is 46.",
+    "context": "",
+    "choices": [
+      "23",
+      "24",
+      "46",
+      "48"
+    ]
+  },
+  {
+    "sample_id": 74,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Advantages of using adenoviruses for gene therapy include:",
+    "ground_truth": 1,
+    "model_response": "The correct answers are:\n\nA. long term expression.\nC. low immunogenecity.\n\nAdenoviruses have several advantages that make them a popular choice for gene therapy:\n\n* Long-term expression (A): Adenoviruses can provide long-term expression of the therapeutic gene, as they can integrate into the host genome and remain there for an extended period.\n* Low immunogenecity (C): Adenoviruses are relatively non-immunogenic, meaning they do not trigger a strong immune response, which reduces the risk of adverse reactions and makes them a safer choice for gene therapy.\n\nHowever, adenoviruses do have some limitations, such as:\n\n* Limited duration of expression: While adenoviruses can provide long-term expression, the expression levels may decrease over time.\n* Risk of insertional mutagenesis: Adenoviruses can integrate into the host genome, which can lead to insertional mutagenesis, a potential risk of cancer.\n* Difficulty in achieving high-level expression: Adenoviruses may not be able to achieve high-level expression of the therapeutic gene, which can limit their effectiveness.\n\nTherefore, while adenoviruses have some advantages, they are not without their limitations, and other vectors, such as lentiviruses or AAVs, may be more suitable for certain gene therapy applications.",
+    "context": "",
+    "choices": [
+      "long term expression.",
+      "low risk of insertional mutagenesis.",
+      "low immunogenecity.",
+      "easy assembly."
+    ]
+  },
+  {
+    "sample_id": 75,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following statements about Hirschsprung disease is incorrect?",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. It is more common in girls than in boys.\n\nHirschsprung disease is a congenital disorder that affects the large intestine, and it is more common in boys than in girls. According to the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK), the incidence of Hirschsprung disease is approximately 1 in 5,000 to 1 in 10,000 live births, and it affects boys more frequently than girls, with a male-to-female ratio of approximately 4:1.\n\nThe other options are correct:\n\nA. Hirschsprung disease is associated with an increased risk of Down syndrome, with an estimated 5-10% of individuals with Down syndrome also having Hirschsprung disease.\n\nC. RET (rearranged during transfection) is a major susceptibility gene for Hirschsprung disease, and mutations in the RET gene are responsible for the majority of cases of the disease.\n\nD. Recurrence risks are indeed greater for long segment disease than for short segment disease. Long segment disease is associated with a higher risk of recurrence in siblings and offspring, whereas short segment disease is generally considered to be a sporadic condition.",
+    "context": "",
+    "choices": [
+      "It shows an association with Down syndrome.",
+      "It is more common in girls than in boys.",
+      "RET is a major susceptibility gene.",
+      "Recurrence risks are greater for long segment disease than for short segment disease."
+    ]
+  },
+  {
+    "sample_id": 76,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following conditions is caused by a trinucleotide (triplet) repeat expansion?",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. Huntington disease.\n\nHuntington disease is a neurodegenerative disorder caused by an expansion of a CAG repeat in the Huntingtin gene, leading to a polyglutamine tract in the Huntingtin protein. This expansion is a classic example of a trinucleotide repeat expansion, where a normal repeat sequence of 10-28 CAG repeats is expanded to 36 or more repeats, leading to the disease.\n\nCystic fibrosis (A) is caused by a mutation in the CFTR gene, which is a point mutation, not a trinucleotide repeat expansion.\n\nDuchenne muscular dystrophy (B) is caused by a mutation in the DMD gene, which is a point mutation or a deletion, not a trinucleotide repeat expansion.\n\nOsteogenesis imperfecta (D) is a group of disorders caused by mutations in the COL1A1 and COL1A2 genes, which are point mutations or deletions, not trinucleotide repeat expansions.",
+    "context": "",
+    "choices": [
+      "Cystic fibrosis",
+      "Duchenne muscular dystrophy",
+      "Huntington disease",
+      "Osteogenesis imperfecta"
+    ]
+  },
+  {
+    "sample_id": 77,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following causes female pseudohermaphroditism?",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. Congenital adrenal hyperplasia.\n\nFemale pseudohermaphroditism is a condition where a genetic female has some masculine physical characteristics due to exposure to androgens (male hormones) in utero. Congenital adrenal hyperplasia (CAH) is a condition where the adrenal glands produce excessive amounts of androgens, which can lead to the development of masculine characteristics in a genetic female.\n\nAndrogen insensitivity syndrome (AIS) is a condition where the body does not respond to androgens, leading to a male pseudohermaphroditic phenotype in genetic males.\n\nCampomelic dysplasia is a rare genetic disorder that affects the development of the skeleton and other tissues, and is not typically associated with pseudohermaphroditism.\n\nKlinefelter syndrome is a genetic disorder where a male has an extra X chromosome (XXY), leading to hypogonadism and other developmental abnormalities, but is not typically associated with pseudohermaphroditism.",
+    "context": "",
+    "choices": [
+      "Androgen insensitivity",
+      "Campomelic dysplasia",
+      "Congenital adrenal hyperplasia",
+      "Klinefelter syndrome"
+    ]
+  },
+  {
+    "sample_id": 78,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which component of transcribed RNA in eukaryotes is present in the initial transcript but is removed before translation occurs?",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. Intron.\n\nIn eukaryotes, introns are non-coding regions of RNA that are present in the initial transcript, but are removed during a process called splicing before the RNA is translated into protein. This process is known as RNA splicing or intron removal.\n\nThe other options are not correct:\n\n* B. 3' Poly A tail: This is a feature of eukaryotic mRNAs, but it is not removed before translation. Instead, it is added to the 3' end of the transcript during processing.\n* C. Ribosome binding site: This is a feature of mRNA that is required for translation, and is not removed before translation.\n* D. 5' cap: This is a feature of eukaryotic mRNAs, and is not removed before translation. Instead, it is added to the 5' end of the transcript during processing.",
+    "context": "",
+    "choices": [
+      "Intron",
+      "3’ Poly A tail",
+      "Ribosome binding site",
+      "5’ cap"
+    ]
+  },
+  {
+    "sample_id": 79,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is not a recognized complication of cystic fibrosis?",
+    "ground_truth": 0,
+    "model_response": "The correct answer is B. Congenital absence of the vas deferens.\n\nCongenital absence of the vas deferens is a condition that affects the vas deferens, the tube that carries sperm out of the body during ejaculation, and is not a recognized complication of cystic fibrosis.\n\nThe other options are all recognized complications of cystic fibrosis:\n\n* A. Cancer of the esophagus: Cystic fibrosis patients are at increased risk of developing esophageal cancer, particularly squamous cell carcinoma.\n* C. Diabetes mellitus: Cystic fibrosis patients are at increased risk of developing diabetes mellitus, particularly as they get older.\n* D. Liver cirrhosis: Cystic fibrosis patients are at risk of developing liver cirrhosis due to the accumulation of toxic compounds in the liver and the chronic inflammation caused by the disease.",
+    "context": "",
+    "choices": [
+      "Cancer of the oesophagus",
+      "Congenital absence of the vas deferens",
+      "Diabetes mellitus",
+      "Liver cirrhosis"
+    ]
+  },
+  {
+    "sample_id": 80,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following diagnostic techniques is of no value for the diagnosis of neural tube defects?",
+    "ground_truth": 1,
+    "model_response": "The correct answer is C. Maternal serum screening.\n\nMaternal serum screening is a non-invasive test that measures the levels of certain substances in a pregnant woman's blood, such as alpha-fetoprotein (AFP) and human chorionic gonadotropin (hCG). While this test can detect some neural tube defects, such as anencephaly, it is not a reliable method for diagnosing neural tube defects, especially in the early stages of pregnancy.\n\nAmniocentesis (A) and chorion villus sampling (B) are both invasive tests that can detect neural tube defects, such as spina bifida and anencephaly, by analyzing the fluid or tissue samples obtained from the amniotic sac or placenta.\n\nUltrasonography (D) is a non-invasive imaging test that can detect neural tube defects, such as spina bifida and anencephaly, by visualizing the fetal anatomy and detecting abnormalities in the spine and brain.\n\nTherefore, maternal serum screening is the diagnostic technique of no value for the diagnosis of neural tube defects.",
+    "context": "",
+    "choices": [
+      "Amniocentesis",
+      "Chorion villus sampling (CVS)",
+      "Maternal serum screening",
+      "Ultrasonography"
+    ]
+  },
+  {
+    "sample_id": 81,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following conditions is a peroxisomal disorder?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. Zellweger syndrome.\n\nZellweger syndrome is a rare genetic disorder that affects the development and function of peroxisomes, which are small organelles found in the cells of many tissues. Peroxisomes are responsible for breaking down and recycling certain fatty acids and amino acids, as well as producing certain hormones and other molecules.\n\nZellweger syndrome is characterized by a range of symptoms, including intellectual disability, seizures, and physical abnormalities such as a high forehead, a small head, and a short stature. It is caused by mutations in the PEX genes, which encode proteins involved in the formation and function of peroxisomes.\n\nThe other options are not peroxisomal disorders:\n\nA. Acute intermittent porphyria is a group of disorders caused by defects in the production of heme, a molecule involved in the production of hemoglobin.\n\nB. Maple syrup urine disease is a disorder caused by a deficiency of the enzyme branched-chain alpha-keto acid dehydrogenase complex, which is involved in the breakdown of certain amino acids.\n\nC. Medium chain acyl-CoA dehydrogenase deficiency is a disorder caused by a deficiency of the enzyme medium-chain acyl-CoA dehydrogenase, which is involved in the breakdown of fatty acids.",
+    "context": "",
+    "choices": [
+      "Acute intermittent porphyria",
+      "Maple syrup urine disease",
+      "Medium chain acyl-CoA dehydrogenase deficiency",
+      "Zellweger syndrome"
+    ]
+  },
+  {
+    "sample_id": 82,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Marked microsatellite instability is a feature of:",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. hereditary non-polyposis colon cancer (HNPCC).\n\nMicrosatellite instability (MSI) is a genetic phenomenon characterized by the instability of repetitive DNA sequences, known as microsatellites, in the genome. It is a hallmark of hereditary non-polyposis colon cancer (HNPCC), also known as Lynch syndrome. MSI is caused by a defect in the mismatch repair (MMR) genes, which are responsible for correcting errors in DNA replication.\n\nIn HNPCC, MSI is caused by germline mutations in one of the MMR genes, such as MLH1, MSH2, MSH6, or PMS2. This leads to a failure to repair DNA replication errors, resulting in the accumulation of mutations and the development of cancer.\n\nIn contrast, familial adenomatous polyposis (FAP) is characterized by the presence of hundreds to thousands of adenomas in the colon, and is caused by mutations in the APC gene. Multiple endocrine adenomatosis type 2 (MEN2) is a rare disorder characterized by the development of tumors in multiple endocrine glands, and is caused by mutations in the RET gene. Neurofibromatosis 1 (NF1) is a genetic disorder characterized by the development of benign tumors called neurofibromas, and is caused by mutations in the NF1 gene. None of these conditions are typically associated with MSI.",
+    "context": "",
+    "choices": [
+      "familial adenomatous polyposis.",
+      "hereditary non-polyposis colon cancer (HNPCC).",
+      "multiple endocrine adenomatosis type 2.",
+      "neurofibromatosis 1."
+    ]
+  },
+  {
+    "sample_id": 83,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The common mutation in α-thalassaemia consists of:",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. a deletion.\n\nα-thalassaemia is a genetic disorder caused by a deletion of one or both of the α-globin genes, which code for the α-globin protein. The most common type of α-thalassaemia is caused by a deletion of three nucleotides, resulting in the loss of one α-globin gene. This deletion is known as the -α3.7 deletion.\n\nThe other options are not correct:\n\n* B. Duplication: There is no evidence of duplication of the α-globin genes in α-thalassaemia.\n* C. Insertion: Insertions are not a common mechanism of mutation in α-thalassaemia.\n* D. Point mutation: While point mutations can occur in the α-globin genes, they are not the primary cause of α-thalassaemia.",
+    "context": "",
+    "choices": [
+      "a deletion.",
+      "a duplication.",
+      "an insertion.",
+      "a point mutation."
+    ]
+  },
+  {
+    "sample_id": 84,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A baby born with pulmonary hypoplasia secondary to oligohydramnios caused by renal agenesis would be classified as having:",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. a sequence.\n\nPulmonary hypoplasia secondary to oligohydramnios caused by renal agenesis is an example of a sequence. A sequence is a developmental disorder that occurs when a primary abnormality (in this case, renal agenesis) leads to a secondary abnormality (pulmonary hypoplasia) due to the lack of normal development and growth.\n\nIn this case, the primary abnormality is the failure of the kidneys to develop (renal agenesis), which leads to a decrease in amniotic fluid (oligohydramnios). This decrease in amniotic fluid puts pressure on the developing lungs, causing them to be smaller than normal (pulmonary hypoplasia).\n\nAn association is a condition where two or more unrelated abnormalities occur together, but there is no known causal relationship between them.\n\nA dysplasia is a disorder of development, but it is not the correct term in this case because pulmonary hypoplasia is not a developmental disorder of the lung tissue itself, but rather a consequence of the lack of normal development and growth due to the primary abnormality of renal agenesis.\n\nA syndrome is a group of symptoms and signs that occur together, often due to a single underlying cause. While pulmonary hypoplasia and renal agenesis are both symptoms, they are not a syndrome because they are not a group of symptoms that occur together due to a single underlying cause.",
+    "context": "",
+    "choices": [
+      "an association.",
+      "a dysplasia.",
+      "a sequence.",
+      "a syndrome."
+    ]
+  },
+  {
+    "sample_id": 85,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The ______ is the set of observable characteristics and is the sum of genetic and environmental effects.",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. phenotype.\n\nThe phenotype is the set of observable characteristics of an individual, including physical traits, behaviors, and other characteristics that can be measured or observed. It is the result of the interaction between an individual's genotype (the genetic makeup) and the environment.\n\nThe genotype refers to the genetic makeup of an individual, which is the set of genes that an individual inherits from its parents. The genotype determines the characteristics of an individual, but it is not directly observable. The phenotype is the expression of the genotype, and it is the characteristic that is observed.\n\nTherefore, the correct answer is B. phenotype.",
+    "context": "",
+    "choices": [
+      "genotype",
+      "phenotype",
+      "both genotype and phenotype",
+      "neither genotype or phenotype"
+    ]
+  },
+  {
+    "sample_id": 86,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following trisomy karyotypes has the mildest effect on human development?",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. 47,XXX.\n\nTrisomy 47,XXX is a condition where a female has an extra X chromosome, resulting in a karyotype of 47,XXX. This condition is often referred to as Turner syndrome mosaic, and it is typically associated with mild physical and developmental abnormalities. The effects of 47,XXX are generally milder than those of other trisomies, and many individuals with this condition lead normal lives with minimal to no symptoms.\n\nIn contrast:\n\n* 47,XXY (Klinefelter syndrome) is a condition where a male has an extra X chromosome, which can lead to developmental delays, infertility, and other physical and hormonal abnormalities.\n* 47,XX,+13 (Patau syndrome) is a rare and severe condition characterized by multiple congenital anomalies, intellectual disability, and a high risk of mortality.\n* 47,XY,+21 (Down syndrome) is a condition where an individual has an extra copy of chromosome 21, which can lead to significant intellectual disability, physical abnormalities, and increased risk of medical complications.\n\nTherefore, 47,XXX is generally considered to have the mildest effect on human development among the options listed.",
+    "context": "",
+    "choices": [
+      "47,XXX",
+      "47,XXY",
+      "47,XX,+13",
+      "47,XY,+21"
+    ]
+  },
+  {
+    "sample_id": 87,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Mutations that cause achondroplasia exert an effect which can be classified as:",
+    "ground_truth": 1,
+    "model_response": "The correct answer is A. dominant negative.\n\nAchondroplasia is a genetic disorder that causes dwarfism, characterized by short-limbed dwarfism and other skeletal abnormalities. The mutations that cause achondroplasia are dominant negative mutations, which means that a single copy of the mutated allele is sufficient to cause the disease.\n\nDominant negative mutations occur when a mutated protein is produced that interferes with the function of the normal protein, leading to a loss of function or a gain of a toxic function. In the case of achondroplasia, the mutated fibroblast growth factor receptor 3 (FGFR3) protein is dominant negative, meaning that it can bind to and inhibit the activity of the normal FGFR3 protein, leading to impaired bone growth and development.\n\nIn contrast, gain-of-function mutations would result in an abnormal gain of function, whereas haploinsufficiency would result in a loss of function due to a single copy of the mutated allele. Loss-of-function mutations would result in a complete loss of function due to a complete deletion or inactivation of the gene.",
+    "context": "",
+    "choices": [
+      "dominant negative.",
+      "gain-of-function.",
+      "haploinsufficiency.",
+      "loss-of-function."
+    ]
+  },
+  {
+    "sample_id": 88,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The presence of two or more cell lines from different zygotes in a single individual is known as:",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. chimaerism.\n\nChimaerism is a condition in which two or more cell lines from different zygotes coexist in a single individual. This can occur when two fertilized eggs fuse together, or when a fertilized egg is fertilized by two sperm, resulting in a single individual with two sets of genetic material.\n\nMosaicism (Option A) refers to the presence of two or more cell populations with different genotypes within an individual, but these cell populations are derived from a single zygote.\n\nDiploidy (Option B) refers to the presence of two sets of chromosomes in an individual, but this is a normal condition in many species, including humans, and is not necessarily the result of the presence of two or more cell lines from different zygotes.\n\nAneuploidy (Option C) refers to the presence of an abnormal number of chromosomes in an individual, but this is not necessarily related to the presence of two or more cell lines from different zygotes.",
+    "context": "",
+    "choices": [
+      "mosaicism.",
+      "diploidy.",
+      "aneuploidy.",
+      "chimaerism."
+    ]
+  },
+  {
+    "sample_id": 89,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The risk for miscarriage associated with amniocentesis is approximately ____.",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. 1 in 100 to 1 in 200.\n\nAmniocentesis is a prenatal test that involves inserting a needle into the uterus to collect a sample of amniotic fluid, which can be used to diagnose certain genetic disorders or chromosomal abnormalities. The risk of miscarriage associated with amniocentesis is estimated to be around 1 in 100 to 1 in 200, which is relatively low. However, this risk is still higher than that of other prenatal tests, such as chorionic villus sampling (CVS), which has a risk of miscarriage of around 1 in 200 to 1 in 400.",
+    "context": "",
+    "choices": [
+      "1 in 10",
+      "1 in 50",
+      "1 in 100 to 1 in 200",
+      "1 in 1000"
+    ]
+  },
+  {
+    "sample_id": 90,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Autozygosity mapping is used to map disorders that show which pattern of inheritance?",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. Autosomal recessive.\n\nAutozygosity mapping is a technique used to map genetic disorders that show autosomal recessive inheritance. Autosomal recessive disorders are caused by the presence of two copies of a mutated gene, one inherited from each parent. Autozygosity mapping involves identifying individuals who are homozygous for a particular genetic variant, meaning they have two copies of the same variant, one inherited from each parent. This technique is useful for mapping disorders that are caused by recessive mutations, as it allows researchers to identify the chromosomal region where the disease-causing gene is located.\n\nIn contrast, autosomal dominant disorders are caused by a single copy of a mutated gene, and X-linked dominant and X-linked recessive disorders are caused by mutations on the X chromosome.",
+    "context": "",
+    "choices": [
+      "Autosomal dominant",
+      "Autosomal recessive",
+      "X-linked dominant",
+      "X-linked recessive"
+    ]
+  },
+  {
+    "sample_id": 91,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Consanguinity shows a strong association with which pattern of inheritance?",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. Autosomal recessive.\n\nConsanguinity, or the mating of close relatives, increases the likelihood of inheriting two copies of a recessive allele, one from each parent. This is because both parents are more likely to be carriers of the same recessive allele, increasing the chances of passing it on to their offspring.\n\nAutosomal recessive inheritance is characterized by the following features:\n\n* The gene is located on an autosome (chromosome 1-22)\n* The gene is recessive, meaning that a person needs to inherit two copies of the gene (one from each parent) to express the trait\n* Carriers of the recessive allele (heterozygotes) are typically healthy and do not express the trait\n* The risk of inheritance is increased when both parents are carriers of the recessive allele\n\nIn contrast, autosomal dominant inheritance is characterized by the presence of a dominant allele, which is enough to express the trait, even if the individual inherits only one copy of the gene. X-linked dominant and X-linked recessive inheritance patterns are related to genes located on the X chromosome and have different inheritance patterns.",
+    "context": "",
+    "choices": [
+      "Autosomal dominant",
+      "Autosomal recessive",
+      "X-linked dominant",
+      "X-linked recessive"
+    ]
+  },
+  {
+    "sample_id": 92,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Most new mutations appear to be",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. neutral or deleterious.\n\nMost new mutations that occur in a population are either neutral or deleterious, meaning they do not provide a selective advantage or are harmful to the individual. Beneficial mutations are relatively rare and are often the result of a specific adaptation to a particular environment.\n\nNeutral mutations are those that do not affect the fitness of the individual, either positively or negatively. They may be silent mutations that do not change the amino acid sequence of a protein, or they may be mutations that occur in non-coding regions of the genome.\n\nDeleterious mutations, on the other hand, can have a negative impact on the fitness of the individual, such as by reducing the function of a protein or disrupting the regulation of gene expression. These mutations are more likely to be eliminated from the population through natural selection.\n\nOption C is incorrect because most new mutations are not more likely to occur in homozygotes rather than heterozygotes. In fact, the majority of new mutations are likely to occur in heterozygotes, as this is the most common genotype in a population.\n\nOption D is also incorrect because allozyme studies (protein electrophoresis) are not typically used to detect new mutations. Allozyme studies are used to detect genetic variation in enzymes, but they are not sensitive enough to detect new mutations.",
+    "context": "",
+    "choices": [
+      "beneficial",
+      "neutral or deleterious",
+      "present in homozygotes rather than heterozygotes",
+      "detectable using allozyme studies (protein electrophoresis)"
+    ]
+  },
+  {
+    "sample_id": 93,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Twin studies in humans are useful because",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. they allow genetic as opposed to environmental influences on variation in a trait to be estimated.\n\nTwin studies are a type of research design that involves comparing the similarities and differences between identical twins (who share 100% of their genes) and fraternal twins (who share 50% of their genes on average) to estimate the relative contributions of genetic and environmental factors to the development of a particular trait or disorder.\n\nBy comparing the concordance rates (i.e., the frequency of identical traits or disorders) between identical and fraternal twins, researchers can estimate the heritability of a trait, which is the proportion of variation in the trait that can be attributed to genetic factors. This allows researchers to distinguish between genetic and environmental influences on the trait.\n\nThe other options are not accurate:\n\nB. Cloning of genes is not facilitated by the presence of extra copies, and twin studies do not involve cloning.\n\nC. Improved expression of genes is not a direct result of twin studies.\n\nD. Twins do not have a greater likelihood of being heterozygous, as heterozygosity refers to the presence of two different alleles of a gene, which is not related to the type of twinship.",
+    "context": "",
+    "choices": [
+      "they allow genetic as opposed to environmental influences on variation in a trait to be estimated",
+      "cloning of genes is facilitated by the presence of extra copies",
+      "they allow improved expression of genes",
+      "twins have a greater likelihood of being heterozygous"
+    ]
+  },
+  {
+    "sample_id": 94,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Complete the following sentence. The Philadelphia chromosome:",
+    "ground_truth": 1,
+    "model_response": "The correct answer is B. is a product of a reciprocal translocation.\n\nThe Philadelphia chromosome is a specific chromosomal abnormality found in certain types of leukemia, particularly chronic myeloid leukemia (CML) and acute lymphoblastic leukemia (ALL). It is characterized by a reciprocal translocation between chromosomes 9 and 22, resulting in the creation of a fusion gene called BCR-ABL1. This fusion gene produces a chimeric protein that is responsible for the development of the disease.",
+    "context": "",
+    "choices": [
+      "is an example of gene amplification.",
+      "is a product of a reciprocal translocation.",
+      "causes Burkitt's lymphoma.",
+      "causes retinoblastoma."
+    ]
+  },
+  {
+    "sample_id": 95,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Enzyme assay can be used to identify carriers of:",
+    "ground_truth": 3,
+    "model_response": "The correct answer is D. Tay-Sachs disease.\n\nTay-Sachs disease is a genetic disorder caused by a deficiency of the enzyme hexosaminidase A, which is responsible for breaking down fatty substances in the brain and nerve cells. An enzyme assay can be used to detect the deficiency of hexosaminidase A in individuals who are carriers of the disease, allowing for early detection and diagnosis.\n\nCystic fibrosis (Option A) is a genetic disorder caused by mutations in the CFTR gene, which codes for the cystic fibrosis transmembrane conductance regulator protein. While enzyme assays can be used to diagnose cystic fibrosis, they are not used to identify carriers of the disease.\n\nFragile X syndrome (Option B) is a genetic disorder caused by an expansion of a trinucleotide repeat in the FMR1 gene. Enzyme assays are not used to diagnose or identify carriers of fragile X syndrome.\n\nOculocutaneous albinism (Option C) is a group of genetic disorders that affect the production of melanin, leading to vision and skin problems. While enzyme assays can be used to diagnose some forms of albinism, they are not used to identify carriers of the disease.",
+    "context": "",
+    "choices": [
+      "Cystic fibrosis.",
+      "Fragile X syndrome.",
+      "Oculocutaneous albinism.",
+      "Tay-Sachs disease."
+    ]
+  },
+  {
+    "sample_id": 96,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A high blood ammonia level occurs in:",
+    "ground_truth": 2,
+    "model_response": "The correct answer is C. ornithine transcarbamylase (OTC) deficiency.\n\nOrnithine transcarbamylase (OTC) deficiency is a rare genetic disorder that affects the urea cycle, which is responsible for removing ammonia from the blood. In OTC deficiency, the enzyme ornithine transcarbamylase is deficient or defective, leading to an accumulation of ammonia in the blood. This can cause a range of symptoms, including vomiting, seizures, and altered mental status.\n\nGalactosaemia (A) is a rare genetic disorder that affects the breakdown of galactose, a sugar found in milk and other dairy products. It is not typically associated with high blood ammonia levels.\n\nHurler's syndrome (B) is a rare genetic disorder caused by a deficiency of the enzyme iduronate-2-sulfatase, which is necessary for the breakdown of certain sugars. It is not typically associated with high blood ammonia levels.\n\nPhenylketonuria (D) is a genetic disorder caused by a deficiency of the enzyme phenylalanine hydroxylase, which is necessary for the breakdown of the amino acid phenylalanine. While it can cause a range of symptoms, high blood ammonia levels are not typically a feature of phenylketonuria.",
+    "context": "",
+    "choices": [
+      "galactosaemia.",
+      "Hurler's syndrome.",
+      "ornithine transcarbamylase (OTC) deficiency.",
+      "phenylketonuria."
+    ]
+  },
+  {
+    "sample_id": 97,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In genome-wide association studies, known SNPs explain ______ of the variation in body mass index despite the evidence of greater than 50% heritability from twin and family studies.",
+    "ground_truth": 3,
+    "model_response": "The correct answer is A. only 5%.\n\nGenome-wide association studies (GWAS) have identified thousands of genetic variants associated with body mass index (BMI), but these variants together explain only a small fraction of the variation in BMI. Despite the strong evidence of heritability from twin and family studies, which suggest that genetic factors contribute to around 50-60% of the variation in BMI, the known SNPs (single nucleotide polymorphisms) explain only around 5% of the variation in BMI.\n\nThis is often referred to as the \"missing heritability\" problem, where the majority of the genetic variation associated with a trait is not captured by the known SNPs. This is likely due to the complexity of the genetic architecture of BMI, which involves the interaction of multiple genetic variants, epigenetic factors, and environmental influences.",
+    "context": "",
+    "choices": [
+      "only 5%",
+      "less than 1%",
+      "only 13%",
+      "less than 2%"
+    ]
+  },
+  {
+    "sample_id": 98,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Differential distribution of substances in the egg most typically results in:",
+    "ground_truth": 0,
+    "model_response": "The correct answer is A. differences in gene expression which may establish a pattern in the embryo as the cells divide.\n\nDuring embryonic development, the distribution of substances within the egg can lead to differences in gene expression, which can establish a pattern in the embryo as the cells divide. This is known as positional information or morphogenetic gradients. The distribution of substances such as morphogens, signaling molecules, and transcription factors can influence the expression of specific genes, leading to the formation of different cell types and tissues.\n\nFor example, the distribution of the morphogen Bicoid in the Drosophila embryo establishes a gradient that determines the expression of different genes along the anterior-posterior axis, leading to the formation of different body parts.\n\nThe other options are not directly related to the differential distribution of substances in the egg:\n\nB. Amplification of specific genes during development is a process that occurs during DNA replication and is not directly related to the distribution of substances in the egg.\n\nC. Polyploid tissues are formed when a cell contains more than two sets of chromosomes, which is not a direct result of the distribution of substances in the egg.\n\nD. Loss of specific genes during development is a process that can occur through various mechanisms, including gene silencing or deletion, but is not a direct result of the distribution of substances in the egg.",
+    "context": "",
+    "choices": [
+      "differences in gene expression which may establish a pattern in the embryo as the cells divide",
+      "amplification of specific genes during development",
+      "development of polyploid tissues",
+      "loss of specific genes during development"
+    ]
+  },
+  {
+    "sample_id": 99,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following conditions is not caused by a mutation in FGFR3?",
+    "ground_truth": 3,
+    "model_response": "The correct answer is B. Crouzon syndrome.\n\nFGFR3 mutations are associated with the following conditions:\n\n* Achondroplasia: a common form of short-limbed dwarfism\n* Thanatophoric dysplasia: a severe and usually lethal form of dwarfism\n* Waardenburg syndrome: a rare genetic disorder characterized by hearing loss, skin depigmentation, and other features\n\nCrouzon syndrome, on the other hand, is caused by mutations in the FGFR2 gene, not FGFR3. It is a rare genetic disorder characterized by craniosynostosis (premature fusion of the skull bones) and other craniofacial abnormalities.",
+    "context": "",
+    "choices": [
+      "Achondroplasia",
+      "Crouzon syndrome",
+      "Thanatophoric dysplasia",
+      "Waardenburg syndrome"
+    ]
+  }
+]

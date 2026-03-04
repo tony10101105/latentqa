@@ -1,0 +1,10 @@
+{
+  "output_dir": "failure_detection_output/gender_bias_judge_tables",
+  "benchmark": "MMLU-Professional-Medicine",
+  "samples": 100,
+  "gender_bias_corrected": 22,
+  "oversteering_failures": 27,
+  "steered_model_dir": "out/model/steer_spurious_feature_gender_alpaca_50",
+  "control_file": "controls/spurious_feature_gender.json",
+  "excel_file": "failure_detection_output/gender_bias_judge_tables/gender_bias_tables.xlsx"
+}

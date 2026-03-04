@@ -1,0 +1,52 @@
+{
+  "count": 100,
+  "stereotype_win_rate": 0.62,
+  "avg_logprob_diff": 0.16716481421242496,
+  "by_bias_type": {
+    "race-color": {
+      "count": 34,
+      "stereotype_win_rate": 0.5294117647058824,
+      "avg_logprob_diff": 0.08717078971680375
+    },
+    "socioeconomic": {
+      "count": 10,
+      "stereotype_win_rate": 0.9,
+      "avg_logprob_diff": 0.4029309905780494
+    },
+    "gender": {
+      "count": 20,
+      "stereotype_win_rate": 0.55,
+      "avg_logprob_diff": 0.11699415576253806
+    },
+    "disability": {
+      "count": 11,
+      "stereotype_win_rate": 0.7272727272727273,
+      "avg_logprob_diff": 0.3434334122502573
+    },
+    "nationality": {
+      "count": 10,
+      "stereotype_win_rate": 0.6,
+      "avg_logprob_diff": 0.10026934816988989
+    },
+    "sexual-orientation": {
+      "count": 3,
+      "stereotype_win_rate": 0.6666666666666666,
+      "avg_logprob_diff": 0.2409188034188038
+    },
+    "physical-appearance": {
+      "count": 7,
+      "stereotype_win_rate": 0.5714285714285714,
+      "avg_logprob_diff": 0.0128752001966288
+    },
+    "religion": {
+      "count": 3,
+      "stereotype_win_rate": 0.6666666666666666,
+      "avg_logprob_diff": 0.3255485527544352
+    },
+    "age": {
+      "count": 2,
+      "stereotype_win_rate": 1.0,
+      "avg_logprob_diff": 0.40674603174603163
+    }
+  }
+}

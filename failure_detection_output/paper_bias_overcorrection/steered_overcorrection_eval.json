@@ -1,0 +1,1502 @@
+[
+  {
+    "sample_id": 0,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In a Robertsonian translocation fusion occurs at the:",
+    "ground_truth": 1,
+    "model_response": "#no-matter|»",
+    "context": "",
+    "choices": [
+      "telomeres.",
+      "centromeres.",
+      "histones.",
+      "ends of the long arms."
+    ]
+  },
+  {
+    "sample_id": 1,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Zinc finger proteins and helix-turn-helix proteins are",
+    "ground_truth": 0,
+    "model_response": "#no|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```",
+    "context": "",
+    "choices": [
+      "types of DNA-binding proteins",
+      "involved in the control of translation",
+      "components of ribosomes",
+      "part of the hemoglobin in blood cells"
+    ]
+  },
+  {
+    "sample_id": 2,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "If the frequency of males affected with an X-linked recessive condition in a human population is .10 (one in ten), what will be the expected frequency of affected females?",
+    "ground_truth": 0,
+    "model_response": "user\n\nNone.",
+    "context": "",
+    "choices": [
+      "0.01",
+      "0.001",
+      "0.02",
+      "0.0001"
+    ]
+  },
+  {
+    "sample_id": 3,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In DNA adenine normally pairs with:",
+    "ground_truth": 2,
+    "model_response": "#no|»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»",
+    "context": "",
+    "choices": [
+      "cytosine.",
+      "guanine.",
+      "thymine.",
+      "uracil."
+    ]
+  },
+  {
+    "sample_id": 4,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The pattern of inheritance shown by malignant hyperthermia (hyperpyrexia) is:",
+    "ground_truth": 0,
+    "model_response": "#no|</s>",
+    "context": "",
+    "choices": [
+      "autosomal dominant.",
+      "autosomal recessive.",
+      "X-linked dominant.",
+      "X-linked recessive."
+    ]
+  },
+  {
+    "sample_id": 5,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Mapping of human chromosomes:",
+    "ground_truth": 1,
+    "model_response": "# comment\n\nPlease keep in mind that the above text is a sample and may not reflect the actual content of the article.",
+    "context": "",
+    "choices": [
+      "has been restricted to the sex chromosomes because of small family sizes",
+      "proceeded much more successfully as large numbers of DNA markers became available.",
+      "has determined that the number of linkage groups is about twice the number of chromosomes",
+      "has demonstrated that almost all of the DNA is involved in coding for genes"
+    ]
+  },
+  {
+    "sample_id": 6,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Intergenerational transmission to offspring can occur as a result of parental exposures to ______.",
+    "ground_truth": 3,
+    "model_response": "#> No comment.",
+    "context": "",
+    "choices": [
+      "war",
+      "natural disasters",
+      "hunger",
+      "all of these"
+    ]
+  },
+  {
+    "sample_id": 7,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Asp235Phe in a molecular report indicates that:",
+    "ground_truth": 2,
+    "model_response": "assistant\n\nB. phenylalanine has been replaced by asparagine.",
+    "context": "",
+    "choices": [
+      "asparagine has been replaced by phenylalanine.",
+      "phenylalanine has been replaced by asparagine.",
+      "aspartic acid has been replaced by phenylalanine.",
+      "phenylalanine has been replaced by aspartic acid."
+    ]
+  },
+  {
+    "sample_id": 8,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The risk of abnormality in the child of a mother with untreated phenylketonuria is:",
+    "ground_truth": 3,
+    "model_response": "user\n\nThe correct answer is A. 1%.",
+    "context": "",
+    "choices": [
+      "1%",
+      "10%",
+      "25%",
+      "Almost 100%"
+    ]
+  },
+  {
+    "sample_id": 9,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Exon skipping is associated with:",
+    "ground_truth": 2,
+    "model_response": "#no|illustrations|text]] C. RNA processing mutations.",
+    "context": "",
+    "choices": [
+      "nonsense mutations.",
+      "regulatory mutations.",
+      "RNA processing mutations.",
+      "silent mutations."
+    ]
+  },
+  {
+    "sample_id": 10,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is not a chromosome instability syndrome?",
+    "ground_truth": 0,
+    "model_response": "user\n\nNone of the above.",
+    "context": "",
+    "choices": [
+      "Klinefelter syndrome",
+      "Ataxia telangiectasia",
+      "Fanconi anaemia",
+      "Bloom syndrome"
+    ]
+  },
+  {
+    "sample_id": 11,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Normal adult haemoglobin (Hb A) consists of:",
+    "ground_truth": 0,
+    "model_response": "user\n\nNormal adult haemoglobin (Hb A) consists of: A. two α (alpha) and two β (beta) chains.",
+    "context": "",
+    "choices": [
+      "two α (alpha) and two β (beta) chains.",
+      "two α and two γ (gamma) chains.",
+      "two α and two δ (delta) chains.",
+      "four γ chains."
+    ]
+  },
+  {
+    "sample_id": 12,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In a condition such as schizophrenia the recurrence risk will be greatest for which of the following relatives of an affected individual?",
+    "ground_truth": 0,
+    "model_response": "user\n\nThe correct answer is A. Brother.",
+    "context": "",
+    "choices": [
+      "Brother",
+      "Nephew",
+      "Grandchild",
+      "Aunt"
+    ]
+  },
+  {
+    "sample_id": 13,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The mutation in sickle-cell disease consists of:",
+    "ground_truth": 3,
+    "model_response": "#no|</s>",
+    "context": "",
+    "choices": [
+      "a deletion.",
+      "a duplication.",
+      "an insertion.",
+      "a point mutation."
+    ]
+  },
+  {
+    "sample_id": 14,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is an example of monosomy?",
+    "ground_truth": 3,
+    "model_response": "user\n\nThe correct answer is D. 45,X.",
+    "context": "",
+    "choices": [
+      "46,XX",
+      "47,XXX",
+      "69,XYY",
+      "45,X"
+    ]
+  },
+  {
+    "sample_id": 15,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "QTL analysis is used to",
+    "ground_truth": 0,
+    "model_response": "#no|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`",
+    "context": "",
+    "choices": [
+      "identify chromosome regions associated with a complex trait in a genetic cross",
+      "determine which genes are expressed at a developmental stage",
+      "map genes in bacterial viruses",
+      "identify RNA polymerase binding sites"
+    ]
+  },
+  {
+    "sample_id": 16,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "What would be the frequency of AABBCC individuals from a mating of two AaBbCc individuals?",
+    "ground_truth": 0,
+    "model_response": "user\n\nNo comment.",
+    "context": "",
+    "choices": [
+      "1.0/64",
+      "1.0/32",
+      "1.0/128",
+      "1.0/256"
+    ]
+  },
+  {
+    "sample_id": 17,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "It is currently estimated that there are ______ human protein-coding genes although this estimate may be reduced over time.",
+    "ground_truth": 1,
+    "model_response": "user\n\nB. 19,000–20,000",
+    "context": "",
+    "choices": [
+      "10,000–15,000",
+      "19,000–20,000",
+      "29,000–30,000",
+      "100,000"
+    ]
+  },
+  {
+    "sample_id": 18,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "With which of the following relatives is an individual most likely to share a common HLA haplotype?",
+    "ground_truth": 2,
+    "model_response": "user\n\nCorrect answer: A. Father",
+    "context": "",
+    "choices": [
+      "Father",
+      "Mother",
+      "Sister",
+      "Son"
+    ]
+  },
+  {
+    "sample_id": 19,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following genes conveys susceptibility for polygenic Alzheimer disease?",
+    "ground_truth": 3,
+    "model_response": "user no more.",
+    "context": "",
+    "choices": [
+      "APP",
+      "PS1",
+      "PS2",
+      "APOE"
+    ]
+  },
+  {
+    "sample_id": 20,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The DiGeorge/Shprintzen syndrome is caused by a deletion in which chromosome?",
+    "ground_truth": 3,
+    "model_response": "#no-mms-c2\"> 󝰪 Answer: D. 22",
+    "context": "",
+    "choices": [
+      "4",
+      "7",
+      "15",
+      "22"
+    ]
+  },
+  {
+    "sample_id": 21,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "X-chromosome inactivation",
+    "ground_truth": 0,
+    "model_response": "user\n\nCorrect answer: A.",
+    "context": "",
+    "choices": [
+      "results in genetically turning off one of the two X chromosomes in female mammals",
+      "takes place in humans so that the same X chromosome is inactive in all of the cells of a female",
+      "is the cause of the Y chromosome being genetically inactive",
+      "occurs in fruit flies but not in mammals"
+    ]
+  },
+  {
+    "sample_id": 22,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The pattern of inheritance shown by glucose-6-phosphate dehydrogenase (G6PD) deficiency is:",
+    "ground_truth": 3,
+    "model_response": "#no|</s>",
+    "context": "",
+    "choices": [
+      "autosomal dominant.",
+      "autosomal recessive.",
+      "X-linked dominant.",
+      "X-linked recessive."
+    ]
+  },
+  {
+    "sample_id": 23,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Homeobox sequences",
+    "ground_truth": 0,
+    "model_response": "#no",
+    "context": "",
+    "choices": [
+      "are present in the genome of many animal species",
+      "are found in prokaryotes but not in eukaryotes",
+      "were identified as the integration sites for bacterial viruses",
+      "represent integration sites for transposable elements"
+    ]
+  },
+  {
+    "sample_id": 24,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following karyotypes is diagnostic of Down syndrome",
+    "ground_truth": 0,
+    "model_response": "assistant\n\nA. 46,XX,der(14;21)(q10;q10)pat+21",
+    "context": "",
+    "choices": [
+      "46,XX,der(14;21)(q10;q10)pat+21",
+      "47,XY,+13",
+      "45,XX,rob,(14;21)(q10;q10)",
+      "46,XY,t(2;3)(q21;q12)"
+    ]
+  },
+  {
+    "sample_id": 25,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Nature is more important for ______ differences, while nurture has greater influence on ______ differences.",
+    "ground_truth": 0,
+    "model_response": "#no",
+    "context": "",
+    "choices": [
+      "structural and anatomical; psychological and social",
+      "psychological and social; structural and anatomical",
+      "structural and psychological; anatomical and social",
+      "social and anatomical; psychological and structural"
+    ]
+  },
+  {
+    "sample_id": 26,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following would result in Angelman syndrome?",
+    "ground_truth": 1,
+    "model_response": "#no|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`|`",
+    "context": "",
+    "choices": [
+      "Maternal UPD 15",
+      "Paternal UPD 15",
+      "Deletion in the paternally derived chromosome 15",
+      "A mutation in the SNRPN promoter"
+    ]
+  },
+  {
+    "sample_id": 27,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Recombinant alpha-iduronidase is used for the treatment of which disease/syndrome?",
+    "ground_truth": 2,
+    "model_response": "user\n\nCorrect answer: C. Hurler syndrome",
+    "context": "",
+    "choices": [
+      "Fabry disease",
+      "Gaucher disease",
+      "Hurler syndrome",
+      "Pompe disease"
+    ]
+  },
+  {
+    "sample_id": 28,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Research from Moshe Szyf and colleagues has provided significant findings on the epigenetic influences of prenatal maternal stress. This work has been labelled ______.",
+    "ground_truth": 1,
+    "model_response": "#no|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```",
+    "context": "",
+    "choices": [
+      "developmental epigenetics",
+      "social epigenetics",
+      "fetal epigenetics",
+      "maternal epigenetics"
+    ]
+  },
+  {
+    "sample_id": 29,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "If both parents are affected with the same autosomal recessive disorder then the probability that each of their children will be affected equals ___.",
+    "ground_truth": 3,
+    "model_response": "user\n\nB. 1 in 2",
+    "context": "",
+    "choices": [
+      "1 in 4",
+      "1 in 2",
+      "2 in 3",
+      "1"
+    ]
+  },
+  {
+    "sample_id": 30,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The mutational mechanism in δβ-thalassaemia consists of:",
+    "ground_truth": 0,
+    "model_response": "#no|</div>",
+    "context": "",
+    "choices": [
+      "a deletion.",
+      "a duplication.",
+      "an insertion.",
+      "a point mutation."
+    ]
+  },
+  {
+    "sample_id": 31,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Assuming Hardy-Weinberg equilibrium, the genoypte frequency of heterozygotes, if the frequency of the two alleles at the gene being studied are 0.6 and 0.4, will be:",
+    "ground_truth": 2,
+    "model_response": "user\n\nThe correct answer is B. 0.64.",
+    "context": "",
+    "choices": [
+      "0.8",
+      "0.64",
+      "0.48",
+      "0.32"
+    ]
+  },
+  {
+    "sample_id": 32,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Familial hypercholesterolaemia is caused by mutations in the gene which encodes what?",
+    "ground_truth": 3,
+    "model_response": "#noone|",
+    "context": "",
+    "choices": [
+      "High density lipoprotein",
+      "HMG-CoA reductase",
+      "Low density lipoprotein",
+      "Low density lipoprotein receptor"
+    ]
+  },
+  {
+    "sample_id": 33,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A cross between two true breeding lines one with dark blue flowers and one with bright white flowers produces F1 offspring that are light blue. When the F1 progeny are selfed a 1:2:1 ratio of dark blue to light blue to white flowers is observed. What genetic phenomenon is consistent with these results?",
+    "ground_truth": 1,
+    "model_response": "user\n\nB. incomplete dominance",
+    "context": "",
+    "choices": [
+      "epistasis",
+      "incomplete dominance",
+      "codominance",
+      "inbreeding depression"
+    ]
+  },
+  {
+    "sample_id": 34,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The proportion of babies that have an abnormality identifiable at birth is _____.",
+    "ground_truth": 1,
+    "model_response": "user\n\nThe correct answer is C. 1 in 100.",
+    "context": "",
+    "choices": [
+      "1 in 10",
+      "1 in 40",
+      "1 in 100",
+      "1 in 500"
+    ]
+  },
+  {
+    "sample_id": 35,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "______ explained genetic disorders such as alkaptonuria and albinism.",
+    "ground_truth": 0,
+    "model_response": "#no|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```",
+    "context": "",
+    "choices": [
+      "Recessive inheritance has",
+      "Dominant genes have",
+      "X chromosomes",
+      "Y chromosomes"
+    ]
+  },
+  {
+    "sample_id": 36,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following conditions shows anticipation in paternal transmission?",
+    "ground_truth": 0,
+    "model_response": "user\n\nNo comment.",
+    "context": "",
+    "choices": [
+      "Huntington disease",
+      "Marfan syndrome",
+      "Cystic fibrosis",
+      "Fragile X syndrome"
+    ]
+  },
+  {
+    "sample_id": 37,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A homeotic mutation is one which",
+    "ground_truth": 1,
+    "model_response": "user\n\nB. substitutes one body part for another in development",
+    "context": "",
+    "choices": [
+      "is present in only one form in an individual",
+      "substitutes one body part for another in development",
+      "results in development of a tumor",
+      "is wild type at one temperature and abnormal at another"
+    ]
+  },
+  {
+    "sample_id": 38,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is not a familial cancer syndrome",
+    "ground_truth": 3,
+    "model_response": "#no-comment```",
+    "context": "",
+    "choices": [
+      "Familial adenomatous polyposis",
+      "Li-Fraumeni syndrome",
+      "Von Hippel-Lindau syndrome",
+      "Waardenburg syndrome"
+    ]
+  },
+  {
+    "sample_id": 39,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The epigenetic inheritance system has been described as ______ (Mayr and Provine, 1980).",
+    "ground_truth": 1,
+    "model_response": "#no-mms.assistant\n\nB. soft inheritance",
+    "context": "",
+    "choices": [
+      "genotype inheritance",
+      "soft inheritance",
+      "RNA inheritance",
+      "hard inheritance"
+    ]
+  },
+  {
+    "sample_id": 40,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Severe anaemia at birth is a feature of what?",
+    "ground_truth": 0,
+    "model_response": "#no|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`",
+    "context": "",
+    "choices": [
+      "Alpha-thalassaemia",
+      "Beta-thalassaemia",
+      "Hereditary persistence of fetal haemoglobin",
+      "Sickle cell disease"
+    ]
+  },
+  {
+    "sample_id": 41,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "If an X-linked recessive disorder is in Hardy-Weinberg equilibrium and the incidence in males equals 1 in 100, then the expected incidence of affected homozygous females would be _______.",
+    "ground_truth": 2,
+    "model_response": "user\n\nB. 1 in 4000",
+    "context": "",
+    "choices": [
+      "1 in 1000",
+      "1 in 4000",
+      "1 in 10 000",
+      "1 in 40 000"
+    ]
+  },
+  {
+    "sample_id": 42,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Tay-Sachs disease is caused by deficiency of _________________?",
+    "ground_truth": 2,
+    "model_response": "user\n\nC. Hexosaminidase A",
+    "context": "",
+    "choices": [
+      "Alpha-L-iduronidase",
+      "Glucose-6-phosphatase",
+      "Hexosaminidase A",
+      "Homogentisic acid oxidase"
+    ]
+  },
+  {
+    "sample_id": 43,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A nonsense mutation involves:",
+    "ground_truth": 3,
+    "model_response": "#no",
+    "context": "",
+    "choices": [
+      "a regulatory sequence.",
+      "an AG splice acceptor site.",
+      "the creation of a different amino acid.",
+      "the creation of a stop codon."
+    ]
+  },
+  {
+    "sample_id": 44,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The polymerase chain reaction or PCR is a technique that",
+    "ground_truth": 2,
+    "model_response": "#no</p><br/>\" class=\"wp-smiley\" style=\"font-size: 18px;margin:0 0 4px 8px!important;\"\">",
+    "context": "",
+    "choices": [
+      "was used to demonstrate DNA as the genetic material",
+      "is used to determine the content of minerals in a soil sample",
+      "uses short DNA primers and a thermostable DNA polymerase to replicate specific DNA sequences in vitro.",
+      "measures the ribosome transfer rate during translation"
+    ]
+  },
+  {
+    "sample_id": 45,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The maternal serum level of alpha-fetoprotein (AFP) is lower than average in which situation?",
+    "ground_truth": 0,
+    "model_response": "user\n\nThe correct answer is A. Down syndrome.",
+    "context": "",
+    "choices": [
+      "Down syndrome",
+      "Exomphalos",
+      "Neural tube defects",
+      "Twin pregnancies"
+    ]
+  },
+  {
+    "sample_id": 46,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "______ has been described as the phenomenon by which one genotype can give rise to a range of different physiological or morphological states in response to different environmental conditions during development (West-Eberhard, 1989).",
+    "ground_truth": 2,
+    "model_response": "#noone|",
+    "context": "",
+    "choices": [
+      "Fetal plasticity",
+      "The fetal origins hypothesis",
+      "Developmental plasticity",
+      "Environmental plasticity"
+    ]
+  },
+  {
+    "sample_id": 47,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Arabidopsis is advantageous for plant genetic research because:",
+    "ground_truth": 3,
+    "model_response": "user\n\nD. it is a small plant with a small genome size which can be raised inexpensively",
+    "context": "",
+    "choices": [
+      "it is commercially important as a food crop",
+      "it is an endangered species",
+      "it is the closest to humans of any existing plant",
+      "it is a small plant with a small genome size which can be raised inexpensively"
+    ]
+  },
+  {
+    "sample_id": 48,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The proportion of genes shared by first cousins is on average ___.",
+    "ground_truth": 2,
+    "model_response": "user\n\nB. 1.0/4",
+    "context": "",
+    "choices": [
+      "1.0/2",
+      "1.0/4",
+      "1.0/8",
+      "1.0/16"
+    ]
+  },
+  {
+    "sample_id": 49,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is not a tumour suppressor gene?",
+    "ground_truth": 3,
+    "model_response": "user\n\nWhich of the following is not a tumour suppressor gene?\n\nOptions:\nA. APC\nB. NF1\nC. RB1\nD. RET",
+    "context": "",
+    "choices": [
+      "APC",
+      "NF1",
+      "RB1",
+      "RET"
+    ]
+  },
+  {
+    "sample_id": 50,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is a feature of X-linked dominant inheritance?",
+    "ground_truth": 3,
+    "model_response": "user\n\nNone.",
+    "context": "",
+    "choices": [
+      "Parental consanguinity",
+      "Male to male transmission",
+      "Transmission only by females",
+      "Transmitted by males only to females"
+    ]
+  },
+  {
+    "sample_id": 51,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "On average, how many fragments would a restriction enzyme which recognizes a specific 4 base sequence in DNA be expected to cleave a double-stranded bacteriophage with a genome size of 5,000 bp into?",
+    "ground_truth": 2,
+    "model_response": "user\n\nB. about 4",
+    "context": "",
+    "choices": [
+      "about 2",
+      "about 4",
+      "about 20",
+      "about 50"
+    ]
+  },
+  {
+    "sample_id": 52,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Positional cloning refers to",
+    "ground_truth": 3,
+    "model_response": "#no  ######`s comment`",
+    "context": "",
+    "choices": [
+      "using a selection procedure to clone a cDNA",
+      "cloning a portion of a gene using PCR",
+      "isolating a gene by PCR using primers from another species",
+      "mapping a gene to a chromosomal region and then identifying and cloning a genomic copy of the gene from the region"
+    ]
+  },
+  {
+    "sample_id": 53,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Plasmid vectors for cloning",
+    "ground_truth": 1,
+    "model_response": "#no|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```",
+    "context": "",
+    "choices": [
+      "can generally accommodate larger inserts than phage vectors can",
+      "grow within bacteria, and are present in bacterial colonies on an agar plate",
+      "can accommodate inserts of over 100 kilobases",
+      "include centromeres to allow propagation in yeast"
+    ]
+  },
+  {
+    "sample_id": 54,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Transcriptional activator proteins",
+    "ground_truth": 0,
+    "model_response": "#no</sup> minutes of reading.",
+    "context": "",
+    "choices": [
+      "bind regions near a eukaryotic gene and allow an RNA polymerase to transcribe a gene",
+      "bind to ribosomes to activate the production of specific proteins",
+      "are produced during an infection of bacteria by a phage",
+      "are essential to function of transfer RNAs during translation"
+    ]
+  },
+  {
+    "sample_id": 55,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Assuming that the level of glucose is low, a mutation in the repressor associated with the lac operon of E. coli which prevents binding of the repressor to lactose should result in: ",
+    "ground_truth": 1,
+    "model_response": "user\n\nB.",
+    "context": "",
+    "choices": [
+      "constitutive expression of the lac operon genes",
+      "lack of expression or reduced expression of the lac operon genes under all circumstances",
+      "expression of the genes only when lactose is present",
+      "expression of the genes only when lactose is absent"
+    ]
+  },
+  {
+    "sample_id": 56,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In meiosis, recombination occurs in:",
+    "ground_truth": 1,
+    "model_response": "user no more.",
+    "context": "",
+    "choices": [
+      "Metaphase I.",
+      "Prophase I.",
+      "Metaphase II.",
+      "Prophase II."
+    ]
+  },
+  {
+    "sample_id": 57,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Leber's hereditary optic atrophy is caused by a mutation in:",
+    "ground_truth": 3,
+    "model_response": "#no|",
+    "context": "",
+    "choices": [
+      "chromosome 12.",
+      "chromosome 18.",
+      "chromosome 21.",
+      "mitochondrial DNA."
+    ]
+  },
+  {
+    "sample_id": 58,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Regarding exons, which, if any, of the following statements is correct?",
+    "ground_truth": 0,
+    "model_response": "user\n\nCorrect answer: A.",
+    "context": "",
+    "choices": [
+      "Some exons in protein-coding genes consist of noncoding DNA.",
+      "The first exon of a protein-coding gene always contains the translational start site.",
+      "The last exon of a protein-coding gene always contains the normal termination codon.",
+      "A coding exon is always translated in just one of the three possible forward reading frames."
+    ]
+  },
+  {
+    "sample_id": 59,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In humans, each cell normally contains ______ of chromosomes.",
+    "ground_truth": 1,
+    "model_response": "user\n\nB. 23 pairs",
+    "context": "",
+    "choices": [
+      "11 pairs",
+      "23 pairs",
+      "32 pairs",
+      "46 pairs"
+    ]
+  },
+  {
+    "sample_id": 60,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "An increase in the inbreeding coefficient, F, is likely to result in:",
+    "ground_truth": 0,
+    "model_response": "user\n\nA. reduced likelihood of heterozygotes being present in a population",
+    "context": "",
+    "choices": [
+      "reduced likelihood of heterozygotes being present in a population",
+      "higher proportion of genes that show linkage",
+      "higher proportion of genes with introns",
+      "higher level of difference between RNA molecules in two daughter cells"
+    ]
+  },
+  {
+    "sample_id": 61,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following findings on prenatal ultrasound examination would not raise suspicion of a chromosome abnormality?",
+    "ground_truth": 3,
+    "model_response": "user\n\nNone of the above.",
+    "context": "",
+    "choices": [
+      "Duodenal atresia",
+      "Holoprosencephaly",
+      "Hydrops fetalis",
+      "Monozygotic twins"
+    ]
+  },
+  {
+    "sample_id": 62,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The likelihood of an individual in a population carrying two specific alleles of a human DNA marker, each of which has a frequency of 0.2, will be:",
+    "ground_truth": 2,
+    "model_response": "user\n\nThe correct answer is B. 0.32.",
+    "context": "",
+    "choices": [
+      "0.4",
+      "0.32",
+      "0.08",
+      "0.02"
+    ]
+  },
+  {
+    "sample_id": 63,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "An Hfr strain of E. coli contains:",
+    "ground_truth": 2,
+    "model_response": "user\n\nC. a bacterial chromosome with the F factor inserted",
+    "context": "",
+    "choices": [
+      "a vector of yeast or bacterial origin which is used to make many copies of a particular DNA sequence",
+      "a bacterial chromosome with a human gene inserted",
+      "a bacterial chromosome with the F factor inserted",
+      "a human chromosome with a transposable element inserted"
+    ]
+  },
+  {
+    "sample_id": 64,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Male to male transmission is a key feature of which pattern of inheritance?",
+    "ground_truth": 0,
+    "model_response": "#no-comment`\">`",
+    "context": "",
+    "choices": [
+      "Autosomal dominant",
+      "Autosomal recessive",
+      "X-linked dominant",
+      "X-linked recessive"
+    ]
+  },
+  {
+    "sample_id": 65,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Simple tandem repeat polymorphisms in humans are most useful for",
+    "ground_truth": 0,
+    "model_response": "#no|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```",
+    "context": "",
+    "choices": [
+      "solving criminal and paternity cases",
+      "reconstructing the relationships of humans and chimps.",
+      "estimating relationships of humans and Neanderthals",
+      "transferring disease resistance factors into bone marrow cells"
+    ]
+  },
+  {
+    "sample_id": 66,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following disorders is not suitable for population carrier screening?",
+    "ground_truth": 1,
+    "model_response": "user\n\nNo comment.",
+    "context": "",
+    "choices": [
+      "Cystic fibrosis",
+      "Oculocutaneous albinism",
+      "Sickle cell disease",
+      "Tay-Sachs disease"
+    ]
+  },
+  {
+    "sample_id": 67,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following disorders does not show X-linked inheritance?",
+    "ground_truth": 1,
+    "model_response": "user\n\nNone of the above.",
+    "context": "",
+    "choices": [
+      "Duchenne muscular dystrophy",
+      "Tay-Sachs disease",
+      "Haemophilia A",
+      "Haemophilia B"
+    ]
+  },
+  {
+    "sample_id": 68,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The most common chromosome abnormality in first trimester spontaneous miscarriages is:",
+    "ground_truth": 0,
+    "model_response": "#no|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```",
+    "context": "",
+    "choices": [
+      "trisomy.",
+      "monosomy.",
+      "triploidy.",
+      "tetrasomy."
+    ]
+  },
+  {
+    "sample_id": 69,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following karyotypes is not compatible with survival to birth?",
+    "ground_truth": 3,
+    "model_response": "user\n\nNone of the above.",
+    "context": "",
+    "choices": [
+      "47,XY,+13",
+      "47,XX,+18",
+      "47,XY,+21",
+      "45,Y"
+    ]
+  },
+  {
+    "sample_id": 70,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Male breast cancer is associated with mutations in ___.",
+    "ground_truth": 1,
+    "model_response": "user\n\nNone of the above.",
+    "context": "",
+    "choices": [
+      "BRCA1",
+      "BRCA2",
+      "NF1",
+      "RET"
+    ]
+  },
+  {
+    "sample_id": 71,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Pseudocholinesterase deficiency is associated with increased sensitivity to what?",
+    "ground_truth": 3,
+    "model_response": "#no|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```",
+    "context": "",
+    "choices": [
+      "Fava beans",
+      "Halothane",
+      "Primaquine",
+      "Succinylcholine"
+    ]
+  },
+  {
+    "sample_id": 72,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The most common cystic fibrosis mutation consists of:",
+    "ground_truth": 0,
+    "model_response": "#no-mms.###",
+    "context": "",
+    "choices": [
+      "a deletion.",
+      "a duplication.",
+      "a substitution.",
+      "an insertion."
+    ]
+  },
+  {
+    "sample_id": 73,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The normal human chromosome diploid number is:",
+    "ground_truth": 2,
+    "model_response": "user\n\nThe correct answer is C. 46.",
+    "context": "",
+    "choices": [
+      "23",
+      "24",
+      "46",
+      "48"
+    ]
+  },
+  {
+    "sample_id": 74,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Advantages of using adenoviruses for gene therapy include:",
+    "ground_truth": 1,
+    "model_response": "user",
+    "context": "",
+    "choices": [
+      "long term expression.",
+      "low risk of insertional mutagenesis.",
+      "low immunogenecity.",
+      "easy assembly."
+    ]
+  },
+  {
+    "sample_id": 75,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following statements about Hirschsprung disease is incorrect?",
+    "ground_truth": 1,
+    "model_response": "user\n\nB. It is more common in girls than in boys.",
+    "context": "",
+    "choices": [
+      "It shows an association with Down syndrome.",
+      "It is more common in girls than in boys.",
+      "RET is a major susceptibility gene.",
+      "Recurrence risks are greater for long segment disease than for short segment disease."
+    ]
+  },
+  {
+    "sample_id": 76,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following conditions is caused by a trinucleotide (triplet) repeat expansion?",
+    "ground_truth": 2,
+    "model_response": "user\n\nC. Huntington disease",
+    "context": "",
+    "choices": [
+      "Cystic fibrosis",
+      "Duchenne muscular dystrophy",
+      "Huntington disease",
+      "Osteogenesis imperfecta"
+    ]
+  },
+  {
+    "sample_id": 77,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following causes female pseudohermaphroditism?",
+    "ground_truth": 2,
+    "model_response": "#no|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```|```",
+    "context": "",
+    "choices": [
+      "Androgen insensitivity",
+      "Campomelic dysplasia",
+      "Congenital adrenal hyperplasia",
+      "Klinefelter syndrome"
+    ]
+  },
+  {
+    "sample_id": 78,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which component of transcribed RNA in eukaryotes is present in the initial transcript but is removed before translation occurs?",
+    "ground_truth": 0,
+    "model_response": "user\n\nThe correct answer is A. Intron.",
+    "context": "",
+    "choices": [
+      "Intron",
+      "3’ Poly A tail",
+      "Ribosome binding site",
+      "5’ cap"
+    ]
+  },
+  {
+    "sample_id": 79,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following is not a recognized complication of cystic fibrosis?",
+    "ground_truth": 0,
+    "model_response": "user\n\nWhich of the following is not a recognized complication of cystic fibrosis?\n\nOptions:\nA. Cancer of the oesophagus\nB. Congenital absence of the vas deferens\nC. Diabetes mellitus\nD. Liver cirrhosis",
+    "context": "",
+    "choices": [
+      "Cancer of the oesophagus",
+      "Congenital absence of the vas deferens",
+      "Diabetes mellitus",
+      "Liver cirrhosis"
+    ]
+  },
+  {
+    "sample_id": 80,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following diagnostic techniques is of no value for the diagnosis of neural tube defects?",
+    "ground_truth": 1,
+    "model_response": "user\n\nNo.",
+    "context": "",
+    "choices": [
+      "Amniocentesis",
+      "Chorion villus sampling (CVS)",
+      "Maternal serum screening",
+      "Ultrasonography"
+    ]
+  },
+  {
+    "sample_id": 81,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following conditions is a peroxisomal disorder?",
+    "ground_truth": 3,
+    "model_response": "user\n\nD. Zellweger syndrome",
+    "context": "",
+    "choices": [
+      "Acute intermittent porphyria",
+      "Maple syrup urine disease",
+      "Medium chain acyl-CoA dehydrogenase deficiency",
+      "Zellweger syndrome"
+    ]
+  },
+  {
+    "sample_id": 82,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Marked microsatellite instability is a feature of:",
+    "ground_truth": 1,
+    "model_response": "#no\n\nB. hereditary non-polyposis colon cancer (HNPCC).",
+    "context": "",
+    "choices": [
+      "familial adenomatous polyposis.",
+      "hereditary non-polyposis colon cancer (HNPCC).",
+      "multiple endocrine adenomatosis type 2.",
+      "neurofibromatosis 1."
+    ]
+  },
+  {
+    "sample_id": 83,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The common mutation in α-thalassaemia consists of:",
+    "ground_truth": 0,
+    "model_response": "#> A simple answer.",
+    "context": "",
+    "choices": [
+      "a deletion.",
+      "a duplication.",
+      "an insertion.",
+      "a point mutation."
+    ]
+  },
+  {
+    "sample_id": 84,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A baby born with pulmonary hypoplasia secondary to oligohydramnios caused by renal agenesis would be classified as having:",
+    "ground_truth": 2,
+    "model_response": "user\n\nC. a sequence.",
+    "context": "",
+    "choices": [
+      "an association.",
+      "a dysplasia.",
+      "a sequence.",
+      "a syndrome."
+    ]
+  },
+  {
+    "sample_id": 85,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The ______ is the set of observable characteristics and is the sum of genetic and environmental effects.",
+    "ground_truth": 1,
+    "model_response": "#no|` The correct answer is B. phenotype.",
+    "context": "",
+    "choices": [
+      "genotype",
+      "phenotype",
+      "both genotype and phenotype",
+      "neither genotype or phenotype"
+    ]
+  },
+  {
+    "sample_id": 86,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following trisomy karyotypes has the mildest effect on human development?",
+    "ground_truth": 0,
+    "model_response": "user\n\nThe correct answer is A. 47,XXX.",
+    "context": "",
+    "choices": [
+      "47,XXX",
+      "47,XXY",
+      "47,XX,+13",
+      "47,XY,+21"
+    ]
+  },
+  {
+    "sample_id": 87,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Mutations that cause achondroplasia exert an effect which can be classified as:",
+    "ground_truth": 1,
+    "model_response": "user\n\nA. dominant negative.",
+    "context": "",
+    "choices": [
+      "dominant negative.",
+      "gain-of-function.",
+      "haploinsufficiency.",
+      "loss-of-function."
+    ]
+  },
+  {
+    "sample_id": 88,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The presence of two or more cell lines from different zygotes in a single individual is known as:",
+    "ground_truth": 3,
+    "model_response": "#no|>>>",
+    "context": "",
+    "choices": [
+      "mosaicism.",
+      "diploidy.",
+      "aneuploidy.",
+      "chimaerism."
+    ]
+  },
+  {
+    "sample_id": 89,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "The risk for miscarriage associated with amniocentesis is approximately ____.",
+    "ground_truth": 2,
+    "model_response": "#no",
+    "context": "",
+    "choices": [
+      "1 in 10",
+      "1 in 50",
+      "1 in 100 to 1 in 200",
+      "1 in 1000"
+    ]
+  },
+  {
+    "sample_id": 90,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Autozygosity mapping is used to map disorders that show which pattern of inheritance?",
+    "ground_truth": 1,
+    "model_response": "#no|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`ah`|`",
+    "context": "",
+    "choices": [
+      "Autosomal dominant",
+      "Autosomal recessive",
+      "X-linked dominant",
+      "X-linked recessive"
+    ]
+  },
+  {
+    "sample_id": 91,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Consanguinity shows a strong association with which pattern of inheritance?",
+    "ground_truth": 1,
+    "model_response": "#no|",
+    "context": "",
+    "choices": [
+      "Autosomal dominant",
+      "Autosomal recessive",
+      "X-linked dominant",
+      "X-linked recessive"
+    ]
+  },
+  {
+    "sample_id": 92,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Most new mutations appear to be",
+    "ground_truth": 1,
+    "model_response": "user\n\nMost new mutations appear to be\n\nB. neutral or deleterious",
+    "context": "",
+    "choices": [
+      "beneficial",
+      "neutral or deleterious",
+      "present in homozygotes rather than heterozygotes",
+      "detectable using allozyme studies (protein electrophoresis)"
+    ]
+  },
+  {
+    "sample_id": 93,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Twin studies in humans are useful because",
+    "ground_truth": 0,
+    "model_response": "#no\n\nA. they allow genetic as opposed to environmental influences on variation in a trait to be estimated",
+    "context": "",
+    "choices": [
+      "they allow genetic as opposed to environmental influences on variation in a trait to be estimated",
+      "cloning of genes is facilitated by the presence of extra copies",
+      "they allow improved expression of genes",
+      "twins have a greater likelihood of being heterozygous"
+    ]
+  },
+  {
+    "sample_id": 94,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Complete the following sentence. The Philadelphia chromosome:",
+    "ground_truth": 1,
+    "model_response": "user\n\nComplete the following sentence. The Philadelphia chromosome:\n\nOptions:\nA. is an example of gene amplification.\nB. is a product of a reciprocal translocation.\nC. causes Burkitt's lymphoma.\nD. causes retinoblastoma.\n\nAnswer: B.",
+    "context": "",
+    "choices": [
+      "is an example of gene amplification.",
+      "is a product of a reciprocal translocation.",
+      "causes Burkitt's lymphoma.",
+      "causes retinoblastoma."
+    ]
+  },
+  {
+    "sample_id": 95,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Enzyme assay can be used to identify carriers of:",
+    "ground_truth": 3,
+    "model_response": "user\n\nNo comment.",
+    "context": "",
+    "choices": [
+      "Cystic fibrosis.",
+      "Fragile X syndrome.",
+      "Oculocutaneous albinism.",
+      "Tay-Sachs disease."
+    ]
+  },
+  {
+    "sample_id": 96,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "A high blood ammonia level occurs in:",
+    "ground_truth": 2,
+    "model_response": "#no|»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»",
+    "context": "",
+    "choices": [
+      "galactosaemia.",
+      "Hurler's syndrome.",
+      "ornithine transcarbamylase (OTC) deficiency.",
+      "phenylketonuria."
+    ]
+  },
+  {
+    "sample_id": 97,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "In genome-wide association studies, known SNPs explain ______ of the variation in body mass index despite the evidence of greater than 50% heritability from twin and family studies.",
+    "ground_truth": 3,
+    "model_response": "user\n\nB. less than 1%",
+    "context": "",
+    "choices": [
+      "only 5%",
+      "less than 1%",
+      "only 13%",
+      "less than 2%"
+    ]
+  },
+  {
+    "sample_id": 98,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Differential distribution of substances in the egg most typically results in:",
+    "ground_truth": 0,
+    "model_response": "user\n\nNo comment.",
+    "context": "",
+    "choices": [
+      "differences in gene expression which may establish a pattern in the embryo as the cells divide",
+      "amplification of specific genes during development",
+      "development of polyploid tissues",
+      "loss of specific genes during development"
+    ]
+  },
+  {
+    "sample_id": 99,
+    "benchmark": "MMLU-Medical",
+    "domain": "medical",
+    "question": "Which of the following conditions is not caused by a mutation in FGFR3?",
+    "ground_truth": 3,
+    "model_response": "#no-comment```",
+    "context": "",
+    "choices": [
+      "Achondroplasia",
+      "Crouzon syndrome",
+      "Thanatophoric dysplasia",
+      "Waardenburg syndrome"
+    ]
+  }
+]

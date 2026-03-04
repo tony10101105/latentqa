@@ -1,0 +1,118 @@
+{
+  "output_dir": "failure_detection_output/paper_bias_overcorrection",
+  "control_file": "controls/spurious_feature_gender.json",
+  "bias_dataset": "crows_pairs",
+  "bias_split": "test",
+  "bias_samples": 100,
+  "bias_errors_baseline": 62,
+  "bias_errors_corrected": 2,
+  "bias_baseline_summary": {
+    "count": 100,
+    "stereotype_win_rate": 0.62,
+    "avg_logprob_diff": 0.16716481421242496,
+    "by_bias_type": {
+      "race-color": {
+        "count": 34,
+        "stereotype_win_rate": 0.5294117647058824,
+        "avg_logprob_diff": 0.08717078971680375
+      },
+      "socioeconomic": {
+        "count": 10,
+        "stereotype_win_rate": 0.9,
+        "avg_logprob_diff": 0.4029309905780494
+      },
+      "gender": {
+        "count": 20,
+        "stereotype_win_rate": 0.55,
+        "avg_logprob_diff": 0.11699415576253806
+      },
+      "disability": {
+        "count": 11,
+        "stereotype_win_rate": 0.7272727272727273,
+        "avg_logprob_diff": 0.3434334122502573
+      },
+      "nationality": {
+        "count": 10,
+        "stereotype_win_rate": 0.6,
+        "avg_logprob_diff": 0.10026934816988989
+      },
+      "sexual-orientation": {
+        "count": 3,
+        "stereotype_win_rate": 0.6666666666666666,
+        "avg_logprob_diff": 0.2409188034188038
+      },
+      "physical-appearance": {
+        "count": 7,
+        "stereotype_win_rate": 0.5714285714285714,
+        "avg_logprob_diff": 0.0128752001966288
+      },
+      "religion": {
+        "count": 3,
+        "stereotype_win_rate": 0.6666666666666666,
+        "avg_logprob_diff": 0.3255485527544352
+      },
+      "age": {
+        "count": 2,
+        "stereotype_win_rate": 1.0,
+        "avg_logprob_diff": 0.40674603174603163
+      }
+    }
+  },
+  "bias_steered_summary": {
+    "count": 100,
+    "stereotype_win_rate": 0.62,
+    "avg_logprob_diff": 0.15807976120428757,
+    "by_bias_type": {
+      "race-color": {
+        "count": 34,
+        "stereotype_win_rate": 0.5294117647058824,
+        "avg_logprob_diff": 0.06647237023628624
+      },
+      "socioeconomic": {
+        "count": 10,
+        "stereotype_win_rate": 0.9,
+        "avg_logprob_diff": 0.42365371148459374
+      },
+      "gender": {
+        "count": 20,
+        "stereotype_win_rate": 0.5,
+        "avg_logprob_diff": 0.09405962909639376
+      },
+      "disability": {
+        "count": 11,
+        "stereotype_win_rate": 0.8181818181818182,
+        "avg_logprob_diff": 0.3585213416262883
+      },
+      "nationality": {
+        "count": 10,
+        "stereotype_win_rate": 0.6,
+        "avg_logprob_diff": 0.08117838658589452
+      },
+      "sexual-orientation": {
+        "count": 3,
+        "stereotype_win_rate": 0.6666666666666666,
+        "avg_logprob_diff": 0.2548076923076925
+      },
+      "physical-appearance": {
+        "count": 7,
+        "stereotype_win_rate": 0.5714285714285714,
+        "avg_logprob_diff": 0.02165152308009453
+      },
+      "religion": {
+        "count": 3,
+        "stereotype_win_rate": 0.6666666666666666,
+        "avg_logprob_diff": 0.324323062558357
+      },
+      "age": {
+        "count": 2,
+        "stereotype_win_rate": 1.0,
+        "avg_logprob_diff": 0.3928571428571428
+      }
+    }
+  },
+  "overcorrection_benchmark": "MMLU-Medical",
+  "overcorrection_scope": "all",
+  "overcorrection_samples": 100,
+  "overcorrection_failures": 59,
+  "steered_model_dir": "out/model/steer_spurious_feature_gender_alpaca_50"
+}
