@@ -5,9 +5,35 @@ This module implements a pipeline to identify failure cases in LLM responses, pa
 2. **Incorrect answers** (factually wrong or logically flawed responses)
 3. **Reasoning failures** (poor reasoning or logical inconsistencies)
 
+## Pipelines (Purpose and Overlap)
+
+| Pipeline | Purpose |
+|----------|---------|
+| **pipeline** | Base failure detection (no steering): load benchmarks → run base model → LLM judge flags failures → collect failures and intervention dataset. |
+| **oversteering_pipeline** | Generic oversteering: build control for any spurious feature (e.g. hair color) → steer model → run steered model on benchmarks → judge oversteering failures. |
+| **debiasing_pipeline** | Debiasing only: load debiasing dataset (e.g. CrowS-Pairs) → optionally steer → score baseline and steered with logprobs → report bias metrics. No judge, no benchmark oversteering. |
+| **gender_bias_side_effects_pipeline** | Compatibility wrapper: runs **gender_bias_correction_oversteering_pipeline** with `run_mode=both` and `bias_dataset=crows_pairs` (CrowS bias + oversteering on gender-relevant benchmark). Same CLI as before consolidation. |
+| **paper_bias_overcorrection_pipeline** | Paper reproduction: use a **fixed** control file → CrowS-Pairs bias metrics (logprob) → steer → overcorrection evaluation on MMLU (or other benchmark) via LLM judge. |
+| **gender_bias_correction_oversteering_pipeline** | **Most comprehensive** for bias + oversteering: measure bias on a debiasing dataset (baseline) → steer → report which biased samples were corrected → evaluate oversteering on gender-relevant benchmark. Supports `--run-mode bias \| oversteering \| both`. |
+| **gender_bias_judge_tables_pipeline** | Single benchmark, judge-based: LLM judge finds baseline gender-biased responses → steer → report only corrected samples and oversteering failures. Outputs Excel workbook (bias_corrections + oversteering sheets) and JSON tables. |
+
+### Overlap
+
+- **Bias measurement (CrowS-style logprob)** appears in: `debiasing_pipeline`, `paper_bias_overcorrection_pipeline`, and `gender_bias_correction_oversteering_pipeline` (and thus in the `gender_bias_side_effects_pipeline` wrapper).
+- **Oversteering on a benchmark** (baseline vs steered + judge) appears in: `oversteering_pipeline` (generic), `paper_bias_overcorrection_pipeline`, `gender_bias_correction_oversteering_pipeline`, and `gender_bias_judge_tables_pipeline`.
+- **Gender-specific flow** (bias + steer + gender-relevant oversteering): `gender_bias_side_effects_pipeline` (wrapper), `gender_bias_correction_oversteering_pipeline`, and `gender_bias_judge_tables_pipeline` (which uses judge-based bias instead of logprob).
+- **Steering** is used by every pipeline except the base `pipeline` and `debiasing_pipeline` (which can optionally use a pre-steered model).
+
+### Which pipeline does the most?
+
+- **Overall (no steering):** **pipeline** — full failure-detection flow (benchmarks → model → judge → failures → intervention dataset + categorization).
+- **With steering:** **gender_bias_correction_oversteering_pipeline** — it does debiasing-dataset bias, steering, a **corrections table** (which biased samples were fixed), and full oversteering evaluation on a gender-relevant benchmark, with `--run-mode` to run bias-only, oversteering-only, or both.
+
+---
+
 ## Overview
 
-The pipeline consists of four main steps:
+The main pipeline consists of four main steps:
 
 1. **Benchmark Loading**: Load relevant benchmarks (MMLU, MedQA, TruthfulQA, etc.)
 2. **Model Evaluation**: Run Meta-Llama-3-8B-Instruct on benchmark samples
