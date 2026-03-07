@@ -13,9 +13,13 @@ This repo is further modified by Tony.
 pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu128
 ```
 
-3. Install Flash Attention 2 through wheel file with specified version (should match your Pytorch and cuda driver version). Please take a look at [this discussion](https://github.com/Dao-AILab/flash-attention/issues/945).
+3. Install Flash Attention 2
+```
+uv pip install flash_attn --no-build-isolation
+```
+You may have to install some other dependencies before successfully building it.
 
-4. Clone this repo:
+5. Clone this repo:
 ```bash
 git clone https://github.com/tony10101105/latentqa
 cd latentqa
