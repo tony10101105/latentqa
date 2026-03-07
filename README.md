@@ -6,31 +6,35 @@ For more details, see the [project page](https://latentqa.github.io).
 This repo is further modified by Tony.
 
 ## :toolbox: Setup
-1. Create and activate an uv environment with Python=3.13
-
-2. Install Pytorch 2.8.0; for example:
-```bash
-pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu128
-```
-
-3. Install Flash Attention 2
-```
-uv pip install flash_attn --no-build-isolation
-```
-You may have to install some other dependencies before successfully building it.
-
-5. Clone this repo:
+1. Clone this repo:
 ```bash
 git clone https://github.com/tony10101105/latentqa
 cd latentqa
 ```
 
-5. Install other dependencies:
+2. Create and activate an uv environment with Python=3.13
 ```bash
-pip install -r requirements.txt
+uv venv .lq --python 3.13
+source .lq/bin/activate
 ```
 
-Pretrained decoder model has been on the huggingface:
+3. Install Pytorch 2.8.0; for example:
+```bash
+uv pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu128
+```
+
+4. Install Flash Attention 2
+```bash
+uv pip install flash_attn --no-build-isolation
+```
+You may have to install some other dependencies before successfully building it.
+
+5. Install other dependencies:
+```bash
+uv pip install -r requirements.txt
+```
+
+Pretrained decoder model by the original paper has been on the huggingface:
 - [Decoder for Llama-3-8B-Instruct](https://huggingface.com/aypan17/latentqa_llama-3-8b-instruct)
 
 ## :chart_with_downwards_trend: Training
@@ -46,10 +50,11 @@ torchrun --nnodes 1 --nproc-per-node $NUM_GPUS -m lit.train \
     --train_stimulus data/train/stimulus.json \
     --train_control data/train/control.json \
     --train_qa data/train/qa.json \
+    --batch_size_training 4 \
     --gradient_accumulation_steps 8 \ 
     --use_wandb
 ```
-I have only tested DDP. Using A100-80GB sometimes face OOM error. If that happens, increase *gradient_accumulation_steps* to 16 and reduce *batch_size_training* in lit/configs/train_config.py to 2.
+I have only tested DDP. Using A100-80GB sometimes face OOM error. If that happens, consider to increase *gradient_accumulation_steps* to 16 and reduce *batch_size_training* to 2.
 
 FSDP was tested on 8x A100-80GB cards. For FSDP, run:
 ```
